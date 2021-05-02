@@ -1,0 +1,6 @@
+C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\AFE DevItem1.cyprj|f50372f2-14c8-4778-8cc3-b5d5e0c9039a
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|baa85f64-533b-4467-bd7a-67d2d7e1bf71
+C:\Users\yomat\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|4828c208-ae63-4c5e-b383-cadc2af8c42c
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|14940c91-4ae9-4ac2-aaef-c72d9b77cb80
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|00dd46c6-d36a-4f8b-ae88-02fce847e3be
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|7fea677b-551a-4ddf-99e6-857d9b76fb53
