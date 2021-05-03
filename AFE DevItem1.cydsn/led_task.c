@@ -142,12 +142,12 @@ void AFE_init(AFE_ID_E afe_id)
     uint32_t data = 0;
     
     printf("Start AFE Control\r\n");
-    printf("Operation cycle: %u min.\r\n", (unsigned)PWM_CYC_config.period0/6000u);
-    printf("Operating  time: %u sec.\r\n", (unsigned)PWM_TIM_config.period0/100u);
+    printf("Operation cycle: %3.1f min.\r\n", (double)PWM_CYC_config.period0/60000u);
+    printf("Operating  time: %u sec.\r\n", (unsigned)PWM_TIM_config.period0/1000u);
     printf("  Selection AFE: %s\r\n", afe_id==AFE0_ID ? "AFE0" : "AFE1");
-    printf("  LED1 TIG gain: %u kOrm\r\n", tia_reg[TIA2_ID]);
+    printf("  LED1 TIG gain: %u korm\r\n", tia_reg[TIA2_ID]);
     printf("  LED1  current: %3.1f mA\r\n", I_LED2 * CURR_STEP);
-    printf("  LED2 TIG gain: %u kOrm\r\n", tia_reg[TIA1_ID]);
+    printf("  LED2 TIG gain: %u korm\r\n", tia_reg[TIA1_ID]);
     printf("  LED2  current: %3.1f mA\r\n\r\n", I_LED1 * CURR_STEP);
     printf("AFE,,LED2amb,LED1amb,,LED2,,,,,LED1,,,,,R\r\n");
     printf(",,,,,AC,MIN,MAX,DC,,AC,MIN,MAX,DC,,\r\n");
@@ -179,6 +179,7 @@ static bool AFE_samp(AFE_ID_E afe_id)
     cval->aled2= (double)(data+1)->val/10000;
     cval->led1 = (double)(data+2)->val/10000;
     cval->aled1= (double)(data+3)->val/10000;
+    //printf("led/aled,%f,%f,%f,%f\r\n", cval->led2, cval->aled2, cval->led1, cval->aled1);
 
     AFE_RDY(afe_id) = false;
     // サンプリング1回目
@@ -186,6 +187,7 @@ static bool AFE_samp(AFE_ID_E afe_id)
         // LED2/LED1の最小値,最大値を初期化
         cval->led2_min = cval->led2_max = cval->aled2;
         cval->led1_min = cval->led1_max = cval->aled1;
+        //printf("min/max,%f,%f,%f,%f\r\n", cval->led2_min, cval->led2_max, cval->led1_min, cval->led1_max);
     }
     // サンプリング2回目以降
     else {
@@ -198,34 +200,36 @@ static bool AFE_samp(AFE_ID_E afe_id)
             cval->led1_max = cval->aled1;
         else if(cval->led1_min > cval->aled1)
             cval->led1_min = cval->aled1;
+        //printf("min/max,%f,%f,%f,%f\r\n", cval->led2_min, cval->led2_max, cval->led1_min, cval->led1_max);
     }
-    cval->sample_cnt++;
+    // 指定サンプリング回カウントしない
+    if (cval->skip_cnt <= 0)
+        cval->sample_cnt++;
+    else cval->skip_cnt--;
+    
     // サンプリング最終回
     if (cval->sample_cnt >= SMP_NUM) {
-        if (afe_calval[afe_id].skip_cnt <= 0) {
-            printf("%d,,", afe_id);
-            printf("%f,%f,,", cval->aled2, cval->aled1);
-            // LED2/LED1のAC値,DC値
-            cval->led2_ac = cval->led2_max - cval->led2_min;
-            cval->led2_dc = (cval->led2_max + cval->led2_min) / 2.0;
-            cval->led1_ac = cval->led1_max - cval->led1_min;
-            cval->led1_dc = (cval->led1_max + cval->led1_min) / 2.0;
-            // R値を算出
-            cval->R = (cval->led2_ac / cval->led2_dc) / (cval->led1_ac / cval->led1_dc);
-            printf("%f,%f,%f,%f,,", cval->led2_ac, cval->led2_min, cval->led2_max, cval->led2_dc);
-            printf("%f,%f,%f,%f,,", cval->led1_ac, cval->led1_min, cval->led1_max, cval->led1_dc);
-            printf("%f\r\n", -3.9*cval->R+100.7);
-            // BLE送信
-            SpO2 = -3.9*cval->R+100.7;
-            cy_stc_ble_gatt_handle_value_pair_t  handleValue = {
-                         .attrHandle = CY_BLE_SPO2_SPO2DATA_CHAR_HANDLE,
-                         .value.val = (uint8_t *)&SpO2,
-                         .value.len = 1,
-                        };
-            Cy_BLE_GATTS_WriteAttributeValueLocal(&handleValue); 
-            Cy_BLE_GATTS_SendNotification(&cy_ble_connHandle[0], &handleValue);
-        }
-        else afe_calval[afe_id].skip_cnt--;
+        printf("%d,,", afe_id);
+        printf("%f,%f,,", cval->aled2, cval->aled1);
+        // LED2/LED1のAC値,DC値
+        cval->led2_ac = cval->led2_max - cval->led2_min;
+        cval->led2_dc = (cval->led2_max + cval->led2_min) / 2.0;
+        cval->led1_ac = cval->led1_max - cval->led1_min;
+        cval->led1_dc = (cval->led1_max + cval->led1_min) / 2.0;
+        // R値を算出
+        cval->R = (cval->led2_ac / cval->led2_dc) / (cval->led1_ac / cval->led1_dc);
+        printf("%f,%f,%f,%f,,", cval->led2_ac, cval->led2_min, cval->led2_max, cval->led2_dc);
+        printf("%f,%f,%f,%f,,", cval->led1_ac, cval->led1_min, cval->led1_max, cval->led1_dc);
+        printf("%f\r\n", -3.9*cval->R+100.7);
+        // BLE送信
+        SpO2 = -3.9*cval->R+100.7;
+        cy_stc_ble_gatt_handle_value_pair_t  handleValue = {
+                     .attrHandle = CY_BLE_SPO2_SPO2DATA_CHAR_HANDLE,
+                     .value.val = (uint8_t *)&SpO2,
+                     .value.len = 1,
+                    };
+        Cy_BLE_GATTS_WriteAttributeValueLocal(&handleValue); 
+        Cy_BLE_GATTS_SendNotification(&cy_ble_connHandle[0], &handleValue);
         // 窓を進める
         afe_calval[afe_id].sample_cnt = 0;
         retval = true;
@@ -243,11 +247,9 @@ void Task_LED (void *pvParameters)
 
     for(;;) {
         // データサンプリング
-        if (AFE_RDY(AFE0_ID)) {
+        if (AFE_RDY(AFE0_ID))
             AFE_samp(AFE0_ID);
-        }
-        if (AFE_RDY(AFE1_ID)) {
+        if (AFE_RDY(AFE1_ID))
             AFE_samp(AFE1_ID);
-        }
     }
 }
