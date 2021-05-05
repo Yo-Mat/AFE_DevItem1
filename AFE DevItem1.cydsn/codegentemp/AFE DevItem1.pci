@@ -1,5 +1,5 @@
 # AFE DevItem1
-# 2021-05-01 10:55:27Z
+# 2021-05-05 12:28:51Z
 
 dont_use_location SMIF -1 -1 0
 dont_use_location p4usbcell -1 -1 0
@@ -22,4 +22,4 @@ set_io "AFE1_RDY(0)" iocell 10 5
 set_io "AFE0_RDY(0)" iocell 10 4
 set_io "SW2(0)" iocell 0 4
 set_io "Pin_AFE_CLK(0)" iocell 10 6
-set_io "LED9(0)" iocell 7 1
+set_io "LED_GREEN(0)" iocell 7 1

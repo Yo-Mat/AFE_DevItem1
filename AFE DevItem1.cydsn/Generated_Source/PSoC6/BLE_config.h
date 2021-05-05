@@ -206,7 +206,7 @@ extern "C" {
 #define CY_BLE_CONFIG_AUTH_INFO_COUNT               (0x01u)
 
 /** LL Privacy 1.2 feature. */
-#define CY_BLE_CONFIG_ENABLE_LL_PRIVACY             (0x01u)
+#define CY_BLE_CONFIG_ENABLE_LL_PRIVACY             (0x00u)
 
 /** LE 2 Mbps feature. */
 #define CY_BLE_CONFIG_ENABLE_PHY_UPDATE             (0u)
@@ -244,7 +244,7 @@ extern "C" {
 #define CY_BLE_CONFIG_BONDING_REQUIREMENT           (0x00u)
 
 /** The maximum number of bonded devices to be supported by this device.  */
-#define CY_BLE_CONFIG_MAX_BONDED_DEVICES            (16u)
+#define CY_BLE_CONFIG_MAX_BONDED_DEVICES            (4u)
 
 /** 
  * The maximum number of peer devices whose addresses should be resolved 
@@ -253,13 +253,12 @@ extern "C" {
 #define CY_BLE_CONFIG_MAX_RESOLVABLE_DEVICES        (16u)
 
 /** The maximum number of devices that can be added to the white list. */
-#define CY_BLE_CONFIG_MAX_WHITE_LIST_SIZE           (16u)
+#define CY_BLE_CONFIG_MAX_WHITE_LIST_SIZE           (8u)
 
 #define CY_BLE_SECURITY_CONFIGURATION_0_INDEX   (0x00u)
 
 #define CY_BLE_ADV_PKT_0_INDEX_FLAGS   (0x00u)
 #define CY_BLE_ADV_PKT_0_INDEX_LOCAL_NAME   (0x03u)
-#define CY_BLE_ADV_PKT_0_INDEX_SERVICE_UUID_128   (0x0Du)
 #define CY_BLE_PERIPHERAL_CONFIGURATION_0_INDEX   (0x00u)
 
 

@@ -165,6 +165,8 @@ void AFE_init(AFE_ID_E afe_id)
     }
     
     AFE_act(AFE_id);    // 動作AFE 
+    // LED(RED)点灯
+    Cy_GPIO_Write(LED_GREEN_PORT, LED_GREEN_NUM, 0);
 }
 
 // AFEデータサンプリング

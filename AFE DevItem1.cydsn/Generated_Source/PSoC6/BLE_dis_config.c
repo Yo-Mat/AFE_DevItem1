@@ -21,17 +21,17 @@
 #ifdef CY_BLE_DIS_SERVER
 static const cy_stc_ble_diss_t cy_ble_diss =
 {
-    0x0013u,    /* Handle of the DIS service */
+    0x0016u,    /* Handle of the DIS service */
     {
-        0x0015u, /* Handle of the Manufacturer Name String characteristic */ 
-        0x0017u, /* Handle of the Model Number String characteristic */ 
-        0x0019u, /* Handle of the Serial Number String characteristic */ 
-        0x001Bu, /* Handle of the Hardware Revision String characteristic */ 
-        0x001Du, /* Handle of the Firmware Revision String characteristic */ 
-        0x001Fu, /* Handle of the Software Revision String characteristic */ 
-        0x0021u, /* Handle of the System ID characteristic */ 
-        0x0023u, /* Handle of the IEEE 11073-20601 Regulatory Certification Data List characteristic */ 
-        0x0025u, /* Handle of the PnP ID characteristic */ 
+        0x0018u, /* Handle of the Manufacturer Name String characteristic */ 
+        0x001Au, /* Handle of the Model Number String characteristic */ 
+        CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, /* Handle of the Serial Number String characteristic */ 
+        0x001Cu, /* Handle of the Hardware Revision String characteristic */ 
+        CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, /* Handle of the Firmware Revision String characteristic */ 
+        CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, /* Handle of the Software Revision String characteristic */ 
+        CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, /* Handle of the System ID characteristic */ 
+        CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, /* Handle of the IEEE 11073-20601 Regulatory Certification Data List characteristic */ 
+        CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, /* Handle of the PnP ID characteristic */ 
     },
 };
 #endif /* CY_BLE_DIS_SERVER */

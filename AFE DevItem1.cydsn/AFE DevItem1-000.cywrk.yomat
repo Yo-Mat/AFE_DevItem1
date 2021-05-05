@@ -18,7 +18,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\PWM_TIM\PWM_TIM.h">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
 <v>AFE DevItem1-000</v>
 <v>AFE DevItem1-000\AFE DevItem1</v>
@@ -83,10 +83,55 @@
 <v>AFE DevItem1-000\AFE DevItem1\Shared Files\system_psoc6.h</v>
 <v>AFE DevItem1-000\AFE DevItem1\Generated_Source</v>
 <v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\PWM_CYC</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\PWM_TIM</v>
+<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\pdl</v>
+<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\pdl\devices</v>
+<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\pdl\devices\psoc6</v>
+<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\pdl\devices\psoc6\include</v>
+<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\pdl\drivers</v>
+<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\pdl\drivers\peripheral</v>
+<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\pdl\drivers\peripheral\gpio</v>
+<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\BLE</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
+<v>AFE DevItem1-000</v>
+<v>AFE DevItem1-000\AFE DevItem1</v>
+<v>AFE DevItem1-000\AFE DevItem1\TopDesign</v>
+<v>AFE DevItem1-000\AFE DevItem1\AFE DevItem1.cydwr</v>
+<v>AFE DevItem1-000\AFE DevItem1\AFE DevItem1.cydwr\Pins</v>
+<v>AFE DevItem1-000\AFE DevItem1\AFE DevItem1.cydwr\Analog</v>
+<v>AFE DevItem1-000\AFE DevItem1\AFE DevItem1.cydwr\DMA</v>
+<v>AFE DevItem1-000\AFE DevItem1\AFE DevItem1.cydwr\Clocks</v>
+<v>AFE DevItem1-000\AFE DevItem1\AFE DevItem1.cydwr\Interrupts</v>
+<v>AFE DevItem1-000\AFE DevItem1\AFE DevItem1.cydwr\System</v>
+<v>AFE DevItem1-000\AFE DevItem1\AFE DevItem1.cydwr\Directives</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM0p (Core 0)</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM0p (Core 0)\ARM GCC Generic</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM0p (Core 0)\ARM GCC Generic\cy8c6xx7_cm0plus.ld</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM0p (Core 0)\ARM IAR Generic</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM0p (Core 0)\ARM IAR Generic\cy8c6xx7_cm0plus.icf</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM0p (Core 0)\ARM MDK Generic</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM0p (Core 0)\ARM MDK Generic\cy8c6xx7_cm0plus.scat</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM0p (Core 0)\Header Files</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM0p (Core 0)\Header Files\common.h</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM0p (Core 0)\Source Files</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM0p (Core 0)\Source Files\ARM GCC Generic</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM0p (Core 0)\Source Files\ARM GCC Generic\startup_psoc6_01_cm0plus.S</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM0p (Core 0)\Source Files\ARM IAR Generic</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM0p (Core 0)\Source Files\ARM IAR Generic\startup_psoc6_01_cm0plus.s</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM0p (Core 0)\Source Files\ARM MDK Generic</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM0p (Core 0)\Source Files\ARM MDK Generic\startup_psoc6_01_cm0plus.s</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM0p (Core 0)\Source Files\main_cm0p.c</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM0p (Core 0)\Source Files\system_psoc6_cm0plus.c</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\AFE4404</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\AFE4404\AFE4404.c</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\AFE4404\AFE4404.h</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\ARM GCC Generic</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\ARM GCC Generic\cy8c6xx7_cm4_dual.ld</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\ARM IAR Generic</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\ARM IAR Generic\cy8c6xx7_cm4_dual.icf</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\ARM MDK Generic</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\ARM MDK Generic\cy8c6xx7_cm4_dual.scat</v>
 <v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Header Files</v>
 <v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Header Files\RTOS and Task Files</v>
 <v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Header Files\RTOS and Task Files\bleTask.h</v>
@@ -96,45 +141,6 @@
 <v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Source Files\ARM GCC Generic</v>
 <v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Source Files\ARM GCC Generic\startup_psoc6_01_cm4.S</v>
 <v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Source Files\ARM IAR Generic</v>
-<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Source Files\ARM IAR Generic\startup_psoc6_01_cm4.s</v>
-<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Source Files\ARM MDK Generic</v>
-<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Source Files\ARM MDK Generic\startup_psoc6_01_cm4.s</v>
-<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Source Files\RTOS and Task Files</v>
-<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Source Files\RTOS and Task Files\led_task.c</v>
-<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Source Files\main_cm4.c</v>
-<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Source Files\system_psoc6_cm4.c</v>
-<v>AFE DevItem1-000\AFE DevItem1\Shared Files</v>
-<v>AFE DevItem1-000\AFE DevItem1\Shared Files\cy_ble_config.h</v>
-<v>AFE DevItem1-000\AFE DevItem1\Shared Files\cyapicallbacks.h</v>
-<v>AFE DevItem1-000\AFE DevItem1\Shared Files\stdio_user.c</v>
-<v>AFE DevItem1-000\AFE DevItem1\Shared Files\stdio_user.h</v>
-<v>AFE DevItem1-000\AFE DevItem1\Shared Files\system_psoc6.h</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\pdl</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\BLE</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\Clock_1</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\Clock_1kHz</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\Clock_2</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\I2C_1</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\I2C_1_SCBCLK</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\I2C_2</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\I2C_2_SCBCLK</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\Pins and Interrupts</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\PWM</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\PWM_AFE</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\PWM_CYC</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\PWM_CYC\PWM_CYC.c</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\PWM_CYC\PWM_CYC.h</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\PWM_TIM</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\PWM_TIM\PWM_TIM.c</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\PWM_TIM\PWM_TIM.h</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\UART</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\UART_SCBCLK</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\cycodeshareexport.ld</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\cycodeshareimport.ld</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\cycodeshareimport.scat</v>
-<v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\cydevice_trm.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -236,7 +242,6 @@
 <v>AFE DevItem1-000\AFE DevItem1\CortexM0p\ARM_GCC_541\Debug\Listing Files\I2C_1.lst</v>
 <v>AFE DevItem1-000\AFE DevItem1\CortexM0p\ARM_GCC_541\Debug\Listing Files\I2C_2.lst</v>
 <v>AFE DevItem1-000\AFE DevItem1\CortexM0p\ARM_GCC_541\Debug\Listing Files\main_cm0p.lst</v>
-<v>AFE DevItem1-000\AFE DevItem1\CortexM0p\ARM_GCC_541\Debug\Listing Files\PWM.lst</v>
 <v>AFE DevItem1-000\AFE DevItem1\CortexM0p\ARM_GCC_541\Debug\Listing Files\PWM_AFE.lst</v>
 <v>AFE DevItem1-000\AFE DevItem1\CortexM0p\ARM_GCC_541\Debug\Listing Files\PWM_CYC.lst</v>
 <v>AFE DevItem1-000\AFE DevItem1\CortexM0p\ARM_GCC_541\Debug\Listing Files\PWM_TIM.lst</v>
@@ -335,7 +340,6 @@
 <v>AFE DevItem1-000\AFE DevItem1\CortexM4\ARM_GCC_541\Debug\Listing Files\list.lst</v>
 <v>AFE DevItem1-000\AFE DevItem1\CortexM4\ARM_GCC_541\Debug\Listing Files\main_cm4.lst</v>
 <v>AFE DevItem1-000\AFE DevItem1\CortexM4\ARM_GCC_541\Debug\Listing Files\port.lst</v>
-<v>AFE DevItem1-000\AFE DevItem1\CortexM4\ARM_GCC_541\Debug\Listing Files\PWM.lst</v>
 <v>AFE DevItem1-000\AFE DevItem1\CortexM4\ARM_GCC_541\Debug\Listing Files\PWM_AFE.lst</v>
 <v>AFE DevItem1-000\AFE DevItem1\CortexM4\ARM_GCC_541\Debug\Listing Files\PWM_CYC.lst</v>
 <v>AFE DevItem1-000\AFE DevItem1\CortexM4\ARM_GCC_541\Debug\Listing Files\PWM_TIM.lst</v>
@@ -404,6 +408,7 @@
 <v>AFE DevItem1-000\AFE DevItem1\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_scps.lst</v>
 <v>AFE DevItem1-000\AFE DevItem1\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_tps.lst</v>
 <v>AFE DevItem1-000\AFE DevItem1\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_uds.lst</v>
+<v>AFE DevItem1-000\AFE DevItem1\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_wpts.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -464,12 +469,7 @@
 <name v=".\led_task.c" />
 <name v=".\led_task.h" />
 <name v=".\TopDesign\TopDesign.cysch" />
-<name v=".\Generated_Source\PSoC6\PWM_CYC.h" />
-<name v=".\Generated_Source\PSoC6\PWM_CYC.c" />
-<name v=".\Generated_Source\PSoC6\PWM_TIM.h" />
-<name v=".\Generated_Source\PSoC6\PWM_TIM.c" />
-<name v=".\Generated_Source\PSoC6\BLE_config.h" />
-<name v=".\AFE4404.h" />
+<name v=".\AFE DevItem1.cydwr" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -477,7 +477,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="933, 649" SelectedTabbedMdiWindow="6ff6f5d4-b445-4d13-8bf4-ced4bc5bd04a"><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\main_cm4.c" Guid="a9e93c25-677b-4cc3-8553-643d7c9afe4f" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\led_task.c" Guid="6ff6f5d4-b445-4d13-8bf4-ced4bc5bd04a" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\led_task.h" Guid="245e442a-4498-484f-9721-d5a979ce0842" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\TopDesign\TopDesign.cysch" Guid="4a09dd1a-5971-4d97-85ae-654fcc84f036" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\Generated_Source\PSoC6\PWM_CYC.h" Guid="a878f711-7341-4676-9af3-f6f82a28d58d" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\Generated_Source\PSoC6\PWM_CYC.c" Guid="f59bed54-ff53-4776-80d8-50269d52506d" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\Generated_Source\PSoC6\PWM_TIM.h" Guid="135d5a06-a5da-4008-b9a1-465fbce67d5a" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\Generated_Source\PSoC6\PWM_TIM.c" Guid="89276a01-d695-49f2-bc11-b116cb444983" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\Generated_Source\PSoC6\BLE_config.h" Guid="19169ddc-0507-4614-a361-ad8879780b36" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="2500d571-b76a-4d5f-bb91-a7784877a96f" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\AFE4404.h" Guid="976b2b7d-3804-4605-aa05-9ca502ea43a9" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="907, 649" SelectedTabbedMdiWindow="4a09dd1a-5971-4d97-85ae-654fcc84f036"><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\main_cm4.c" Guid="a9e93c25-677b-4cc3-8553-643d7c9afe4f" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\led_task.c" Guid="6ff6f5d4-b445-4d13-8bf4-ced4bc5bd04a" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\led_task.h" Guid="245e442a-4498-484f-9721-d5a979ce0842" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\TopDesign\TopDesign.cysch" Guid="4a09dd1a-5971-4d97-85ae-654fcc84f036" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="2500d571-b76a-4d5f-bb91-a7784877a96f" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\AFE DevItem1.cydwr" Guid="7d036a70-89f3-423e-8378-d9c385aa71f7" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

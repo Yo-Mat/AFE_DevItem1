@@ -76,7 +76,6 @@ void genericEventHandler(uint32_t event, void *eventParameter)
         /* This event is received when the BLE stack is Started */
         case CY_BLE_EVT_STACK_ON:
         case CY_BLE_EVT_GAP_DEVICE_DISCONNECTED:
-            PWM_Start();    
             Cy_BLE_GAPP_StartAdvertisement(CY_BLE_ADVERTISING_FAST, CY_BLE_PERIPHERAL_CONFIGURATION_0_INDEX);
             //Cy_TCPWM_TriggerReloadOrIndex(PWM_DIM_HW,PWM_DIM_CNT_NUM);
             //Cy_TCPWM_PWM_Disable(PWM_DIM_HW,PWM_DIM_CNT_NUM);
@@ -84,7 +83,6 @@ void genericEventHandler(uint32_t event, void *eventParameter)
         break;
 
         case CY_BLE_EVT_GATT_CONNECT_IND:
-            PWM_Disable();
             //
             //PWM_Stop();
             //PWM_WriteCompare1(uint8/16 compare)
@@ -204,6 +202,8 @@ static void PWM_TIM_hdr()
     //printf("Info! : End of operating time!\r\n");
     NVIC_DisableIRQ(ISR_TIM_cfg.intrSrc);
     AFE_act(NOAFE_ID);
+    // LED(RED)消灯
+    Cy_GPIO_Write(LED_GREEN_PORT, LED_GREEN_NUM, 1);
 }
 
 // 動作周期割り込みハンドラ
@@ -215,6 +215,8 @@ static void PWM_CYC_hdr()
     NVIC_EnableIRQ(ISR_TIM_cfg.intrSrc);
     AFE_clr(AFE_ID);
     AFE_act(AFE_ID);
+    // LED(RED)点灯
+    Cy_GPIO_Write(LED_GREEN_PORT, LED_GREEN_NUM, 0);
 }
 
 static void PWM_Timer_init()
@@ -247,7 +249,6 @@ static void PWM_Timer_init()
 int main()
 {
     // PWM開始
-    PWM_Start();
     PWM_AFE_Start();
     PWM_CYC_Start();
     PWM_TIM_Start();

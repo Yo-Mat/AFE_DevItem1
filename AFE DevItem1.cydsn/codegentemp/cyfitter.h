@@ -24,24 +24,6 @@
 #define BLE_cy_mxs40_ble__HW BLE
 #define BLE_cy_mxs40_ble__IDX 0
 
-/* PWM */
-#define PWM_AFE_TCPWM__CNT_HW TCPWM1_CNT2
-#define PWM_AFE_TCPWM__CNT_IDX 2u
-#define PWM_AFE_TCPWM__HW TCPWM1
-#define PWM_AFE_TCPWM__IDX 1u
-#define PWM_CYC_TCPWM__CNT_HW TCPWM0_CNT1
-#define PWM_CYC_TCPWM__CNT_IDX 1u
-#define PWM_CYC_TCPWM__HW TCPWM0
-#define PWM_CYC_TCPWM__IDX 0u
-#define PWM_TCPWM__CNT_HW TCPWM0_CNT0
-#define PWM_TCPWM__CNT_IDX 0u
-#define PWM_TCPWM__HW TCPWM0
-#define PWM_TCPWM__IDX 0u
-#define PWM_TIM_TCPWM__CNT_HW TCPWM0_CNT2
-#define PWM_TIM_TCPWM__CNT_IDX 2u
-#define PWM_TIM_TCPWM__HW TCPWM0
-#define PWM_TIM_TCPWM__IDX 0u
-
 /* UART */
 #define UART_SCB__HW SCB5
 #define UART_SCB__IDX 5
@@ -49,8 +31,8 @@
 #define UART_SCB__SS1_POSITION 1u
 #define UART_SCB__SS2_POSITION 2u
 #define UART_SCB__SS3_POSITION 3u
-#define UART_SCBCLK__DIV_IDX 4
-#define UART_SCBCLK__DIV_NUM 4
+#define UART_SCBCLK__DIV_IDX 3
+#define UART_SCBCLK__DIV_NUM 3
 #define UART_SCBCLK__DIV_TYPE CY_SYSCLK_DIV_8_BIT
 
 /* I2C_1 */
@@ -80,10 +62,23 @@
 #define Clock_1__DIV_NUM 0
 #define Clock_1__DIV_TYPE CY_SYSCLK_DIV_8_BIT
 
-/* Clock_2 */
-#define Clock_2__DIV_IDX 3
-#define Clock_2__DIV_NUM 3
-#define Clock_2__DIV_TYPE CY_SYSCLK_DIV_8_BIT
+/* PWM_AFE */
+#define PWM_AFE_TCPWM__CNT_HW TCPWM1_CNT2
+#define PWM_AFE_TCPWM__CNT_IDX 2u
+#define PWM_AFE_TCPWM__HW TCPWM1
+#define PWM_AFE_TCPWM__IDX 1u
+
+/* PWM_CYC */
+#define PWM_CYC_TCPWM__CNT_HW TCPWM0_CNT0
+#define PWM_CYC_TCPWM__CNT_IDX 0u
+#define PWM_CYC_TCPWM__HW TCPWM0
+#define PWM_CYC_TCPWM__IDX 0u
+
+/* PWM_TIM */
+#define PWM_TIM_TCPWM__CNT_HW TCPWM0_CNT1
+#define PWM_TIM_TCPWM__CNT_IDX 1u
+#define PWM_TIM_TCPWM__HW TCPWM0
+#define PWM_TIM_TCPWM__IDX 0u
 
 /* Clock_1kHz */
 #define Clock_1kHz__DIV_IDX 8

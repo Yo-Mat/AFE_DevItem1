@@ -2,7 +2,7 @@
 --	Conversion of AFE DevItem1.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Sat May 01 19:55:16 2021
+--	Wed May 05 21:28:42 2021
 --
 
 USE cypress.cypress.all;
@@ -134,21 +134,9 @@ SIGNAL Net_473 : bit;
 SIGNAL tmpFB_0__Pin_AFE_CLK_net_0 : bit;
 SIGNAL tmpIO_0__Pin_AFE_CLK_net_0 : bit;
 TERMINAL tmpSIOVREF__Pin_AFE_CLK_net_0 : bit;
-SIGNAL Net_380 : bit;
-SIGNAL tmpFB_0__LED9_net_0 : bit;
-SIGNAL tmpIO_0__LED9_net_0 : bit;
-TERMINAL tmpSIOVREF__LED9_net_0 : bit;
-SIGNAL Net_381 : bit;
-SIGNAL \PWM:swap\ : bit;
-SIGNAL \PWM:count\ : bit;
-SIGNAL \PWM:reload\ : bit;
-SIGNAL \PWM:kill\ : bit;
-SIGNAL \PWM:start\ : bit;
-SIGNAL Net_391 : bit;
-SIGNAL Net_382 : bit;
-SIGNAL Net_386 : bit;
-SIGNAL Net_387 : bit;
-SIGNAL Net_384 : bit;
+SIGNAL tmpFB_0__LED_GREEN_net_0 : bit;
+SIGNAL tmpIO_0__LED_GREEN_net_0 : bit;
+TERMINAL tmpSIOVREF__LED_GREEN_net_0 : bit;
 SIGNAL Net_600 : bit;
 SIGNAL Net_599 : bit;
 SIGNAL Net_601 : bit;
@@ -690,7 +678,7 @@ Pin_AFE_CLK:cy_mxs40_gpio_v1_0
 		io=>(tmpIO_0__Pin_AFE_CLK_net_0),
 		annotation=>(open),
 		siovref=>(tmpSIOVREF__Pin_AFE_CLK_net_0));
-LED9:cy_mxs40_gpio_v1_0
+LED_GREEN:cy_mxs40_gpio_v1_0
 	GENERIC MAP(cy_registers=>"",
 		width=>1,
 		sio_grp_cnt=>0,
@@ -701,7 +689,7 @@ LED9:cy_mxs40_gpio_v1_0
 		input_sync=>"0",
 		intr_mode=>"0",
 		io_voltage=>"",
-		output_conn=>"1",
+		output_conn=>"0",
 		oe_conn=>"0",
 		output_sync=>"0",
 		oe_sync=>"0",
@@ -716,38 +704,12 @@ LED9:cy_mxs40_gpio_v1_0
 		use_annotation=>"0",
 		hotswap_needed=>"0")
 	PORT MAP(oe=>(one),
-		y=>Net_380,
-		fb=>(tmpFB_0__LED9_net_0),
+		y=>(zero),
+		fb=>(tmpFB_0__LED_GREEN_net_0),
 		analog=>(open),
-		io=>(tmpIO_0__LED9_net_0),
+		io=>(tmpIO_0__LED_GREEN_net_0),
 		annotation=>(open),
-		siovref=>(tmpSIOVREF__LED9_net_0));
-\PWM:TCPWM\:cy_mxs40_tcpwm_v1_0
-	GENERIC MAP(cy_registers=>"",
-		width=>32,
-		exact_width=>'0')
-	PORT MAP(clock=>Net_381,
-		capture=>zero,
-		count=>one,
-		reload=>zero,
-		stop=>zero,
-		start=>zero,
-		tr_underflow=>Net_391,
-		tr_compare_match=>Net_382,
-		tr_overflow=>Net_386,
-		line_compl=>Net_387,
-		line=>Net_380,
-		interrupt=>Net_384);
-Clock_2:cy_clock_v1_0
-	GENERIC MAP(cy_registers=>"",
-		id=>"c82f74e8-dcf3-4276-9667-1471af994976",
-		source_clock_id=>"2FB4EC85-8328-4C5A-9ED9-8B63060178EB",
-		divisor=>0,
-		period=>"250000000",
-		is_direct=>'0',
-		is_digital=>'0')
-	PORT MAP(clock_out=>Net_381,
-		dig_domain_out=>open);
+		siovref=>(tmpSIOVREF__LED_GREEN_net_0));
 \BLE:cy_mxs40_ble\:cy_mxs40_ble_v1_0
 	GENERIC MAP(cy_registers=>"",
 		low_power=>'1')

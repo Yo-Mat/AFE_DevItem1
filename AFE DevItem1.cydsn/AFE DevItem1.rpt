@@ -1,4 +1,4 @@
-Loading plugins phase: Elapsed time ==> 0s.319ms
+Loading plugins phase: Elapsed time ==> 0s.291ms
 <CYPRESSTAG name="CyDsfit arguments...">
 cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\AFE DevItem1.cyprj -d CYBLE-416045-02 -s C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\Generated_Source\PSoC6 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
 </CYPRESSTAG>
@@ -7,10 +7,10 @@ ADD: fit.M0067: information: Clock Information: (The WCO is enabled. Chip startu
 
 <CYPRESSTAG name="Design elaboration results...">
 </CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 3s.742ms
+Elaboration phase: Elapsed time ==> 3s.249ms
 <CYPRESSTAG name="HDL generation results...">
 </CYPRESSTAG>
-HDL generation phase: Elapsed time ==> 0s.097ms
+HDL generation phase: Elapsed time ==> 0s.070ms
 <CYPRESSTAG name="Synthesis results...">
 
      | | | | | | |
@@ -44,7 +44,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\yomat
 ======================================================================
 
 vlogfe V6.3 IR 41:  Verilog parser
-Sat May 01 19:55:14 2021
+Wed May 05 21:28:40 2021
 
 
 ======================================================================
@@ -54,7 +54,7 @@ Options  :    -yv2 -q10 AFE DevItem1.v
 ======================================================================
 
 vpp V6.3 IR 41:  Verilog Pre-Processor
-Sat May 01 19:55:14 2021
+Wed May 05 21:28:40 2021
 
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'
@@ -86,7 +86,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\yomat
 ======================================================================
 
 tovif V6.3 IR 41:  High-level synthesis
-Sat May 01 19:55:15 2021
+Wed May 05 21:28:41 2021
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -113,7 +113,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\yomat
 ======================================================================
 
 topld V6.3 IR 41:  Synthesis and optimization
-Sat May 01 19:55:16 2021
+Wed May 05 21:28:41 2021
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -172,11 +172,6 @@ Aliasing \PWM_AFE:count\ to one
 Aliasing \PWM_AFE:reload\ to zero
 Aliasing \PWM_AFE:kill\ to zero
 Aliasing \PWM_AFE:start\ to zero
-Aliasing \PWM:swap\ to zero
-Aliasing \PWM:count\ to one
-Aliasing \PWM:reload\ to zero
-Aliasing \PWM:kill\ to zero
-Aliasing \PWM:start\ to zero
 Aliasing \PWM_CYC:swap\ to zero
 Aliasing \PWM_CYC:count\ to one
 Aliasing \PWM_CYC:reload\ to zero
@@ -209,24 +204,19 @@ Removing Lhs of wire \PWM_AFE:count\[132] = one[6]
 Removing Lhs of wire \PWM_AFE:reload\[133] = zero[12]
 Removing Lhs of wire \PWM_AFE:kill\[134] = zero[12]
 Removing Lhs of wire \PWM_AFE:start\[135] = zero[12]
-Removing Lhs of wire \PWM:swap\[153] = zero[12]
-Removing Lhs of wire \PWM:count\[154] = one[6]
-Removing Lhs of wire \PWM:reload\[155] = zero[12]
-Removing Lhs of wire \PWM:kill\[156] = zero[12]
-Removing Lhs of wire \PWM:start\[157] = zero[12]
-Removing Lhs of wire \PWM_CYC:swap\[177] = zero[12]
-Removing Lhs of wire \PWM_CYC:count\[178] = one[6]
-Removing Lhs of wire \PWM_CYC:reload\[179] = zero[12]
-Removing Lhs of wire \PWM_CYC:kill\[180] = zero[12]
-Removing Lhs of wire \PWM_CYC:start\[181] = zero[12]
-Removing Lhs of wire \PWM_TIM:swap\[188] = zero[12]
-Removing Lhs of wire \PWM_TIM:count\[189] = one[6]
-Removing Lhs of wire \PWM_TIM:reload\[190] = zero[12]
-Removing Lhs of wire \PWM_TIM:kill\[191] = zero[12]
-Removing Lhs of wire \PWM_TIM:start\[192] = zero[12]
+Removing Lhs of wire \PWM_CYC:swap\[163] = zero[12]
+Removing Lhs of wire \PWM_CYC:count\[164] = one[6]
+Removing Lhs of wire \PWM_CYC:reload\[165] = zero[12]
+Removing Lhs of wire \PWM_CYC:kill\[166] = zero[12]
+Removing Lhs of wire \PWM_CYC:start\[167] = zero[12]
+Removing Lhs of wire \PWM_TIM:swap\[174] = zero[12]
+Removing Lhs of wire \PWM_TIM:count\[175] = one[6]
+Removing Lhs of wire \PWM_TIM:reload\[176] = zero[12]
+Removing Lhs of wire \PWM_TIM:kill\[177] = zero[12]
+Removing Lhs of wire \PWM_TIM:start\[178] = zero[12]
 
 ------------------------------------------------------
-Aliased 0 equations, 37 wires.
+Aliased 0 equations, 32 wires.
 ------------------------------------------------------
 
 ----------------------------------------------------------
@@ -250,14 +240,14 @@ CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\wa
 Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\bin\warp.exe
 Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya "-.fftprj=C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\AFE DevItem1.cyprj" -dcpsoc3 "AFE DevItem1.v" -verilog
 </CYPRESSTAG>
-Warp synthesis phase: Elapsed time ==> 1s.914ms
+Warp synthesis phase: Elapsed time ==> 1s.824ms
 <CYPRESSTAG name="Fitter results...">
 <CYPRESSTAG name="Fitter startup details...">
-cyp3fit: V4.4.0.80, Family: PSoC3, Started at: Saturday, 01 May 2021 19:55:16
+cyp3fit: V4.4.0.80, Family: PSoC3, Started at: Wednesday, 05 May 2021 21:28:42
 Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\AFE DevItem1.cyprj -d CYBLE-416045-02 AFE DevItem1.v -verilog
 </CYPRESSTAG>
 <CYPRESSTAG name="Design parsing">
-Design parsing phase: Elapsed time ==> 0s.831ms
+Design parsing phase: Elapsed time ==> 0s.856ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Tech Mapping">
 <CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
@@ -268,10 +258,9 @@ Done removing unused cells.
     Fixed Function Clock 11: Automatic-assigning  clock 'Clock_1'. Signal=Net_52_ff11
     Fixed Function Clock 0: Automatic-assigning  clock 'I2C_1_SCBCLK'. Signal=\I2C_1:clock_wire_ff0\
     Fixed Function Clock 1: Automatic-assigning  clock 'I2C_2_SCBCLK'. Signal=\I2C_2:clock_wire_ff1\
-    Fixed Function Clock 12: Automatic-assigning  clock 'Clock_2'. Signal=Net_381_ff12
     Fixed Function Clock 2: Automatic-assigning  clock 'UART_SCBCLK'. Signal=\UART:Net_847_ff2\
+    Fixed Function Clock 12: Automatic-assigning  clock 'Clock_1kHz'. Signal=Net_713_ff12
     Fixed Function Clock 13: Automatic-assigning  clock 'Clock_1kHz'. Signal=Net_713_ff13
-    Fixed Function Clock 14: Automatic-assigning  clock 'Clock_1kHz'. Signal=Net_713_ff14
 <CYPRESSTAG name="UDB Clock/Enable Remapping Results">
 </CYPRESSTAG>
 </CYPRESSTAG>
@@ -895,7 +884,7 @@ Design Equations
         {
         }
 
-    Pin : Name = LED9(0)
+    Pin : Name = LED_GREEN(0)
         Attributes:
             In Group/Port: True
             In Sync Option: AUTO
@@ -928,9 +917,8 @@ Design Equations
             Initial Value: 1
             IO Voltage: 0
         PORT MAP (
-            pa_out => LED9(0)__PA ,
-            pin_input => Net_380 ,
-            pad => LED9(0)_PAD );
+            pa_out => LED_GREEN(0)__PA ,
+            pad => LED_GREEN(0)_PAD );
         Properties:
         {
         }
@@ -1063,7 +1051,7 @@ SCB                           :    3 :    6 :    9 : 33.33 %
 DMA Channels                  :    0 :   32 :   32 :  0.00 %
 LCD                           :    0 :    1 :    1 :  0.00 %
 SmartIO                       :    0 :    2 :    2 :  0.00 %
-TCPWM                         :    4 :   28 :   32 : 12.50 %
+TCPWM                         :    3 :   29 :   32 :  9.38 %
 UDB                           :      :      :      :        
   Macrocells                  :    0 :   96 :   96 :  0.00 %
   Unique P-terms              :    0 :  192 :  192 :  0.00 %
@@ -1079,8 +1067,8 @@ Sample and Hold               :    0 :    1 :    1 :  0.00 %
 SAR ADC                       :    0 :    1 :    1 :  0.00 %
 DieTemp Sensor                :    0 :    1 :    1 :  0.00 %
 </CYPRESSTAG>
-Technology Mapping: Elapsed time ==> 0s.185ms
-Tech Mapping phase: Elapsed time ==> 0s.356ms
+Technology Mapping: Elapsed time ==> 0s.122ms
+Tech Mapping phase: Elapsed time ==> 0s.228ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Placement">
 <CYPRESSTAG name="FFB & IO Pre Placement">
@@ -1103,7 +1091,7 @@ AFE1_RDY(0)                         : [IOP=(10)][IoId=(5)]
 AFE0_RDY(0)                         : [IOP=(10)][IoId=(4)]               
 SW2(0)                              : [IOP=(0)][IoId=(4)]                
 Pin_AFE_CLK(0)                      : [IOP=(10)][IoId=(6)]               
-LED9(0)                             : [IOP=(7)][IoId=(1)]                
+LED_GREEN(0)                        : [IOP=(7)][IoId=(1)]                
 ClockGenBlock                       : CLK_GEN_[FFB(CLK_GEN,0)]           
 CPUSS                               : CPUSS_[FFB(CPUSS,0)]               
 SRSS                                : SRSS_[FFB(SRSS,0)]                 
@@ -1112,22 +1100,21 @@ SRSS                                : SRSS_[FFB(SRSS,0)]
 \I2C_2:SCB\                         : SCB_[FFB(SCB,2)]                   
 \BLE:cy_mxs40_ble\                  : BLE_[FFB(BLE,0)]                   
 \PWM_AFE:TCPWM\                     : TCPWM_[FFB(TCPWM,1)]               
-\PWM:TCPWM\                         : TCPWM_[FFB(TCPWM,0)]               
-\PWM_CYC:TCPWM\                     : TCPWM_[FFB(TCPWM,2)]               
-\PWM_TIM:TCPWM\                     : TCPWM_[FFB(TCPWM,3)]               
+\PWM_CYC:TCPWM\                     : TCPWM_[FFB(TCPWM,0)]               
+\PWM_TIM:TCPWM\                     : TCPWM_[FFB(TCPWM,2)]               
 
 </CYPRESSTAG>
 </CYPRESSTAG>
 <CYPRESSTAG name="Real Analog Placement">
-Elapsed time ==> 0.1846824s
+Elapsed time ==> 0.1665322s
 </CYPRESSTAG>
-Analog Placement phase: Elapsed time ==> 1s.632ms
+Analog Placement phase: Elapsed time ==> 1s.474ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Routing">
 <CYPRESSTAG name="Analog Routing">
-Route success=True, Iterations=1 Elapsed=0.0035620 secs
+Route success=True, Iterations=1 Elapsed=0.0021762 secs
 </CYPRESSTAG>
-Analog Routing phase: Elapsed time ==> 0s.004ms
+Analog Routing phase: Elapsed time ==> 0s.002ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Code Generation">
 ============ Analog Final Answer Routes ============
@@ -1154,12 +1141,12 @@ Map of item to net {
 }
 Mux Info {
 }
-Analog Code Generation phase: Elapsed time ==> 0s.025ms
+Analog Code Generation phase: Elapsed time ==> 0s.022ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Placement">
 <CYPRESSTAG name="Detailed placement messages">
 I2659: No Constrained paths were found. The placer will run in non-timing driven mode.
-I2076: Total run-time: 0.7 sec.
+I2076: Total run-time: 0.6 sec.
 
 </CYPRESSTAG>
 <CYPRESSTAG name="PLD Packing">
@@ -1173,7 +1160,7 @@ PLD Packing: Elapsed time ==> 0s.000ms
 Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
 <CYPRESSTAG name="Final Partitioning Summary">
 Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
-Partitioning: Elapsed time ==> 0s.055ms
+Partitioning: Elapsed time ==> 0s.023ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Final Placement Summary">
 
@@ -1611,7 +1598,7 @@ Pin : Name = CY_CPUSS_SWJ_SWCLK_TCLK(0)
 
 Port 7 contains the following IO cells:
 [IoId=1]: 
-Pin : Name = LED9(0)
+Pin : Name = LED_GREEN(0)
     Attributes:
         In Group/Port: True
         In Sync Option: AUTO
@@ -1644,9 +1631,8 @@ Pin : Name = LED9(0)
         Initial Value: 1
         IO Voltage: 0
     PORT MAP (
-        pa_out => LED9(0)__PA ,
-        pin_input => Net_380 ,
-        pad => LED9(0)_PAD );
+        pa_out => LED_GREEN(0)__PA ,
+        pad => LED_GREEN(0)_PAD );
     Properties:
     {
     }
@@ -1996,10 +1982,9 @@ Clock group 0:
             ff_div_11 => Net_52_ff11 ,
             ff_div_0 => \I2C_1:clock_wire_ff0\ ,
             ff_div_1 => \I2C_2:clock_wire_ff1\ ,
-            ff_div_12 => Net_381_ff12 ,
             ff_div_2 => \UART:Net_847_ff2\ ,
-            ff_div_13 => Net_713_ff13 ,
-            ff_div_14 => Net_713_ff14 );
+            ff_div_12 => Net_713_ff12 ,
+            ff_div_13 => Net_713_ff13 );
         Properties:
         {
         }
@@ -2067,30 +2052,9 @@ CSD group 0: empty
 CSIDAC7 group 0: empty
 TCPWM group 0: 
     TCPWM @ F(TCPWM,0): 
-    TCPWM: Name =\PWM:TCPWM\
-        PORT MAP (
-            clock => Net_381_ff12 ,
-            capture => zero ,
-            count => one ,
-            reload => zero ,
-            stop => zero ,
-            start => zero ,
-            tr_underflow => Net_391 ,
-            tr_compare_match => Net_382 ,
-            tr_overflow => Net_386 ,
-            line_compl => Net_387 ,
-            line => Net_380 ,
-            interrupt => Net_384 );
-        Properties:
-        {
-            cy_registers = ""
-            exact_width = 0
-            width = 32
-        }
-    TCPWM @ F(TCPWM,1): 
     TCPWM: Name =\PWM_CYC:TCPWM\
         PORT MAP (
-            clock => Net_713_ff13 ,
+            clock => Net_713_ff12 ,
             capture => zero ,
             count => one ,
             reload => zero ,
@@ -2108,10 +2072,10 @@ TCPWM group 0:
             exact_width = 0
             width = 32
         }
-    TCPWM @ F(TCPWM,2): 
+    TCPWM @ F(TCPWM,1): 
     TCPWM: Name =\PWM_TIM:TCPWM\
         PORT MAP (
-            clock => Net_713_ff14 ,
+            clock => Net_713_ff13 ,
             capture => zero ,
             count => one ,
             reload => zero ,
@@ -2226,7 +2190,7 @@ Port | Pin | Fixed |      Type |       Drive Mode |                       Name |
      |   6 |     * |      NONE |      RES_PULL_UP |  CY_CPUSS_SWJ_SWDIO_TMS(0) | FB(CPUSS_swj_swdio_tms)
      |   7 |     * |      NONE |    RES_PULL_DOWN | CY_CPUSS_SWJ_SWCLK_TCLK(0) | FB(CPUSS_swj_swclk_tclk)
 -----+-----+-------+-----------+------------------+----------------------------+-------------------------
-   7 |   1 |     * |      NONE |         CMOS_OUT |                    LED9(0) | In(Net_380)
+   7 |   1 |     * |      NONE |         CMOS_OUT |               LED_GREEN(0) | 
 -----+-----+-------+-----------+------------------+----------------------------+-------------------------
    9 |   0 |     * |      NONE |    OPEN_DRAIN_LO |             \I2C_2:scl(0)\ | FB(Net_116)
      |   1 |     * |      NONE |    OPEN_DRAIN_LO |             \I2C_2:sda(0)\ | FB(Net_118)
@@ -2240,33 +2204,33 @@ Port | Pin | Fixed |      Type |       Drive Mode |                       Name |
 </CYPRESSTAG>
 </CYPRESSTAG>
 </CYPRESSTAG>
-Digital component placer commit/Report: Elapsed time ==> 0s.149ms
-Digital Placement phase: Elapsed time ==> 9s.108ms
+Digital component placer commit/Report: Elapsed time ==> 0s.062ms
+Digital Placement phase: Elapsed time ==> 7s.375ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Routing">
 "C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\bin/sjrouter.exe" --xml-path "C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc6/0/route_arch-rrg.cydata" --vh2-path "AFE DevItem1_r.vh2" --pcf-path "AFE DevItem1.pco" --des-name "AFE DevItem1" --dsf-path "AFE DevItem1.dsf" --sdc-path "AFE DevItem1.sdc" --lib-path "AFE DevItem1_r.lib"
 Routing successful.
-Digital Routing phase: Elapsed time ==> 1s.950ms
+Digital Routing phase: Elapsed time ==> 1s.824ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Generation">
-Bitstream Generation phase: Elapsed time ==> 0s.721ms
+Bitstream Generation phase: Elapsed time ==> 0s.668ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Verification">
-Bitstream Verification phase: Elapsed time ==> 0s.001ms
+Bitstream Verification phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Static timing analysis">
 Timing report is in AFE DevItem1_timing.html.
-Static timing analysis phase: Elapsed time ==> 13s.867ms
+Static timing analysis phase: Elapsed time ==> 11s.142ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Data reporting">
-Data reporting phase: Elapsed time ==> 0s.267ms
+Data reporting phase: Elapsed time ==> 0s.145ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Database update...">
-Design database save phase: Elapsed time ==> 0s.253ms
+Design database save phase: Elapsed time ==> 0s.165ms
 </CYPRESSTAG>
-cydsfit: Elapsed time ==> 29s.052ms
+cydsfit: Elapsed time ==> 23s.921ms
 </CYPRESSTAG>
-Fitter phase: Elapsed time ==> 29s.052ms
-API generation phase: Elapsed time ==> 1s.874ms
-Dependency generation phase: Elapsed time ==> 0s.008ms
-Cleanup phase: Elapsed time ==> 0s.001ms
+Fitter phase: Elapsed time ==> 23s.922ms
+API generation phase: Elapsed time ==> 1s.178ms
+Dependency generation phase: Elapsed time ==> 0s.016ms
+Cleanup phase: Elapsed time ==> 0s.002ms

@@ -1,5 +1,5 @@
 -- Project:   AFE DevItem1
--- Generated: 05/01/2021 19:55:27
+-- Generated: 05/05/2021 21:28:51
 -- PSoC Creator  4.4
 
 ENTITY \AFE DevItem1\ IS
@@ -15,7 +15,7 @@ ENTITY \AFE DevItem1\ IS
         AFE0_RDY(0)_PAD : IN std_ulogic;
         SW2(0)_PAD : IN std_ulogic;
         Pin_AFE_CLK(0)_PAD : OUT std_ulogic;
-        LED9(0)_PAD : OUT std_ulogic);
+        LED_GREEN(0)_PAD : OUT std_ulogic);
     ATTRIBUTE voltage_VBACKUP OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDA_CSD OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDIO_A OF __DEFAULT__ : ENTITY IS 3.3e0;
@@ -55,7 +55,7 @@ ARCHITECTURE __DEFAULT__ OF \AFE DevItem1\ IS
     ATTRIBUTE global_signal OF ClockBlock_PeriClk : SIGNAL IS true;
     SIGNAL ClockBlock_SlowClk : bit;
     SIGNAL ClockBlock_WCO : bit;
-    SIGNAL LED9(0)__PA : bit;
+    SIGNAL LED_GREEN(0)__PA : bit;
     SIGNAL LED_RED(0)__PA : bit;
     SIGNAL Net_105 : bit;
     SIGNAL Net_108 : bit;
@@ -66,14 +66,6 @@ ARCHITECTURE __DEFAULT__ OF \AFE DevItem1\ IS
     SIGNAL Net_117 : bit;
     SIGNAL Net_118 : bit;
     SIGNAL Net_372 : bit;
-    SIGNAL Net_380 : bit;
-    SIGNAL Net_381_ff12 : bit;
-    ATTRIBUTE global_signal OF Net_381_ff12 : SIGNAL IS true;
-    SIGNAL Net_382 : bit;
-    SIGNAL Net_384 : bit;
-    SIGNAL Net_386 : bit;
-    SIGNAL Net_387 : bit;
-    SIGNAL Net_391 : bit;
     SIGNAL Net_471 : bit;
     SIGNAL Net_473 : bit;
     SIGNAL Net_475 : bit;
@@ -94,10 +86,10 @@ ARCHITECTURE __DEFAULT__ OF \AFE DevItem1\ IS
     SIGNAL Net_710 : bit;
     SIGNAL Net_711 : bit;
     SIGNAL Net_712 : bit;
+    SIGNAL Net_713_ff12 : bit;
+    ATTRIBUTE global_signal OF Net_713_ff12 : SIGNAL IS true;
     SIGNAL Net_713_ff13 : bit;
     ATTRIBUTE global_signal OF Net_713_ff13 : SIGNAL IS true;
-    SIGNAL Net_713_ff14 : bit;
-    ATTRIBUTE global_signal OF Net_713_ff14 : SIGNAL IS true;
     SIGNAL Net_715 : bit;
     SIGNAL Net_721 : bit;
     SIGNAL Net_722 : bit;
@@ -173,8 +165,8 @@ ARCHITECTURE __DEFAULT__ OF \AFE DevItem1\ IS
     ATTRIBUTE Location OF SW2(0) : LABEL IS "P0[4]";
     ATTRIBUTE lib_model OF Pin_AFE_CLK(0) : LABEL IS "iocell15";
     ATTRIBUTE Location OF Pin_AFE_CLK(0) : LABEL IS "P10[6]";
-    ATTRIBUTE lib_model OF LED9(0) : LABEL IS "iocell16";
-    ATTRIBUTE Location OF LED9(0) : LABEL IS "P7[1]";
+    ATTRIBUTE lib_model OF LED_GREEN(0) : LABEL IS "iocell16";
+    ATTRIBUTE Location OF LED_GREEN(0) : LABEL IS "P7[1]";
     COMPONENT BLE
         PORT (
             ext_pa_lna_chip_en_out : OUT std_ulogic;
@@ -589,10 +581,9 @@ BEGIN
             ff_div_11 => Net_52_ff11,
             ff_div_0 => \I2C_1:clock_wire_ff0\,
             ff_div_1 => \I2C_2:clock_wire_ff1\,
-            ff_div_12 => Net_381_ff12,
             ff_div_2 => \UART:Net_847_ff2\,
+            ff_div_12 => Net_713_ff12,
             ff_div_13 => Net_713_ff13,
-            ff_div_14 => Net_713_ff14,
             periclk_App => periclk_App);
 
     CPUSS:CPUSS
@@ -1421,7 +1412,7 @@ BEGIN
             out_clock_en => open,
             out_reset => open);
 
-    LED9:logicalport
+    LED_GREEN:logicalport
         GENERIC MAP(
             cy_registers => "",
             drive_mode => "110",
@@ -1437,7 +1428,7 @@ BEGIN
             max_frequency => "100",
             oe_conn => "0",
             oe_sync => "0",
-            output_conn => "1",
+            output_conn => "0",
             output_current_cap => "8",
             output_sync => "0",
             pin_aliases => "",
@@ -1456,20 +1447,18 @@ BEGIN
             out_clken_mode => 1,
             out_rst_inv => 0);
 
-    LED9(0):iocell
+    LED_GREEN(0):iocell
         GENERIC MAP(
             in_sync_mode => 0,
             out_sync_mode => 0,
             oe_sync_mode => 0,
-            logicalport => "LED9",
+            logicalport => "LED_GREEN",
             logicalport_pin_id => 0,
             io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
         PORT MAP(
-            pa_out => LED9(0)__PA,
+            pa_out => LED_GREEN(0)__PA,
             oe => open,
-            pin_input => Net_380,
-            pad_out => LED9(0)_PAD,
-            pad_in => LED9(0)_PAD,
+            pad_in => LED_GREEN(0)_PAD,
             in_clock => open,
             in_clock_en => open,
             in_reset => open,
@@ -1617,25 +1606,6 @@ BEGIN
             line => Net_372,
             interrupt => Net_473);
 
-    \PWM:TCPWM\:TCPWM
-        GENERIC MAP(
-            cy_registers => "",
-            exact_width => 0,
-            width => 32)
-        PORT MAP(
-            clock => Net_381_ff12,
-            capture => '0',
-            count => '1',
-            reload => '0',
-            stop => '0',
-            start => '0',
-            tr_underflow => Net_391,
-            tr_compare_match => Net_382,
-            tr_overflow => Net_386,
-            line_compl => Net_387,
-            line => Net_380,
-            interrupt => Net_384);
-
     \BLE:cy_mxs40_ble\:BLE
         GENERIC MAP(
             cy_registers => "",
@@ -1679,7 +1649,7 @@ BEGIN
             exact_width => 0,
             width => 32)
         PORT MAP(
-            clock => Net_713_ff13,
+            clock => Net_713_ff12,
             capture => '0',
             count => '1',
             reload => '0',
@@ -1698,7 +1668,7 @@ BEGIN
             exact_width => 0,
             width => 16)
         PORT MAP(
-            clock => Net_713_ff14,
+            clock => Net_713_ff13,
             capture => '0',
             count => '1',
             reload => '0',

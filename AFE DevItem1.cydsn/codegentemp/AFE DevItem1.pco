@@ -1,5 +1,5 @@
 # AFE DevItem1
-# 2021-05-01 10:55:29Z
+# 2021-05-05 12:28:52Z
 
 dont_use_location SMIF -1 -1 0
 dont_use_location p4usbcell -1 -1 0
@@ -24,7 +24,7 @@ set_io "AFE1_RDY(0)" iocell 10 5
 set_io "AFE0_RDY(0)" iocell 10 4
 set_io "SW2(0)" iocell 0 4
 set_io "Pin_AFE_CLK(0)" iocell 10 6
-set_io "LED9(0)" iocell 7 1
+set_io "LED_GREEN(0)" iocell 7 1
 set_location "\UART:SCB_IRQ\" interrupt -1 -1 46
 set_location "\UART:SCB\" SCB -1 -1 5
 set_location "\I2C_1:SCB\" SCB -1 -1 1
@@ -34,10 +34,9 @@ set_location "\I2C_2:SCB_IRQ\" interrupt -1 -1 43
 set_location "ISR_AFE0" interrupt -1 -1 122
 set_location "ISR_AFE1" interrupt -1 -1 123
 set_location "\PWM_AFE:TCPWM\" TCPWM -1 -1 10
-set_location "\PWM:TCPWM\" TCPWM -1 -1 0
 set_location "\BLE:cy_mxs40_ble\" BLE -1 -1 0
 set_location "\BLE:bless_isr\" interrupt -1 -1 24
 set_location "ISR_CYC" interrupt -1 -1 124
 set_location "ISR_TIM" interrupt -1 -1 125
-set_location "\PWM_CYC:TCPWM\" TCPWM -1 -1 1
-set_location "\PWM_TIM:TCPWM\" TCPWM -1 -1 2
+set_location "\PWM_CYC:TCPWM\" TCPWM -1 -1 0
+set_location "\PWM_TIM:TCPWM\" TCPWM -1 -1 1

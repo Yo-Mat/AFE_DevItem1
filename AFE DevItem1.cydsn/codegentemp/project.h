@@ -163,8 +163,6 @@
 #include "I2C_2.h"
 #include "Clock_1.h"
 #include "PWM_AFE.h"
-#include "PWM.h"
-#include "Clock_2.h"
 #include "BLE.h"
 #include "BLE_config.h"
 #include "Clock_1kHz.h"

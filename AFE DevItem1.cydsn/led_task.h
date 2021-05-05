@@ -54,7 +54,7 @@ static const uint8_t LED_CURR_MIN = 6;  // 4.8mA step +0.8mA
 static const uint8_t LED_CURR_MAX = 63; // 50.4mA
 
 // 初期値
-#define SMP_NUM     100     // サンプル数(時間窓)
+#define SMP_NUM     300     // サンプル数(時間窓)
 #define AFE_ID      AFE0_ID // 選択AFE
 #define SMP_SKIP    5       // サンプルスキップ数
 // TIAゲイン
