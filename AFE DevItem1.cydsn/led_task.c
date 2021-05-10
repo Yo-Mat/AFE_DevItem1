@@ -249,9 +249,12 @@ void Task_LED (void *pvParameters)
 
     for(;;) {
         // データサンプリング
-        if (AFE_RDY(AFE0_ID))
-            AFE_samp(AFE0_ID);
-        if (AFE_RDY(AFE1_ID))
-            AFE_samp(AFE1_ID);
+        if (AFE_RDY(AFE0_ID)) AFE_samp(AFE0_ID);
+        if (AFE_RDY(AFE1_ID)) AFE_samp(AFE1_ID);
+
+        /* Enter sleep mode */
+//        printf("Info! : LED task goes into sleep!\r\n");
+//		Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
+		Cy_SysPm_Sleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
     }
 }

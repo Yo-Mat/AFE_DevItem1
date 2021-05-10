@@ -18,7 +18,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="AFE DevItem1-000\AFE DevItem1\CM0p (Core 0)\Source Files\main_cm0p.c">
 <ExpandedNodeIds>
 <v>AFE DevItem1-000</v>
 <v>AFE DevItem1-000\AFE DevItem1</v>
@@ -93,15 +93,6 @@
 <v>AFE DevItem1-000\AFE DevItem1\Generated_Source\PSoC6\BLE</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>AFE DevItem1-000</v>
-<v>AFE DevItem1-000\AFE DevItem1</v>
-<v>AFE DevItem1-000\AFE DevItem1\TopDesign</v>
-<v>AFE DevItem1-000\AFE DevItem1\AFE DevItem1.cydwr</v>
-<v>AFE DevItem1-000\AFE DevItem1\AFE DevItem1.cydwr\Pins</v>
-<v>AFE DevItem1-000\AFE DevItem1\AFE DevItem1.cydwr\Analog</v>
-<v>AFE DevItem1-000\AFE DevItem1\AFE DevItem1.cydwr\DMA</v>
-<v>AFE DevItem1-000\AFE DevItem1\AFE DevItem1.cydwr\Clocks</v>
-<v>AFE DevItem1-000\AFE DevItem1\AFE DevItem1.cydwr\Interrupts</v>
 <v>AFE DevItem1-000\AFE DevItem1\AFE DevItem1.cydwr\System</v>
 <v>AFE DevItem1-000\AFE DevItem1\AFE DevItem1.cydwr\Directives</v>
 <v>AFE DevItem1-000\AFE DevItem1\CM0p (Core 0)</v>
@@ -141,6 +132,15 @@
 <v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Source Files\ARM GCC Generic</v>
 <v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Source Files\ARM GCC Generic\startup_psoc6_01_cm4.S</v>
 <v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Source Files\ARM IAR Generic</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Source Files\ARM IAR Generic\startup_psoc6_01_cm4.s</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Source Files\ARM MDK Generic</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Source Files\ARM MDK Generic\startup_psoc6_01_cm4.s</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Source Files\RTOS and Task Files</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Source Files\RTOS and Task Files\led_task.c</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Source Files\main_cm4.c</v>
+<v>AFE DevItem1-000\AFE DevItem1\CM4 (Core 1)\Source Files\system_psoc6_cm4.c</v>
+<v>AFE DevItem1-000\AFE DevItem1\Shared Files</v>
+<v>AFE DevItem1-000\AFE DevItem1\Shared Files\cy_ble_config.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -408,7 +408,6 @@
 <v>AFE DevItem1-000\AFE DevItem1\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_scps.lst</v>
 <v>AFE DevItem1-000\AFE DevItem1\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_tps.lst</v>
 <v>AFE DevItem1-000\AFE DevItem1\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_uds.lst</v>
-<v>AFE DevItem1-000\AFE DevItem1\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_wpts.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -470,6 +469,7 @@
 <name v=".\led_task.h" />
 <name v=".\TopDesign\TopDesign.cysch" />
 <name v=".\AFE DevItem1.cydwr" />
+<name v=".\main_cm0p.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -477,7 +477,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="907, 649" SelectedTabbedMdiWindow="4a09dd1a-5971-4d97-85ae-654fcc84f036"><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\main_cm4.c" Guid="a9e93c25-677b-4cc3-8553-643d7c9afe4f" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\led_task.c" Guid="6ff6f5d4-b445-4d13-8bf4-ced4bc5bd04a" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\led_task.h" Guid="245e442a-4498-484f-9721-d5a979ce0842" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\TopDesign\TopDesign.cysch" Guid="4a09dd1a-5971-4d97-85ae-654fcc84f036" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="2500d571-b76a-4d5f-bb91-a7784877a96f" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\AFE DevItem1.cydwr" Guid="7d036a70-89f3-423e-8378-d9c385aa71f7" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1168, 649" SelectedTabbedMdiWindow="7d036a70-89f3-423e-8378-d9c385aa71f7"><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\main_cm4.c" Guid="a9e93c25-677b-4cc3-8553-643d7c9afe4f" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\led_task.c" Guid="6ff6f5d4-b445-4d13-8bf4-ced4bc5bd04a" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\led_task.h" Guid="245e442a-4498-484f-9721-d5a979ce0842" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\TopDesign\TopDesign.cysch" Guid="4a09dd1a-5971-4d97-85ae-654fcc84f036" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="2500d571-b76a-4d5f-bb91-a7784877a96f" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\AFE DevItem1.cydwr" Guid="7d036a70-89f3-423e-8378-d9c385aa71f7" /><DocumentWindow Key="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\main_cm0p.c" Guid="15997814-d982-4b9d-92f6-216493797d72" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

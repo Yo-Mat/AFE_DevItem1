@@ -74,6 +74,11 @@ int main(void)
     {
         /* Place your application code here. */
         Cy_BLE_ProcessEvents();
+
+        /* Enter sleep mode */
+//        printf("Info! : BLE task goes into sleep!\r\n");
+//		Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
+		Cy_SysPm_Sleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
     }
 }
 

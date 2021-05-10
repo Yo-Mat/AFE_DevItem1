@@ -188,10 +188,15 @@ void bleTask(void *arg)
                 }
                 else
                 {
-                    printf("Failure! : BLE - Sending notification, Error code: %x", apiResult);
+                    printf("Failure! : BLE - Sending notification, Error code: %x\r\n", apiResult);
                 }
             }
         }   
+
+        /* Enter sleep mode */
+//        printf("Info! : BLE task goes into sleep!\r\n");
+//		Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
+		Cy_SysPm_Sleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
     }
 }
 
