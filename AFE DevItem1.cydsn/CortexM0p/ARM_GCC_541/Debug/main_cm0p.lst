@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
   28:main_cm0p.c   **** * code solely for use in connection with Cypress’s integrated circuit products.
   29:main_cm0p.c   **** * Any reproduction, modification, translation, compilation, or representation
   30:main_cm0p.c   **** * of this Software except as specified above is prohibited without the express
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 2
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 2
 
 
   31:main_cm0p.c   **** * written permission of Cypress.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
    9:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
   10:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * SPDX-License-Identifier: Apache-2.0
   11:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 3
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 3
 
 
   12:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * Licensed under the Apache License, Version 2.0 (the License); you may
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
   66:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
   67:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __PACKED_UNION
   68:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __PACKED_UNION                         union __attribute__((packed, aligned(1)))
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 4
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 4
 
 
   69:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  123:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
  124:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /**
  125:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   \brief   Enable IRQ Interrupts
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 5
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 5
 
 
  126:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   \details Enables IRQ interrupts by clearing the I-bit in the CPSR.
@@ -282,12 +282,10 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
   60              	.LVL2:
   77:main_cm0p.c   **** 
   78:main_cm0p.c   ****         /* Enter sleep mode */
-  79:main_cm0p.c   **** //        printf("Info! : BLE task goes into sleep!\r\n");
-  80:main_cm0p.c   **** //		Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
-  81:main_cm0p.c   **** 		Cy_SysPm_Sleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
-  61              		.loc 1 81 0 discriminator 1
+  79:main_cm0p.c   **** 		Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
+  61              		.loc 1 79 0 discriminator 1
   62 0014 0020     		movs	r0, #0
-  63 0016 FFF7FEFF 		bl	Cy_SysPm_CpuEnterSleep
+  63 0016 FFF7FEFF 		bl	Cy_SysPm_CpuEnterDeepSleep
   64              	.LVL3:
   65 001a F9E7     		b	.L2
   66              	.L4:
@@ -298,11 +296,11 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
   71              	.LFE589:
   72              		.size	main, .-main
   73              		.text
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 6
-
-
   74              	.Letext0:
   75              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 6
+
+
   76              		.file 4 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
   77              		.file 5 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/device/cy_device.h"
   78              		.file 6 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/syspm/cy_syspm.h"
@@ -325,7 +323,7 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
   95 0006 00000000 		.4byte	.Ldebug_abbrev0
   96 000a 04       		.byte	0x4
   97 000b 01       		.uleb128 0x1
-  98 000c A7080000 		.4byte	.LASF194
+  98 000c AB080000 		.4byte	.LASF194
   99 0010 0C       		.byte	0xc
  100 0011 A1000000 		.4byte	.LASF195
  101 0015 4C030000 		.4byte	.LASF196
@@ -335,11 +333,11 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  105 0025 02       		.uleb128 0x2
  106 0026 02       		.byte	0x2
  107 0027 05       		.byte	0x5
- 108 0028 B5070000 		.4byte	.LASF0
+ 108 0028 B9070000 		.4byte	.LASF0
  109 002c 02       		.uleb128 0x2
  110 002d 01       		.byte	0x1
  111 002e 08       		.byte	0x8
- 112 002f 93070000 		.4byte	.LASF1
+ 112 002f 97070000 		.4byte	.LASF1
  113 0033 02       		.uleb128 0x2
  114 0034 01       		.byte	0x1
  115 0035 06       		.byte	0x6
@@ -350,35 +348,35 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  120 0040 1D       		.byte	0x1d
  121 0041 2C000000 		.4byte	0x2c
  122 0045 03       		.uleb128 0x3
- 123 0046 04040000 		.4byte	.LASF4
+ 123 0046 08040000 		.4byte	.LASF4
  124 004a 03       		.byte	0x3
  125 004b 29       		.byte	0x29
  126 004c 25000000 		.4byte	0x25
  127 0050 03       		.uleb128 0x3
- 128 0051 75090000 		.4byte	.LASF5
+ 128 0051 79090000 		.4byte	.LASF5
  129 0055 03       		.byte	0x3
  130 0056 2B       		.byte	0x2b
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 7
-
-
  131 0057 5B000000 		.4byte	0x5b
  132 005b 02       		.uleb128 0x2
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 7
+
+
  133 005c 02       		.byte	0x2
  134 005d 07       		.byte	0x7
- 135 005e 060A0000 		.4byte	.LASF6
+ 135 005e 0A0A0000 		.4byte	.LASF6
  136 0062 02       		.uleb128 0x2
  137 0063 04       		.byte	0x4
  138 0064 05       		.byte	0x5
  139 0065 CE020000 		.4byte	.LASF7
  140 0069 03       		.uleb128 0x3
- 141 006a E9030000 		.4byte	.LASF8
+ 141 006a D2030000 		.4byte	.LASF8
  142 006e 03       		.byte	0x3
  143 006f 41       		.byte	0x41
  144 0070 74000000 		.4byte	0x74
  145 0074 02       		.uleb128 0x2
  146 0075 04       		.byte	0x4
  147 0076 07       		.byte	0x7
- 148 0077 C4040000 		.4byte	.LASF9
+ 148 0077 C8040000 		.4byte	.LASF9
  149 007b 02       		.uleb128 0x2
  150 007c 08       		.byte	0x8
  151 007d 05       		.byte	0x5
@@ -394,9 +392,9 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  161 0090 02       		.uleb128 0x2
  162 0091 04       		.byte	0x4
  163 0092 07       		.byte	0x7
- 164 0093 67040000 		.4byte	.LASF12
+ 164 0093 6B040000 		.4byte	.LASF12
  165 0097 03       		.uleb128 0x3
- 166 0098 440B0000 		.4byte	.LASF13
+ 166 0098 480B0000 		.4byte	.LASF13
  167 009c 04       		.byte	0x4
  168 009d 18       		.byte	0x18
  169 009e 3A000000 		.4byte	0x3a
@@ -406,28 +404,28 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  173 00a8 20       		.byte	0x20
  174 00a9 45000000 		.4byte	0x45
  175 00ad 03       		.uleb128 0x3
- 176 00ae C0050000 		.4byte	.LASF15
+ 176 00ae C4050000 		.4byte	.LASF15
  177 00b2 04       		.byte	0x4
  178 00b3 24       		.byte	0x24
  179 00b4 50000000 		.4byte	0x50
  180 00b8 03       		.uleb128 0x3
- 181 00b9 85080000 		.4byte	.LASF16
+ 181 00b9 89080000 		.4byte	.LASF16
  182 00bd 04       		.byte	0x4
  183 00be 30       		.byte	0x30
  184 00bf 69000000 		.4byte	0x69
  185 00c3 02       		.uleb128 0x2
  186 00c4 04       		.byte	0x4
  187 00c5 07       		.byte	0x7
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 8
-
-
- 188 00c6 85040000 		.4byte	.LASF17
+ 188 00c6 89040000 		.4byte	.LASF17
  189 00ca 05       		.uleb128 0x5
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 8
+
+
  190 00cb B8000000 		.4byte	0xb8
  191 00cf 02       		.uleb128 0x2
  192 00d0 08       		.byte	0x8
  193 00d1 04       		.byte	0x4
- 194 00d2 3F090000 		.4byte	.LASF18
+ 194 00d2 43090000 		.4byte	.LASF18
  195 00d6 06       		.uleb128 0x6
  196 00d7 B8       		.byte	0xb8
  197 00d8 05       		.byte	0x5
@@ -440,7 +438,7 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  204 00e5 B8000000 		.4byte	0xb8
  205 00e9 00       		.byte	0
  206 00ea 07       		.uleb128 0x7
- 207 00eb 40080000 		.4byte	.LASF20
+ 207 00eb 44080000 		.4byte	.LASF20
  208 00ef 05       		.byte	0x5
  209 00f0 38       		.byte	0x38
  210 00f1 B8000000 		.4byte	0xb8
@@ -452,7 +450,7 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  216 00fd B8000000 		.4byte	0xb8
  217 0101 08       		.byte	0x8
  218 0102 07       		.uleb128 0x7
- 219 0103 6D070000 		.4byte	.LASF22
+ 219 0103 71070000 		.4byte	.LASF22
  220 0107 05       		.byte	0x5
  221 0108 3A       		.byte	0x3a
  222 0109 B8000000 		.4byte	0xb8
@@ -470,7 +468,7 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  234 0121 B8000000 		.4byte	0xb8
  235 0125 14       		.byte	0x14
  236 0126 07       		.uleb128 0x7
- 237 0127 2C050000 		.4byte	.LASF25
+ 237 0127 30050000 		.4byte	.LASF25
  238 012b 05       		.byte	0x5
  239 012c 3D       		.byte	0x3d
  240 012d B8000000 		.4byte	0xb8
@@ -478,26 +476,26 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  242 0132 07       		.uleb128 0x7
  243 0133 98000000 		.4byte	.LASF26
  244 0137 05       		.byte	0x5
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 9
-
-
  245 0138 3E       		.byte	0x3e
  246 0139 B8000000 		.4byte	0xb8
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 9
+
+
  247 013d 1C       		.byte	0x1c
  248 013e 07       		.uleb128 0x7
- 249 013f E60B0000 		.4byte	.LASF27
+ 249 013f EA0B0000 		.4byte	.LASF27
  250 0143 05       		.byte	0x5
  251 0144 3F       		.byte	0x3f
  252 0145 B8000000 		.4byte	0xb8
  253 0149 20       		.byte	0x20
  254 014a 07       		.uleb128 0x7
- 255 014b F3060000 		.4byte	.LASF28
+ 255 014b F7060000 		.4byte	.LASF28
  256 014f 05       		.byte	0x5
  257 0150 40       		.byte	0x40
  258 0151 B8000000 		.4byte	0xb8
  259 0155 24       		.byte	0x24
  260 0156 07       		.uleb128 0x7
- 261 0157 32060000 		.4byte	.LASF29
+ 261 0157 36060000 		.4byte	.LASF29
  262 015b 05       		.byte	0x5
  263 015c 43       		.byte	0x43
  264 015d 97000000 		.4byte	0x97
@@ -509,25 +507,25 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  270 0169 97000000 		.4byte	0x97
  271 016d 29       		.byte	0x29
  272 016e 07       		.uleb128 0x7
- 273 016f DC0B0000 		.4byte	.LASF31
+ 273 016f E00B0000 		.4byte	.LASF31
  274 0173 05       		.byte	0x5
  275 0174 45       		.byte	0x45
  276 0175 97000000 		.4byte	0x97
  277 0179 2A       		.byte	0x2a
  278 017a 07       		.uleb128 0x7
- 279 017b E5060000 		.4byte	.LASF32
+ 279 017b E9060000 		.4byte	.LASF32
  280 017f 05       		.byte	0x5
  281 0180 46       		.byte	0x46
  282 0181 97000000 		.4byte	0x97
  283 0185 2B       		.byte	0x2b
  284 0186 07       		.uleb128 0x7
- 285 0187 B4050000 		.4byte	.LASF33
+ 285 0187 B8050000 		.4byte	.LASF33
  286 018b 05       		.byte	0x5
  287 018c 47       		.byte	0x47
  288 018d 97000000 		.4byte	0x97
  289 0191 2C       		.byte	0x2c
  290 0192 07       		.uleb128 0x7
- 291 0193 B8090000 		.4byte	.LASF34
+ 291 0193 BC090000 		.4byte	.LASF34
  292 0197 05       		.byte	0x5
  293 0198 48       		.byte	0x48
  294 0199 97000000 		.4byte	0x97
@@ -538,23 +536,23 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  299 01a4 49       		.byte	0x49
  300 01a5 97000000 		.4byte	0x97
  301 01a9 2E       		.byte	0x2e
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 10
-
-
  302 01aa 07       		.uleb128 0x7
- 303 01ab 3F060000 		.4byte	.LASF36
+ 303 01ab 43060000 		.4byte	.LASF36
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 10
+
+
  304 01af 05       		.byte	0x5
  305 01b0 4A       		.byte	0x4a
  306 01b1 97000000 		.4byte	0x97
  307 01b5 2F       		.byte	0x2f
  308 01b6 07       		.uleb128 0x7
- 309 01b7 5B090000 		.4byte	.LASF37
+ 309 01b7 5F090000 		.4byte	.LASF37
  310 01bb 05       		.byte	0x5
  311 01bc 4B       		.byte	0x4b
  312 01bd 97000000 		.4byte	0x97
  313 01c1 30       		.byte	0x30
  314 01c2 07       		.uleb128 0x7
- 315 01c3 21050000 		.4byte	.LASF38
+ 315 01c3 25050000 		.4byte	.LASF38
  316 01c7 05       		.byte	0x5
  317 01c8 4E       		.byte	0x4e
  318 01c9 97000000 		.4byte	0x97
@@ -566,19 +564,19 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  324 01d5 97000000 		.4byte	0x97
  325 01d9 32       		.byte	0x32
  326 01da 07       		.uleb128 0x7
- 327 01db 5B040000 		.4byte	.LASF40
+ 327 01db 5F040000 		.4byte	.LASF40
  328 01df 05       		.byte	0x5
  329 01e0 50       		.byte	0x50
  330 01e1 97000000 		.4byte	0x97
  331 01e5 33       		.byte	0x33
  332 01e6 07       		.uleb128 0x7
- 333 01e7 8A060000 		.4byte	.LASF41
+ 333 01e7 8E060000 		.4byte	.LASF41
  334 01eb 05       		.byte	0x5
  335 01ec 51       		.byte	0x51
  336 01ed 97000000 		.4byte	0x97
  337 01f1 34       		.byte	0x34
  338 01f2 07       		.uleb128 0x7
- 339 01f3 480A0000 		.4byte	.LASF42
+ 339 01f3 4C0A0000 		.4byte	.LASF42
  340 01f7 05       		.byte	0x5
  341 01f8 52       		.byte	0x52
  342 01f9 A2000000 		.4byte	0xa2
@@ -590,7 +588,7 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  348 0205 A2000000 		.4byte	0xa2
  349 0209 38       		.byte	0x38
  350 020a 07       		.uleb128 0x7
- 351 020b D7090000 		.4byte	.LASF44
+ 351 020b DB090000 		.4byte	.LASF44
  352 020f 05       		.byte	0x5
  353 0210 54       		.byte	0x54
  354 0211 A2000000 		.4byte	0xa2
@@ -598,11 +596,11 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  356 0216 07       		.uleb128 0x7
  357 0217 79020000 		.4byte	.LASF45
  358 021b 05       		.byte	0x5
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 11
-
-
  359 021c 55       		.byte	0x55
  360 021d 97000000 		.4byte	0x97
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 11
+
+
  361 0221 3C       		.byte	0x3c
  362 0222 07       		.uleb128 0x7
  363 0223 41030000 		.4byte	.LASF46
@@ -611,7 +609,7 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  366 0229 97000000 		.4byte	0x97
  367 022d 3D       		.byte	0x3d
  368 022e 07       		.uleb128 0x7
- 369 022f DE0A0000 		.4byte	.LASF47
+ 369 022f E20A0000 		.4byte	.LASF47
  370 0233 05       		.byte	0x5
  371 0234 57       		.byte	0x57
  372 0235 97000000 		.4byte	0x97
@@ -623,25 +621,25 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  378 0241 97000000 		.4byte	0x97
  379 0245 3F       		.byte	0x3f
  380 0246 07       		.uleb128 0x7
- 381 0247 FE060000 		.4byte	.LASF49
+ 381 0247 02070000 		.4byte	.LASF49
  382 024b 05       		.byte	0x5
  383 024c 59       		.byte	0x59
  384 024d 97000000 		.4byte	0x97
  385 0251 40       		.byte	0x40
  386 0252 07       		.uleb128 0x7
- 387 0253 F4030000 		.4byte	.LASF50
+ 387 0253 DD030000 		.4byte	.LASF50
  388 0257 05       		.byte	0x5
  389 0258 5A       		.byte	0x5a
  390 0259 97000000 		.4byte	0x97
  391 025d 41       		.byte	0x41
  392 025e 07       		.uleb128 0x7
- 393 025f 35050000 		.4byte	.LASF51
+ 393 025f 39050000 		.4byte	.LASF51
  394 0263 05       		.byte	0x5
  395 0264 5B       		.byte	0x5b
  396 0265 97000000 		.4byte	0x97
  397 0269 42       		.byte	0x42
  398 026a 07       		.uleb128 0x7
- 399 026b D1060000 		.4byte	.LASF52
+ 399 026b D5060000 		.4byte	.LASF52
  400 026f 05       		.byte	0x5
  401 0270 5C       		.byte	0x5c
  402 0271 97000000 		.4byte	0x97
@@ -658,17 +656,17 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  413 0288 5E       		.byte	0x5e
  414 0289 B8000000 		.4byte	0xb8
  415 028d 48       		.byte	0x48
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 12
-
-
  416 028e 07       		.uleb128 0x7
  417 028f F2020000 		.4byte	.LASF55
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 12
+
+
  418 0293 05       		.byte	0x5
  419 0294 5F       		.byte	0x5f
  420 0295 B8000000 		.4byte	0xb8
  421 0299 4C       		.byte	0x4c
  422 029a 07       		.uleb128 0x7
- 423 029b 1C0C0000 		.4byte	.LASF56
+ 423 029b 200C0000 		.4byte	.LASF56
  424 029f 05       		.byte	0x5
  425 02a0 60       		.byte	0x60
  426 02a1 97000000 		.4byte	0x97
@@ -680,19 +678,19 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  432 02ad 97000000 		.4byte	0x97
  433 02b1 51       		.byte	0x51
  434 02b2 07       		.uleb128 0x7
- 435 02b3 340B0000 		.4byte	.LASF58
+ 435 02b3 380B0000 		.4byte	.LASF58
  436 02b7 05       		.byte	0x5
  437 02b8 62       		.byte	0x62
  438 02b9 97000000 		.4byte	0x97
  439 02bd 52       		.byte	0x52
  440 02be 07       		.uleb128 0x7
- 441 02bf C5090000 		.4byte	.LASF59
+ 441 02bf C9090000 		.4byte	.LASF59
  442 02c3 05       		.byte	0x5
  443 02c4 63       		.byte	0x63
  444 02c5 97000000 		.4byte	0x97
  445 02c9 53       		.byte	0x53
  446 02ca 07       		.uleb128 0x7
- 447 02cb 75080000 		.4byte	.LASF60
+ 447 02cb 79080000 		.4byte	.LASF60
  448 02cf 05       		.byte	0x5
  449 02d0 64       		.byte	0x64
  450 02d1 97000000 		.4byte	0x97
@@ -704,13 +702,13 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  456 02dd 97000000 		.4byte	0x97
  457 02e1 55       		.byte	0x55
  458 02e2 07       		.uleb128 0x7
- 459 02e3 B0040000 		.4byte	.LASF62
+ 459 02e3 B4040000 		.4byte	.LASF62
  460 02e7 05       		.byte	0x5
  461 02e8 66       		.byte	0x66
  462 02e9 97000000 		.4byte	0x97
  463 02ed 56       		.byte	0x56
  464 02ee 07       		.uleb128 0x7
- 465 02ef F3070000 		.4byte	.LASF63
+ 465 02ef F7070000 		.4byte	.LASF63
  466 02f3 05       		.byte	0x5
  467 02f4 67       		.byte	0x67
  468 02f5 97000000 		.4byte	0x97
@@ -718,26 +716,26 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  470 02fa 07       		.uleb128 0x7
  471 02fb 39000000 		.4byte	.LASF64
  472 02ff 05       		.byte	0x5
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 13
-
-
  473 0300 68       		.byte	0x68
  474 0301 97000000 		.4byte	0x97
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 13
+
+
  475 0305 58       		.byte	0x58
  476 0306 07       		.uleb128 0x7
- 477 0307 A1070000 		.4byte	.LASF65
+ 477 0307 A5070000 		.4byte	.LASF65
  478 030b 05       		.byte	0x5
  479 030c 69       		.byte	0x69
  480 030d 97000000 		.4byte	0x97
  481 0311 59       		.byte	0x59
  482 0312 07       		.uleb128 0x7
- 483 0313 6F060000 		.4byte	.LASF66
+ 483 0313 73060000 		.4byte	.LASF66
  484 0317 05       		.byte	0x5
  485 0318 6E       		.byte	0x6e
  486 0319 AD000000 		.4byte	0xad
  487 031d 5A       		.byte	0x5a
  488 031e 07       		.uleb128 0x7
- 489 031f 190A0000 		.4byte	.LASF67
+ 489 031f 1D0A0000 		.4byte	.LASF67
  490 0323 05       		.byte	0x5
  491 0324 6F       		.byte	0x6f
  492 0325 AD000000 		.4byte	0xad
@@ -749,19 +747,19 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  498 0331 97000000 		.4byte	0x97
  499 0335 5E       		.byte	0x5e
  500 0336 07       		.uleb128 0x7
- 501 0337 4E070000 		.4byte	.LASF69
+ 501 0337 52070000 		.4byte	.LASF69
  502 033b 05       		.byte	0x5
  503 033c 71       		.byte	0x71
  504 033d 97000000 		.4byte	0x97
  505 0341 5F       		.byte	0x5f
  506 0342 07       		.uleb128 0x7
- 507 0343 C0060000 		.4byte	.LASF70
+ 507 0343 C4060000 		.4byte	.LASF70
  508 0347 05       		.byte	0x5
  509 0348 72       		.byte	0x72
  510 0349 97000000 		.4byte	0x97
  511 034d 60       		.byte	0x60
  512 034e 07       		.uleb128 0x7
- 513 034f 27070000 		.4byte	.LASF71
+ 513 034f 2B070000 		.4byte	.LASF71
  514 0353 05       		.byte	0x5
  515 0354 73       		.byte	0x73
  516 0355 B8000000 		.4byte	0xb8
@@ -773,28 +771,28 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  522 0361 AD000000 		.4byte	0xad
  523 0365 68       		.byte	0x68
  524 0366 07       		.uleb128 0x7
- 525 0367 9E040000 		.4byte	.LASF73
+ 525 0367 A2040000 		.4byte	.LASF73
  526 036b 05       		.byte	0x5
  527 036c 77       		.byte	0x77
  528 036d AD000000 		.4byte	0xad
  529 0371 6A       		.byte	0x6a
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 14
-
-
  530 0372 07       		.uleb128 0x7
- 531 0373 62050000 		.4byte	.LASF74
+ 531 0373 66050000 		.4byte	.LASF74
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 14
+
+
  532 0377 05       		.byte	0x5
  533 0378 78       		.byte	0x78
  534 0379 AD000000 		.4byte	0xad
  535 037d 6C       		.byte	0x6c
  536 037e 07       		.uleb128 0x7
- 537 037f E8040000 		.4byte	.LASF75
+ 537 037f EC040000 		.4byte	.LASF75
  538 0383 05       		.byte	0x5
  539 0384 79       		.byte	0x79
  540 0385 AD000000 		.4byte	0xad
  541 0389 6E       		.byte	0x6e
  542 038a 07       		.uleb128 0x7
- 543 038b D0070000 		.4byte	.LASF76
+ 543 038b D4070000 		.4byte	.LASF76
  544 038f 05       		.byte	0x5
  545 0390 7B       		.byte	0x7b
  546 0391 97000000 		.4byte	0x97
@@ -806,25 +804,25 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  552 039d 97000000 		.4byte	0x97
  553 03a1 71       		.byte	0x71
  554 03a2 07       		.uleb128 0x7
- 555 03a3 EE0B0000 		.4byte	.LASF78
+ 555 03a3 F20B0000 		.4byte	.LASF78
  556 03a7 05       		.byte	0x5
  557 03a8 7D       		.byte	0x7d
  558 03a9 97000000 		.4byte	0x97
  559 03ad 72       		.byte	0x72
  560 03ae 07       		.uleb128 0x7
- 561 03af 9B060000 		.4byte	.LASF79
+ 561 03af 9F060000 		.4byte	.LASF79
  562 03b3 05       		.byte	0x5
  563 03b4 7E       		.byte	0x7e
  564 03b5 97000000 		.4byte	0x97
  565 03b9 73       		.byte	0x73
  566 03ba 07       		.uleb128 0x7
- 567 03bb AE030000 		.4byte	.LASF80
+ 567 03bb 97030000 		.4byte	.LASF80
  568 03bf 05       		.byte	0x5
  569 03c0 80       		.byte	0x80
  570 03c1 AD000000 		.4byte	0xad
  571 03c5 74       		.byte	0x74
  572 03c6 07       		.uleb128 0x7
- 573 03c7 80090000 		.4byte	.LASF81
+ 573 03c7 84090000 		.4byte	.LASF81
  574 03cb 05       		.byte	0x5
  575 03cc 81       		.byte	0x81
  576 03cd AD000000 		.4byte	0xad
@@ -838,20 +836,20 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  584 03de 07       		.uleb128 0x7
  585 03df DE000000 		.4byte	.LASF83
  586 03e3 05       		.byte	0x5
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 15
-
-
  587 03e4 83       		.byte	0x83
  588 03e5 AD000000 		.4byte	0xad
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 15
+
+
  589 03e9 7A       		.byte	0x7a
  590 03ea 07       		.uleb128 0x7
- 591 03eb 610B0000 		.4byte	.LASF84
+ 591 03eb 650B0000 		.4byte	.LASF84
  592 03ef 05       		.byte	0x5
  593 03f0 86       		.byte	0x86
  594 03f1 97000000 		.4byte	0x97
  595 03f5 7C       		.byte	0x7c
  596 03f6 07       		.uleb128 0x7
- 597 03f7 850A0000 		.4byte	.LASF85
+ 597 03f7 890A0000 		.4byte	.LASF85
  598 03fb 05       		.byte	0x5
  599 03fc 87       		.byte	0x87
  600 03fd 97000000 		.4byte	0x97
@@ -863,19 +861,19 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  606 0409 97000000 		.4byte	0x97
  607 040d 7E       		.byte	0x7e
  608 040e 07       		.uleb128 0x7
- 609 040f C0030000 		.4byte	.LASF87
+ 609 040f A9030000 		.4byte	.LASF87
  610 0413 05       		.byte	0x5
  611 0414 89       		.byte	0x89
  612 0415 97000000 		.4byte	0x97
  613 0419 7F       		.byte	0x7f
  614 041a 07       		.uleb128 0x7
- 615 041b 47040000 		.4byte	.LASF88
+ 615 041b 4B040000 		.4byte	.LASF88
  616 041f 05       		.byte	0x5
  617 0420 8A       		.byte	0x8a
  618 0421 97000000 		.4byte	0x97
  619 0425 80       		.byte	0x80
  620 0426 07       		.uleb128 0x7
- 621 0427 6E0A0000 		.4byte	.LASF89
+ 621 0427 720A0000 		.4byte	.LASF89
  622 042b 05       		.byte	0x5
  623 042c 8D       		.byte	0x8d
  624 042d B8000000 		.4byte	0xb8
@@ -887,34 +885,34 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  630 0439 B8000000 		.4byte	0xb8
  631 043d 88       		.byte	0x88
  632 043e 07       		.uleb128 0x7
- 633 043f 4C0B0000 		.4byte	.LASF91
+ 633 043f 500B0000 		.4byte	.LASF91
  634 0443 05       		.byte	0x5
  635 0444 8F       		.byte	0x8f
  636 0445 B8000000 		.4byte	0xb8
  637 0449 8C       		.byte	0x8c
  638 044a 07       		.uleb128 0x7
- 639 044b 4B060000 		.4byte	.LASF92
+ 639 044b 4F060000 		.4byte	.LASF92
  640 044f 05       		.byte	0x5
  641 0450 90       		.byte	0x90
  642 0451 B8000000 		.4byte	0xb8
  643 0455 90       		.byte	0x90
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 16
-
-
  644 0456 07       		.uleb128 0x7
- 645 0457 17040000 		.4byte	.LASF93
+ 645 0457 1B040000 		.4byte	.LASF93
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 16
+
+
  646 045b 05       		.byte	0x5
  647 045c 91       		.byte	0x91
  648 045d B8000000 		.4byte	0xb8
  649 0461 94       		.byte	0x94
  650 0462 07       		.uleb128 0x7
- 651 0463 03060000 		.4byte	.LASF94
+ 651 0463 07060000 		.4byte	.LASF94
  652 0467 05       		.byte	0x5
  653 0468 92       		.byte	0x92
  654 0469 B8000000 		.4byte	0xb8
  655 046d 98       		.byte	0x98
  656 046e 07       		.uleb128 0x7
- 657 046f B70B0000 		.4byte	.LASF95
+ 657 046f BB0B0000 		.4byte	.LASF95
  658 0473 05       		.byte	0x5
  659 0474 93       		.byte	0x93
  660 0475 B8000000 		.4byte	0xb8
@@ -932,40 +930,40 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  672 048d AD000000 		.4byte	0xad
  673 0491 A4       		.byte	0xa4
  674 0492 07       		.uleb128 0x7
- 675 0493 110B0000 		.4byte	.LASF98
+ 675 0493 150B0000 		.4byte	.LASF98
  676 0497 05       		.byte	0x5
  677 0498 96       		.byte	0x96
  678 0499 AD000000 		.4byte	0xad
  679 049d A6       		.byte	0xa6
  680 049e 07       		.uleb128 0x7
- 681 049f 42070000 		.4byte	.LASF99
+ 681 049f 46070000 		.4byte	.LASF99
  682 04a3 05       		.byte	0x5
  683 04a4 97       		.byte	0x97
  684 04a5 AD000000 		.4byte	0xad
  685 04a9 A8       		.byte	0xa8
  686 04aa 07       		.uleb128 0x7
- 687 04ab 67090000 		.4byte	.LASF100
+ 687 04ab 6B090000 		.4byte	.LASF100
  688 04af 05       		.byte	0x5
  689 04b0 98       		.byte	0x98
  690 04b1 AD000000 		.4byte	0xad
  691 04b5 AA       		.byte	0xaa
  692 04b6 07       		.uleb128 0x7
- 693 04b7 71050000 		.4byte	.LASF101
+ 693 04b7 75050000 		.4byte	.LASF101
  694 04bb 05       		.byte	0x5
  695 04bc 99       		.byte	0x99
  696 04bd AD000000 		.4byte	0xad
  697 04c1 AC       		.byte	0xac
  698 04c2 07       		.uleb128 0x7
- 699 04c3 B2060000 		.4byte	.LASF102
+ 699 04c3 B6060000 		.4byte	.LASF102
  700 04c7 05       		.byte	0x5
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 17
-
-
  701 04c8 9A       		.byte	0x9a
  702 04c9 AD000000 		.4byte	0xad
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 17
+
+
  703 04cd AE       		.byte	0xae
  704 04ce 07       		.uleb128 0x7
- 705 04cf 0B070000 		.4byte	.LASF103
+ 705 04cf 0F070000 		.4byte	.LASF103
  706 04d3 05       		.byte	0x5
  707 04d4 9D       		.byte	0x9d
  708 04d5 AD000000 		.4byte	0xad
@@ -978,18 +976,18 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  715 04e5 B4       		.byte	0xb4
  716 04e6 00       		.byte	0
  717 04e7 03       		.uleb128 0x3
- 718 04e8 C9050000 		.4byte	.LASF105
+ 718 04e8 CD050000 		.4byte	.LASF105
  719 04ec 05       		.byte	0x5
  720 04ed 9F       		.byte	0x9f
  721 04ee D6000000 		.4byte	0xd6
  722 04f2 02       		.uleb128 0x2
  723 04f3 01       		.byte	0x1
  724 04f4 08       		.byte	0x8
- 725 04f5 4B090000 		.4byte	.LASF106
+ 725 04f5 4F090000 		.4byte	.LASF106
  726 04f9 02       		.uleb128 0x2
  727 04fa 04       		.byte	0x4
  728 04fb 04       		.byte	0x4
- 729 04fc 21070000 		.4byte	.LASF107
+ 729 04fc 25070000 		.4byte	.LASF107
  730 0500 02       		.uleb128 0x2
  731 0501 08       		.byte	0x8
  732 0502 04       		.byte	0x4
@@ -1001,10 +999,10 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  738 050e 2305     		.2byte	0x523
  739 0510 21050000 		.4byte	0x521
  740 0514 09       		.uleb128 0x9
- 741 0515 220A0000 		.4byte	.LASF109
+ 741 0515 260A0000 		.4byte	.LASF109
  742 0519 00       		.byte	0
  743 051a 09       		.uleb128 0x9
- 744 051b 93090000 		.4byte	.LASF110
+ 744 051b 97090000 		.4byte	.LASF110
  745 051f 01       		.byte	0x1
  746 0520 00       		.byte	0
  747 0521 0A       		.uleb128 0xa
@@ -1012,25 +1010,25 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  749 0523 02       		.uleb128 0x2
  750 0524 01       		.byte	0x1
  751 0525 02       		.byte	0x2
- 752 0526 39090000 		.4byte	.LASF111
+ 752 0526 3D090000 		.4byte	.LASF111
  753 052a 08       		.uleb128 0x8
  754 052b 01       		.byte	0x1
  755 052c 2C000000 		.4byte	0x2c
  756 0530 07       		.byte	0x7
  757 0531 2402     		.2byte	0x224
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 18
-
-
  758 0533 44050000 		.4byte	0x544
  759 0537 09       		.uleb128 0x9
- 760 0538 75070000 		.4byte	.LASF112
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 18
+
+
+ 760 0538 79070000 		.4byte	.LASF112
  761 053c 00       		.byte	0
  762 053d 09       		.uleb128 0x9
  763 053e E3020000 		.4byte	.LASF113
  764 0542 01       		.byte	0x1
  765 0543 00       		.byte	0
  766 0544 0B       		.uleb128 0xb
- 767 0545 F90A0000 		.4byte	.LASF114
+ 767 0545 FD0A0000 		.4byte	.LASF114
  768 0549 07       		.byte	0x7
  769 054a 2702     		.2byte	0x227
  770 054c 2A050000 		.4byte	0x52a
@@ -1048,7 +1046,7 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  782 0568 B8000000 		.4byte	0xb8
  783 056c 00       		.byte	0
  784 056d 0B       		.uleb128 0xb
- 785 056e 24080000 		.4byte	.LASF116
+ 785 056e 28080000 		.4byte	.LASF116
  786 0572 07       		.byte	0x7
  787 0573 4402     		.2byte	0x244
  788 0575 79050000 		.4byte	0x579
@@ -1068,21 +1066,21 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  802 0595 C302     		.2byte	0x2c3
  803 0597 AD060000 		.4byte	0x6ad
  804 059b 11       		.uleb128 0x11
- 805 059c 3E0A0000 		.4byte	.LASF117
+ 805 059c 420A0000 		.4byte	.LASF117
  806 05a0 07       		.byte	0x7
  807 05a1 C602     		.2byte	0x2c6
  808 05a3 23050000 		.4byte	0x523
  809 05a7 00       		.byte	0
  810 05a8 11       		.uleb128 0x11
- 811 05a9 4A050000 		.4byte	.LASF118
+ 811 05a9 4E050000 		.4byte	.LASF118
  812 05ad 07       		.byte	0x7
  813 05ae C702     		.2byte	0x2c7
  814 05b0 23050000 		.4byte	0x523
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 19
-
-
  815 05b4 01       		.byte	0x1
  816 05b5 11       		.uleb128 0x11
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 19
+
+
  817 05b6 AA020000 		.4byte	.LASF119
  818 05ba 07       		.byte	0x7
  819 05bb C902     		.2byte	0x2c9
@@ -1095,7 +1093,7 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  826 05ca CA000000 		.4byte	0xca
  827 05ce 08       		.byte	0x8
  828 05cf 11       		.uleb128 0x11
- 829 05d0 07080000 		.4byte	.LASF121
+ 829 05d0 0B080000 		.4byte	.LASF121
  830 05d4 07       		.byte	0x7
  831 05d5 CC02     		.2byte	0x2cc
  832 05d7 23050000 		.4byte	0x523
@@ -1107,25 +1105,25 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  838 05e4 23050000 		.4byte	0x523
  839 05e8 0D       		.byte	0xd
  840 05e9 11       		.uleb128 0x11
- 841 05ea AB090000 		.4byte	.LASF123
+ 841 05ea AF090000 		.4byte	.LASF123
  842 05ee 07       		.byte	0x7
  843 05ef CF02     		.2byte	0x2cf
  844 05f1 AD060000 		.4byte	0x6ad
  845 05f5 10       		.byte	0x10
  846 05f6 11       		.uleb128 0x11
- 847 05f7 BF070000 		.4byte	.LASF124
+ 847 05f7 C3070000 		.4byte	.LASF124
  848 05fb 07       		.byte	0x7
  849 05fc D002     		.2byte	0x2d0
  850 05fe B8000000 		.4byte	0xb8
  851 0602 14       		.byte	0x14
  852 0603 11       		.uleb128 0x11
- 853 0604 7A060000 		.4byte	.LASF125
+ 853 0604 7E060000 		.4byte	.LASF125
  854 0608 07       		.byte	0x7
  855 0609 D102     		.2byte	0x2d1
  856 060b CA000000 		.4byte	0xca
  857 060f 18       		.byte	0x18
  858 0610 11       		.uleb128 0x11
- 859 0611 55080000 		.4byte	.LASF126
+ 859 0611 59080000 		.4byte	.LASF126
  860 0615 07       		.byte	0x7
  861 0616 D202     		.2byte	0x2d2
  862 0618 CA000000 		.4byte	0xca
@@ -1137,40 +1135,40 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  868 0625 CA000000 		.4byte	0xca
  869 0629 20       		.byte	0x20
  870 062a 11       		.uleb128 0x11
- 871 062b 8E040000 		.4byte	.LASF128
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 20
-
-
+ 871 062b 92040000 		.4byte	.LASF128
  872 062f 07       		.byte	0x7
  873 0630 D502     		.2byte	0x2d5
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 20
+
+
  874 0632 B3060000 		.4byte	0x6b3
  875 0636 24       		.byte	0x24
  876 0637 11       		.uleb128 0x11
- 877 0638 A40A0000 		.4byte	.LASF129
+ 877 0638 A80A0000 		.4byte	.LASF129
  878 063c 07       		.byte	0x7
  879 063d D702     		.2byte	0x2d7
  880 063f AD060000 		.4byte	0x6ad
  881 0643 28       		.byte	0x28
  882 0644 11       		.uleb128 0x11
- 883 0645 B20A0000 		.4byte	.LASF130
+ 883 0645 B60A0000 		.4byte	.LASF130
  884 0649 07       		.byte	0x7
  885 064a D802     		.2byte	0x2d8
  886 064c B8000000 		.4byte	0xb8
  887 0650 2C       		.byte	0x2c
  888 0651 11       		.uleb128 0x11
- 889 0652 74040000 		.4byte	.LASF131
+ 889 0652 78040000 		.4byte	.LASF131
  890 0656 07       		.byte	0x7
  891 0657 D902     		.2byte	0x2d9
  892 0659 CA000000 		.4byte	0xca
  893 065d 30       		.byte	0x30
  894 065e 11       		.uleb128 0x11
- 895 065f 64080000 		.4byte	.LASF132
+ 895 065f 68080000 		.4byte	.LASF132
  896 0663 07       		.byte	0x7
  897 0664 DA02     		.2byte	0x2da
  898 0666 CA000000 		.4byte	0xca
  899 066a 34       		.byte	0x34
  900 066b 11       		.uleb128 0x11
- 901 066c 19060000 		.4byte	.LASF133
+ 901 066c 1D060000 		.4byte	.LASF133
  902 0670 07       		.byte	0x7
  903 0671 DC02     		.2byte	0x2dc
  904 0673 AD060000 		.4byte	0x6ad
@@ -1188,50 +1186,50 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  916 068d CA000000 		.4byte	0xca
  917 0691 40       		.byte	0x40
  918 0692 11       		.uleb128 0x11
- 919 0693 8D050000 		.4byte	.LASF136
+ 919 0693 91050000 		.4byte	.LASF136
  920 0697 07       		.byte	0x7
  921 0698 E402     		.2byte	0x2e4
  922 069a 50050000 		.4byte	0x550
  923 069e 44       		.byte	0x44
  924 069f 11       		.uleb128 0x11
- 925 06a0 D4030000 		.4byte	.LASF137
+ 925 06a0 BD030000 		.4byte	.LASF137
  926 06a4 07       		.byte	0x7
  927 06a5 EB02     		.2byte	0x2eb
  928 06a7 6D050000 		.4byte	0x56d
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 21
-
-
  929 06ab 48       		.byte	0x48
  930 06ac 00       		.byte	0
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 21
+
+
  931 06ad 0C       		.uleb128 0xc
  932 06ae 04       		.byte	0x4
  933 06af 97000000 		.4byte	0x97
  934 06b3 05       		.uleb128 0x5
  935 06b4 23050000 		.4byte	0x523
  936 06b8 0B       		.uleb128 0xb
- 937 06b9 8E080000 		.4byte	.LASF138
+ 937 06b9 92080000 		.4byte	.LASF138
  938 06bd 07       		.byte	0x7
  939 06be EE02     		.2byte	0x2ee
  940 06c0 8E050000 		.4byte	0x58e
  941 06c4 0B       		.uleb128 0xb
- 942 06c5 F5040000 		.4byte	.LASF139
+ 942 06c5 F9040000 		.4byte	.LASF139
  943 06c9 08       		.byte	0x8
  944 06ca D901     		.2byte	0x1d9
  945 06cc 5C050000 		.4byte	0x55c
  946 06d0 10       		.uleb128 0x10
- 947 06d1 040C0000 		.4byte	.LASF141
+ 947 06d1 080C0000 		.4byte	.LASF141
  948 06d5 38       		.byte	0x38
  949 06d6 08       		.byte	0x8
  950 06d7 7502     		.2byte	0x275
  951 06d9 94070000 		.4byte	0x794
  952 06dd 11       		.uleb128 0x11
- 953 06de 41050000 		.4byte	.LASF142
+ 953 06de 45050000 		.4byte	.LASF142
  954 06e2 08       		.byte	0x8
  955 06e3 7802     		.2byte	0x278
  956 06e5 CA000000 		.4byte	0xca
  957 06e9 00       		.byte	0
  958 06ea 11       		.uleb128 0x11
- 959 06eb DC060000 		.4byte	.LASF143
+ 959 06eb E0060000 		.4byte	.LASF143
  960 06ef 08       		.byte	0x8
  961 06f0 7902     		.2byte	0x279
  962 06f2 CA000000 		.4byte	0xca
@@ -1243,28 +1241,28 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  968 06ff 21050000 		.4byte	0x521
  969 0703 08       		.byte	0x8
  970 0704 11       		.uleb128 0x11
- 971 0705 EC090000 		.4byte	.LASF145
+ 971 0705 F0090000 		.4byte	.LASF145
  972 0709 08       		.byte	0x8
  973 070a 7C02     		.2byte	0x27c
  974 070c B8000000 		.4byte	0xb8
  975 0710 0C       		.byte	0xc
  976 0711 11       		.uleb128 0x11
- 977 0712 F5050000 		.4byte	.LASF146
+ 977 0712 F9050000 		.4byte	.LASF146
  978 0716 08       		.byte	0x8
  979 0717 7D02     		.2byte	0x27d
  980 0719 CA000000 		.4byte	0xca
  981 071d 10       		.byte	0x10
  982 071e 11       		.uleb128 0x11
- 983 071f A00B0000 		.4byte	.LASF147
+ 983 071f A40B0000 		.4byte	.LASF147
  984 0723 08       		.byte	0x8
  985 0724 7E02     		.2byte	0x27e
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 22
-
-
  986 0726 CA000000 		.4byte	0xca
  987 072a 14       		.byte	0x14
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 22
+
+
  988 072b 11       		.uleb128 0x11
- 989 072c 9E0A0000 		.4byte	.LASF148
+ 989 072c A20A0000 		.4byte	.LASF148
  990 0730 08       		.byte	0x8
  991 0731 8002     		.2byte	0x280
  992 0733 21050000 		.4byte	0x521
@@ -1276,7 +1274,7 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  998 0740 B8000000 		.4byte	0xb8
  999 0744 1C       		.byte	0x1c
  1000 0745 11       		.uleb128 0x11
- 1001 0746 0E040000 		.4byte	.LASF150
+ 1001 0746 12040000 		.4byte	.LASF150
  1002 074a 08       		.byte	0x8
  1003 074b 8202     		.2byte	0x282
  1004 074d CA000000 		.4byte	0xca
@@ -1288,7 +1286,7 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1010 075a 21050000 		.4byte	0x521
  1011 075e 24       		.byte	0x24
  1012 075f 11       		.uleb128 0x11
- 1013 0760 2C040000 		.4byte	.LASF152
+ 1013 0760 30040000 		.4byte	.LASF152
  1014 0764 08       		.byte	0x8
  1015 0765 8502     		.2byte	0x285
  1016 0767 B8000000 		.4byte	0xb8
@@ -1300,34 +1298,34 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1022 0774 CA000000 		.4byte	0xca
  1023 0778 2C       		.byte	0x2c
  1024 0779 11       		.uleb128 0x11
- 1025 077a 8D050000 		.4byte	.LASF136
+ 1025 077a 91050000 		.4byte	.LASF136
  1026 077e 08       		.byte	0x8
  1027 077f 8B02     		.2byte	0x28b
  1028 0781 C4060000 		.4byte	0x6c4
  1029 0785 30       		.byte	0x30
  1030 0786 11       		.uleb128 0x11
- 1031 0787 960A0000 		.4byte	.LASF154
+ 1031 0787 9A0A0000 		.4byte	.LASF154
  1032 078b 08       		.byte	0x8
  1033 078c 8E02     		.2byte	0x28e
  1034 078e B8000000 		.4byte	0xb8
  1035 0792 34       		.byte	0x34
  1036 0793 00       		.byte	0
  1037 0794 0B       		.uleb128 0xb
- 1038 0795 C40A0000 		.4byte	.LASF155
+ 1038 0795 C80A0000 		.4byte	.LASF155
  1039 0799 08       		.byte	0x8
  1040 079a 9102     		.2byte	0x291
  1041 079c D0060000 		.4byte	0x6d0
  1042 07a0 12       		.uleb128 0x12
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 23
-
-
  1043 07a1 92020000 		.4byte	.LASF156
  1044 07a5 64       		.byte	0x64
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 23
+
+
  1045 07a6 09       		.byte	0x9
  1046 07a7 2F       		.byte	0x2f
  1047 07a8 D9080000 		.4byte	0x8d9
  1048 07ac 07       		.uleb128 0x7
- 1049 07ad 19070000 		.4byte	.LASF157
+ 1049 07ad 1D070000 		.4byte	.LASF157
  1050 07b1 09       		.byte	0x9
  1051 07b2 31       		.byte	0x31
  1052 07b3 B8000000 		.4byte	0xb8
@@ -1345,7 +1343,7 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1064 07cb B8000000 		.4byte	0xb8
  1065 07cf 08       		.byte	0x8
  1066 07d0 07       		.uleb128 0x7
- 1067 07d1 E6050000 		.4byte	.LASF160
+ 1067 07d1 EA050000 		.4byte	.LASF160
  1068 07d5 09       		.byte	0x9
  1069 07d6 35       		.byte	0x35
  1070 07d7 B8000000 		.4byte	0xb8
@@ -1357,109 +1355,109 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1076 07e3 B8000000 		.4byte	0xb8
  1077 07e7 10       		.byte	0x10
  1078 07e8 07       		.uleb128 0x7
- 1079 07e9 550A0000 		.4byte	.LASF162
+ 1079 07e9 590A0000 		.4byte	.LASF162
  1080 07ed 09       		.byte	0x9
  1081 07ee 37       		.byte	0x37
  1082 07ef B8000000 		.4byte	0xb8
  1083 07f3 14       		.byte	0x14
  1084 07f4 07       		.uleb128 0x7
- 1085 07f5 5D0A0000 		.4byte	.LASF163
+ 1085 07f5 610A0000 		.4byte	.LASF163
  1086 07f9 09       		.byte	0x9
  1087 07fa 38       		.byte	0x38
  1088 07fb B8000000 		.4byte	0xb8
  1089 07ff 18       		.byte	0x18
  1090 0800 07       		.uleb128 0x7
- 1091 0801 13080000 		.4byte	.LASF164
+ 1091 0801 17080000 		.4byte	.LASF164
  1092 0805 09       		.byte	0x9
  1093 0806 39       		.byte	0x39
  1094 0807 23050000 		.4byte	0x523
  1095 080b 1C       		.byte	0x1c
  1096 080c 07       		.uleb128 0x7
- 1097 080d AE0B0000 		.4byte	.LASF165
+ 1097 080d B20B0000 		.4byte	.LASF165
  1098 0811 09       		.byte	0x9
  1099 0812 3A       		.byte	0x3a
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 24
-
-
  1100 0813 B8000000 		.4byte	0xb8
  1101 0817 20       		.byte	0x20
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 24
+
+
  1102 0818 07       		.uleb128 0x7
- 1103 0819 650A0000 		.4byte	.LASF166
+ 1103 0819 690A0000 		.4byte	.LASF166
  1104 081d 09       		.byte	0x9
  1105 081e 3B       		.byte	0x3b
  1106 081f B8000000 		.4byte	0xb8
  1107 0823 24       		.byte	0x24
  1108 0824 07       		.uleb128 0x7
- 1109 0825 D6040000 		.4byte	.LASF167
+ 1109 0825 DA040000 		.4byte	.LASF167
  1110 0829 09       		.byte	0x9
  1111 082a 3C       		.byte	0x3c
  1112 082b 23050000 		.4byte	0x523
  1113 082f 28       		.byte	0x28
  1114 0830 07       		.uleb128 0x7
- 1115 0831 36040000 		.4byte	.LASF168
+ 1115 0831 3A040000 		.4byte	.LASF168
  1116 0835 09       		.byte	0x9
  1117 0836 3E       		.byte	0x3e
  1118 0837 B8000000 		.4byte	0xb8
  1119 083b 2C       		.byte	0x2c
  1120 083c 07       		.uleb128 0x7
- 1121 083d D9050000 		.4byte	.LASF169
+ 1121 083d DD050000 		.4byte	.LASF169
  1122 0841 09       		.byte	0x9
  1123 0842 3F       		.byte	0x3f
  1124 0843 B8000000 		.4byte	0xb8
  1125 0847 30       		.byte	0x30
  1126 0848 07       		.uleb128 0x7
- 1127 0849 260B0000 		.4byte	.LASF170
+ 1127 0849 2A0B0000 		.4byte	.LASF170
  1128 084d 09       		.byte	0x9
  1129 084e 40       		.byte	0x40
  1130 084f B8000000 		.4byte	0xb8
  1131 0853 34       		.byte	0x34
  1132 0854 07       		.uleb128 0x7
- 1133 0855 64070000 		.4byte	.LASF171
+ 1133 0855 68070000 		.4byte	.LASF171
  1134 0859 09       		.byte	0x9
  1135 085a 41       		.byte	0x41
  1136 085b B8000000 		.4byte	0xb8
  1137 085f 38       		.byte	0x38
  1138 0860 07       		.uleb128 0x7
- 1139 0861 54050000 		.4byte	.LASF172
+ 1139 0861 58050000 		.4byte	.LASF172
  1140 0865 09       		.byte	0x9
  1141 0866 42       		.byte	0x42
  1142 0867 B8000000 		.4byte	0xb8
  1143 086b 3C       		.byte	0x3c
  1144 086c 07       		.uleb128 0x7
- 1145 086d 4B080000 		.4byte	.LASF173
+ 1145 086d 4F080000 		.4byte	.LASF173
  1146 0871 09       		.byte	0x9
  1147 0872 44       		.byte	0x44
  1148 0873 B8000000 		.4byte	0xb8
  1149 0877 40       		.byte	0x40
  1150 0878 07       		.uleb128 0x7
- 1151 0879 900B0000 		.4byte	.LASF174
+ 1151 0879 940B0000 		.4byte	.LASF174
  1152 087d 09       		.byte	0x9
  1153 087e 45       		.byte	0x45
  1154 087f B8000000 		.4byte	0xb8
  1155 0883 44       		.byte	0x44
  1156 0884 07       		.uleb128 0x7
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 25
-
-
- 1157 0885 FA090000 		.4byte	.LASF175
+ 1157 0885 FE090000 		.4byte	.LASF175
  1158 0889 09       		.byte	0x9
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 25
+
+
  1159 088a 47       		.byte	0x47
  1160 088b B8000000 		.4byte	0xb8
  1161 088f 48       		.byte	0x48
  1162 0890 07       		.uleb128 0x7
- 1163 0891 84070000 		.4byte	.LASF176
+ 1163 0891 88070000 		.4byte	.LASF176
  1164 0895 09       		.byte	0x9
  1165 0896 48       		.byte	0x48
  1166 0897 B8000000 		.4byte	0xb8
  1167 089b 4C       		.byte	0x4c
  1168 089c 07       		.uleb128 0x7
- 1169 089d 27060000 		.4byte	.LASF177
+ 1169 089d 2B060000 		.4byte	.LASF177
  1170 08a1 09       		.byte	0x9
  1171 08a2 4A       		.byte	0x4a
  1172 08a3 B8000000 		.4byte	0xb8
  1173 08a7 50       		.byte	0x50
  1174 08a8 07       		.uleb128 0x7
- 1175 08a9 7F050000 		.4byte	.LASF178
+ 1175 08a9 83050000 		.4byte	.LASF178
  1176 08ad 09       		.byte	0x9
  1177 08ae 4B       		.byte	0x4b
  1178 08af B8000000 		.4byte	0xb8
@@ -1471,20 +1469,20 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1184 08bb B8000000 		.4byte	0xb8
  1185 08bf 58       		.byte	0x58
  1186 08c0 07       		.uleb128 0x7
- 1187 08c1 CD0B0000 		.4byte	.LASF180
+ 1187 08c1 D10B0000 		.4byte	.LASF180
  1188 08c5 09       		.byte	0x9
  1189 08c6 4E       		.byte	0x4e
  1190 08c7 B8000000 		.4byte	0xb8
  1191 08cb 5C       		.byte	0x5c
  1192 08cc 07       		.uleb128 0x7
- 1193 08cd 50090000 		.4byte	.LASF181
+ 1193 08cd 54090000 		.4byte	.LASF181
  1194 08d1 09       		.byte	0x9
  1195 08d2 50       		.byte	0x50
  1196 08d3 B8000000 		.4byte	0xb8
  1197 08d7 60       		.byte	0x60
  1198 08d8 00       		.byte	0
  1199 08d9 03       		.uleb128 0x3
- 1200 08da 760B0000 		.4byte	.LASF182
+ 1200 08da 7A0B0000 		.4byte	.LASF182
  1201 08de 09       		.byte	0x9
  1202 08df 51       		.byte	0x51
  1203 08e0 A0070000 		.4byte	0x7a0
@@ -1498,11 +1496,11 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1211 08f1 01       		.byte	0x1
  1212 08f2 3F       		.byte	0x3f
  1213 08f3 89000000 		.4byte	0x89
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 26
-
-
  1214 08f7 00000000 		.4byte	.LFB589
  1215 08fb 20000000 		.4byte	.LFE589-.LFB589
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 26
+
+
  1216 08ff 01       		.uleb128 0x1
  1217 0900 9C       		.byte	0x9c
  1218 0901 57090000 		.4byte	0x957
@@ -1547,7 +1545,7 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1257 0955 00       		.byte	0
  1258 0956 00       		.byte	0
  1259 0957 1A       		.uleb128 0x1a
- 1260 0958 38070000 		.4byte	.LASF183
+ 1260 0958 3C070000 		.4byte	.LASF183
  1261 095c 05       		.byte	0x5
  1262 095d A7       		.byte	0xa7
  1263 095e 62090000 		.4byte	0x962
@@ -1557,25 +1555,25 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1267 0968 1B       		.uleb128 0x1b
  1268 0969 E7040000 		.4byte	0x4e7
  1269 096d 1A       		.uleb128 0x1a
- 1270 096e 14050000 		.4byte	.LASF184
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 27
-
-
+ 1270 096e 18050000 		.4byte	.LASF184
  1271 0972 0A       		.byte	0xa
  1272 0973 87       		.byte	0x87
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 27
+
+
  1273 0974 94070000 		.4byte	0x794
  1274 0978 1A       		.uleb128 0x1a
- 1275 0979 DB030000 		.4byte	.LASF185
+ 1275 0979 C4030000 		.4byte	.LASF185
  1276 097d 0B       		.byte	0xb
  1277 097e 7F       		.byte	0x7f
  1278 097f B8060000 		.4byte	0x6b8
  1279 0983 1A       		.uleb128 0x1a
- 1280 0984 96050000 		.4byte	.LASF186
+ 1280 0984 9A050000 		.4byte	.LASF186
  1281 0988 0C       		.byte	0xc
  1282 0989 7F       		.byte	0x7f
  1283 098a B8060000 		.4byte	0x6b8
  1284 098e 1A       		.uleb128 0x1a
- 1285 098f E4070000 		.4byte	.LASF187
+ 1285 098f E8070000 		.4byte	.LASF187
  1286 0993 0D       		.byte	0xd
  1287 0994 1F       		.byte	0x1f
  1288 0995 99090000 		.4byte	0x999
@@ -1587,18 +1585,18 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1294 09a4 1F       		.byte	0x1f
  1295 09a5 99090000 		.4byte	0x999
  1296 09a9 1A       		.uleb128 0x1a
- 1297 09aa 60060000 		.4byte	.LASF189
+ 1297 09aa 64060000 		.4byte	.LASF189
  1298 09ae 0F       		.byte	0xf
  1299 09af 1F       		.byte	0x1f
  1300 09b0 99090000 		.4byte	0x999
  1301 09b4 1C       		.uleb128 0x1c
- 1302 09b5 EC0A0000 		.4byte	.LASF190
- 1303 09b9 EC0A0000 		.4byte	.LASF190
+ 1302 09b5 F00A0000 		.4byte	.LASF190
+ 1303 09b9 F00A0000 		.4byte	.LASF190
  1304 09bd 10       		.byte	0x10
  1305 09be 24       		.byte	0x24
  1306 09bf 1D       		.uleb128 0x1d
- 1307 09c0 A4050000 		.4byte	.LASF191
- 1308 09c4 A4050000 		.4byte	.LASF191
+ 1307 09c0 A8050000 		.4byte	.LASF191
+ 1308 09c4 A8050000 		.4byte	.LASF191
  1309 09c8 11       		.byte	0x11
  1310 09c9 2502     		.2byte	0x225
  1311 09cb 1D       		.uleb128 0x1d
@@ -1607,10 +1605,10 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1314 09d4 12       		.byte	0x12
  1315 09d5 CC08     		.2byte	0x8cc
  1316 09d7 1D       		.uleb128 0x1d
- 1317 09d8 97030000 		.4byte	.LASF193
- 1318 09dc 97030000 		.4byte	.LASF193
+ 1317 09d8 ED030000 		.4byte	.LASF193
+ 1318 09dc ED030000 		.4byte	.LASF193
  1319 09e0 06       		.byte	0x6
- 1320 09e1 4706     		.2byte	0x647
+ 1320 09e1 4806     		.2byte	0x648
  1321 09e3 00       		.byte	0
  1322              		.section	.debug_abbrev,"",%progbits
  1323              	.Ldebug_abbrev0:
@@ -1618,11 +1616,11 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1325 0001 11       		.uleb128 0x11
  1326 0002 01       		.byte	0x1
  1327 0003 25       		.uleb128 0x25
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 28
-
-
  1328 0004 0E       		.uleb128 0xe
  1329 0005 13       		.uleb128 0x13
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 28
+
+
  1330 0006 0B       		.uleb128 0xb
  1331 0007 03       		.uleb128 0x3
  1332 0008 0E       		.uleb128 0xe
@@ -1678,11 +1676,11 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1382 003a 13       		.uleb128 0x13
  1383 003b 00       		.byte	0
  1384 003c 00       		.byte	0
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 29
-
-
  1385 003d 06       		.uleb128 0x6
  1386 003e 13       		.uleb128 0x13
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 29
+
+
  1387 003f 01       		.byte	0x1
  1388 0040 0B       		.uleb128 0xb
  1389 0041 0B       		.uleb128 0xb
@@ -1738,11 +1736,11 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1439 0073 00       		.byte	0
  1440 0074 0B       		.uleb128 0xb
  1441 0075 0B       		.uleb128 0xb
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 30
-
-
  1442 0076 00       		.byte	0
  1443 0077 00       		.byte	0
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 30
+
+
  1444 0078 0B       		.uleb128 0xb
  1445 0079 16       		.uleb128 0x16
  1446 007a 00       		.byte	0
@@ -1798,11 +1796,11 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1496 00ac 03       		.uleb128 0x3
  1497 00ad 0E       		.uleb128 0xe
  1498 00ae 0B       		.uleb128 0xb
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 31
-
-
  1499 00af 0B       		.uleb128 0xb
  1500 00b0 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 31
+
+
  1501 00b1 0B       		.uleb128 0xb
  1502 00b2 3B       		.uleb128 0x3b
  1503 00b3 05       		.uleb128 0x5
@@ -1858,11 +1856,11 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1553 00e5 14       		.uleb128 0x14
  1554 00e6 2E       		.uleb128 0x2e
  1555 00e7 01       		.byte	0x1
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 32
-
-
  1556 00e8 3F       		.uleb128 0x3f
  1557 00e9 19       		.uleb128 0x19
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 32
+
+
  1558 00ea 03       		.uleb128 0x3
  1559 00eb 0E       		.uleb128 0xe
  1560 00ec 3A       		.uleb128 0x3a
@@ -1918,11 +1916,11 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1610 0124 00       		.byte	0
  1611 0125 02       		.uleb128 0x2
  1612 0126 18       		.uleb128 0x18
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 33
-
-
  1613 0127 9142     		.uleb128 0x2111
  1614 0129 18       		.uleb128 0x18
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 33
+
+
  1615 012a 00       		.byte	0
  1616 012b 00       		.byte	0
  1617 012c 18       		.uleb128 0x18
@@ -1978,11 +1976,11 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1667 0162 0E       		.uleb128 0xe
  1668 0163 03       		.uleb128 0x3
  1669 0164 0E       		.uleb128 0xe
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 34
-
-
  1670 0165 3A       		.uleb128 0x3a
  1671 0166 0B       		.uleb128 0xb
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 34
+
+
  1672 0167 3B       		.uleb128 0x3b
  1673 0168 0B       		.uleb128 0xb
  1674 0169 00       		.byte	0
@@ -2038,11 +2036,11 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1716      6B00
  1717              	.LASF161:
  1718 0012 72756E4D 		.ascii	"runMode\000"
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 35
-
-
  1718      6F646500 
  1719              	.LASF192:
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 35
+
+
  1720 001a 43795F42 		.ascii	"Cy_BLE_ProcessEvents\000"
  1720      4C455F50 
  1720      726F6365 
@@ -2098,11 +2096,11 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1740      00
  1741              	.LASF39:
  1742 00ba 63707573 		.ascii	"cpussIpcIrqNr\000"
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 36
-
-
  1742      73497063 
  1742      4972714E 
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 36
+
+
  1742      7200
  1743              	.LASF3:
  1744 00c8 5F5F7569 		.ascii	"__uint8_t\000"
@@ -2158,11 +2156,11 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1764 0166 72785269 		.ascii	"rxRingBuf\000"
  1764      6E674275 
  1764      6600
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 37
-
-
  1765              	.LASF96:
  1766 0170 63707573 		.ascii	"cpussSysTickCtlOffset\000"
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 37
+
+
  1766      73537973 
  1766      5469636B 
  1766      43746C4F 
@@ -2218,11 +2216,11 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1786      70655365 
  1786      6C506F73 
  1787              	.LASF153:
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 38
-
-
  1788 021e 74784C65 		.ascii	"txLeftToTransmit\000"
  1788      6674546F 
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 38
+
+
  1788      5472616E 
  1788      736D6974 
  1788      00
@@ -2278,11 +2276,11 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1809              	.LASF7:
  1810 02ce 6C6F6E67 		.ascii	"long int\000"
  1810      20696E74 
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 39
-
-
  1810      00
  1811              	.LASF122:
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 39
+
+
  1812 02d7 6D617374 		.ascii	"masterRdDir\000"
  1812      65725264 
  1812      44697200 
@@ -2337,736 +2335,736 @@ ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 1
  1832              	.LASF198:
  1833 0392 6D61696E 		.ascii	"main\000"
  1833      00
- 1834              	.LASF193:
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 40
+ 1834              	.LASF80:
+ 1835 0397 70657269 		.ascii	"periDiv8CtlOffset\000"
+ 1835      44697638 
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 40
 
 
- 1835 0397 43795F53 		.ascii	"Cy_SysPm_CpuEnterSleep\000"
- 1835      7973506D 
- 1835      5F437075 
- 1835      456E7465 
- 1835      72536C65 
- 1836              	.LASF80:
- 1837 03ae 70657269 		.ascii	"periDiv8CtlOffset\000"
- 1837      44697638 
- 1837      43746C4F 
- 1837      66667365 
- 1837      7400
- 1838              	.LASF87:
- 1839 03c0 6770696F 		.ascii	"gpioPrtCfgOutOffset\000"
- 1839      50727443 
- 1839      66674F75 
- 1839      744F6666 
- 1839      73657400 
- 1840              	.LASF137:
- 1841 03d4 63624164 		.ascii	"cbAddr\000"
- 1841      647200
- 1842              	.LASF185:
- 1843 03db 4932435F 		.ascii	"I2C_1_context\000"
- 1843      315F636F 
- 1843      6E746578 
- 1843      7400
- 1844              	.LASF8:
- 1845 03e9 5F5F7569 		.ascii	"__uint32_t\000"
- 1845      6E743332 
- 1845      5F7400
- 1846              	.LASF50:
- 1847 03f4 70617373 		.ascii	"passSarChannels\000"
- 1847      53617243 
- 1847      68616E6E 
- 1847      656C7300 
+ 1835      43746C4F 
+ 1835      66667365 
+ 1835      7400
+ 1836              	.LASF87:
+ 1837 03a9 6770696F 		.ascii	"gpioPrtCfgOutOffset\000"
+ 1837      50727443 
+ 1837      66674F75 
+ 1837      744F6666 
+ 1837      73657400 
+ 1838              	.LASF137:
+ 1839 03bd 63624164 		.ascii	"cbAddr\000"
+ 1839      647200
+ 1840              	.LASF185:
+ 1841 03c4 4932435F 		.ascii	"I2C_1_context\000"
+ 1841      315F636F 
+ 1841      6E746578 
+ 1841      7400
+ 1842              	.LASF8:
+ 1843 03d2 5F5F7569 		.ascii	"__uint32_t\000"
+ 1843      6E743332 
+ 1843      5F7400
+ 1844              	.LASF50:
+ 1845 03dd 70617373 		.ascii	"passSarChannels\000"
+ 1845      53617243 
+ 1845      68616E6E 
+ 1845      656C7300 
+ 1846              	.LASF193:
+ 1847 03ed 43795F53 		.ascii	"Cy_SysPm_CpuEnterDeepSleep\000"
+ 1847      7973506D 
+ 1847      5F437075 
+ 1847      456E7465 
+ 1847      72446565 
  1848              	.LASF4:
- 1849 0404 5F5F696E 		.ascii	"__int16_t\000"
+ 1849 0408 5F5F696E 		.ascii	"__int16_t\000"
  1849      7431365F 
  1849      7400
  1850              	.LASF150:
- 1851 040e 72784275 		.ascii	"rxBufIdx\000"
+ 1851 0412 72784275 		.ascii	"rxBufIdx\000"
  1851      66496478 
  1851      00
  1852              	.LASF93:
- 1853 0417 63707573 		.ascii	"cpussCm4PwrCtlOffset\000"
+ 1853 041b 63707573 		.ascii	"cpussCm4PwrCtlOffset\000"
  1853      73436D34 
  1853      50777243 
  1853      746C4F66 
  1853      66736574 
  1854              	.LASF152:
- 1855 042c 74784275 		.ascii	"txBufSize\000"
+ 1855 0430 74784275 		.ascii	"txBufSize\000"
  1855      6653697A 
  1855      6500
  1856              	.LASF168:
- 1857 0436 696E7465 		.ascii	"interruptSources\000"
+ 1857 043a 696E7465 		.ascii	"interruptSources\000"
  1857      72727570 
  1857      74536F75 
  1857      72636573 
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 41
-
-
  1857      00
  1858              	.LASF88:
- 1859 0447 6770696F 		.ascii	"gpioPrtCfgSioOffset\000"
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 41
+
+
+ 1859 044b 6770696F 		.ascii	"gpioPrtCfgSioOffset\000"
  1859      50727443 
  1859      66675369 
  1859      6F4F6666 
  1859      73657400 
  1860              	.LASF40:
- 1861 045b 63707573 		.ascii	"cpussDwChNr\000"
+ 1861 045f 63707573 		.ascii	"cpussDwChNr\000"
  1861      73447743 
  1861      684E7200 
  1862              	.LASF12:
- 1863 0467 756E7369 		.ascii	"unsigned int\000"
+ 1863 046b 756E7369 		.ascii	"unsigned int\000"
  1863      676E6564 
  1863      20696E74 
  1863      00
  1864              	.LASF131:
- 1865 0474 736C6176 		.ascii	"slaveTxBufferIdx\000"
+ 1865 0478 736C6176 		.ascii	"slaveTxBufferIdx\000"
  1865      65547842 
  1865      75666665 
  1865      72496478 
  1865      00
  1866              	.LASF17:
- 1867 0485 73697A65 		.ascii	"sizetype\000"
+ 1867 0489 73697A65 		.ascii	"sizetype\000"
  1867      74797065 
  1867      00
  1868              	.LASF128:
- 1869 048e 736C6176 		.ascii	"slaveRdBufEmpty\000"
+ 1869 0492 736C6176 		.ascii	"slaveRdBufEmpty\000"
  1869      65526442 
  1869      7566456D 
  1869      70747900 
  1870              	.LASF73:
- 1871 049e 70657269 		.ascii	"periTrCmdGrSelMsk\000"
+ 1871 04a2 70657269 		.ascii	"periTrCmdGrSelMsk\000"
  1871      5472436D 
  1871      64477253 
  1871      656C4D73 
  1871      6B00
  1872              	.LASF62:
- 1873 04b0 666C6173 		.ascii	"flashCtlMainWs1Freq\000"
+ 1873 04b4 666C6173 		.ascii	"flashCtlMainWs1Freq\000"
  1873      6843746C 
  1873      4D61696E 
  1873      57733146 
  1873      72657100 
  1874              	.LASF9:
- 1875 04c4 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1875 04c8 6C6F6E67 		.ascii	"long unsigned int\000"
  1875      20756E73 
  1875      69676E65 
  1875      6420696E 
  1875      7400
  1876              	.LASF167:
- 1877 04d6 656E6162 		.ascii	"enableCompareSwap\000"
+ 1877 04da 656E6162 		.ascii	"enableCompareSwap\000"
  1877      6C65436F 
  1877      6D706172 
  1877      65537761 
  1877      7000
  1878              	.LASF75:
- 1879 04e8 70657269 		.ascii	"periTrGrSize\000"
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 42
-
-
+ 1879 04ec 70657269 		.ascii	"periTrGrSize\000"
  1879      54724772 
  1879      53697A65 
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 42
+
+
  1879      00
  1880              	.LASF139:
- 1881 04f5 63795F63 		.ascii	"cy_cb_scb_uart_handle_events_t\000"
+ 1881 04f9 63795F63 		.ascii	"cy_cb_scb_uart_handle_events_t\000"
  1881      625F7363 
  1881      625F7561 
  1881      72745F68 
  1881      616E646C 
  1882              	.LASF184:
- 1883 0514 55415254 		.ascii	"UART_context\000"
+ 1883 0518 55415254 		.ascii	"UART_context\000"
  1883      5F636F6E 
  1883      74657874 
  1883      00
  1884              	.LASF38:
- 1885 0521 63707573 		.ascii	"cpussIpcNr\000"
+ 1885 0525 63707573 		.ascii	"cpussIpcNr\000"
  1885      73497063 
  1885      4E7200
  1886              	.LASF25:
- 1887 052c 6770696F 		.ascii	"gpioBase\000"
+ 1887 0530 6770696F 		.ascii	"gpioBase\000"
  1887      42617365 
  1887      00
  1888              	.LASF51:
- 1889 0535 65704D6F 		.ascii	"epMonitorNr\000"
+ 1889 0539 65704D6F 		.ascii	"epMonitorNr\000"
  1889      6E69746F 
  1889      724E7200 
  1890              	.LASF142:
- 1891 0541 74785374 		.ascii	"txStatus\000"
+ 1891 0545 74785374 		.ascii	"txStatus\000"
  1891      61747573 
  1891      00
  1892              	.LASF118:
- 1893 054a 75736554 		.ascii	"useTxFifo\000"
+ 1893 054e 75736554 		.ascii	"useTxFifo\000"
  1893      78466966 
  1893      6F00
  1894              	.LASF172:
- 1895 0554 73776170 		.ascii	"swapInputMode\000"
+ 1895 0558 73776170 		.ascii	"swapInputMode\000"
  1895      496E7075 
  1895      744D6F64 
  1895      6500
  1896              	.LASF74:
- 1897 0562 70657269 		.ascii	"periTrGrOffset\000"
+ 1897 0566 70657269 		.ascii	"periTrGrOffset\000"
  1897      54724772 
  1897      4F666673 
  1897      657400
  1898              	.LASF101:
- 1899 0571 63707573 		.ascii	"cpussRam1Ctl0\000"
+ 1899 0575 63707573 		.ascii	"cpussRam1Ctl0\000"
  1899      7352616D 
  1899      3143746C 
  1899      3000
  1900              	.LASF178:
- 1901 057f 6B696C6C 		.ascii	"killInputMode\000"
+ 1901 0583 6B696C6C 		.ascii	"killInputMode\000"
  1901      496E7075 
  1901      744D6F64 
  1901      6500
  1902              	.LASF136:
- 1903 058d 63624576 		.ascii	"cbEvents\000"
+ 1903 0591 63624576 		.ascii	"cbEvents\000"
  1903      656E7473 
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 43
-
-
  1903      00
  1904              	.LASF186:
- 1905 0596 4932435F 		.ascii	"I2C_2_context\000"
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 43
+
+
+ 1905 059a 4932435F 		.ascii	"I2C_2_context\000"
  1905      325F636F 
  1905      6E746578 
  1905      7400
  1906              	.LASF191:
- 1907 05a4 43795F53 		.ascii	"Cy_SysEnableCM4\000"
+ 1907 05a8 43795F53 		.ascii	"Cy_SysEnableCM4\000"
  1907      7973456E 
  1907      61626C65 
  1907      434D3400 
  1908              	.LASF33:
- 1909 05b4 6770696F 		.ascii	"gpioVersion\000"
+ 1909 05b8 6770696F 		.ascii	"gpioVersion\000"
  1909      56657273 
  1909      696F6E00 
  1910              	.LASF15:
- 1911 05c0 75696E74 		.ascii	"uint16_t\000"
+ 1911 05c4 75696E74 		.ascii	"uint16_t\000"
  1911      31365F74 
  1911      00
  1912              	.LASF105:
- 1913 05c9 63795F73 		.ascii	"cy_stc_device_t\000"
+ 1913 05cd 63795F73 		.ascii	"cy_stc_device_t\000"
  1913      74635F64 
  1913      65766963 
  1913      655F7400 
  1914              	.LASF169:
- 1915 05d9 696E7665 		.ascii	"invertPWMOut\000"
+ 1915 05dd 696E7665 		.ascii	"invertPWMOut\000"
  1915      72745057 
  1915      4D4F7574 
  1915      00
  1916              	.LASF160:
- 1917 05e6 64656164 		.ascii	"deadTimeClocks\000"
+ 1917 05ea 64656164 		.ascii	"deadTimeClocks\000"
  1917      54696D65 
  1917      436C6F63 
  1917      6B7300
  1918              	.LASF146:
- 1919 05f5 72785269 		.ascii	"rxRingBufHead\000"
+ 1919 05f9 72785269 		.ascii	"rxRingBufHead\000"
  1919      6E674275 
  1919      66486561 
  1919      6400
  1920              	.LASF94:
- 1921 0603 63707573 		.ascii	"cpussTrimRamCtlOffset\000"
+ 1921 0607 63707573 		.ascii	"cpussTrimRamCtlOffset\000"
  1921      73547269 
  1921      6D52616D 
  1921      43746C4F 
  1921      66667365 
  1922              	.LASF133:
- 1923 0619 736C6176 		.ascii	"slaveRxBuffer\000"
+ 1923 061d 736C6176 		.ascii	"slaveRxBuffer\000"
  1923      65527842 
  1923      75666665 
  1923      7200
  1924              	.LASF177:
- 1925 0627 73746172 		.ascii	"startInput\000"
+ 1925 062b 73746172 		.ascii	"startInput\000"
  1925      74496E70 
  1925      757400
  1926              	.LASF29:
- 1927 0632 63707573 		.ascii	"cpussVersion\000"
+ 1927 0636 63707573 		.ascii	"cpussVersion\000"
  1927      73566572 
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 44
-
-
  1927      73696F6E 
  1927      00
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 44
+
+
  1928              	.LASF36:
- 1929 063f 70657269 		.ascii	"periVersion\000"
+ 1929 0643 70657269 		.ascii	"periVersion\000"
  1929      56657273 
  1929      696F6E00 
  1930              	.LASF92:
- 1931 064b 63707573 		.ascii	"cpussCm0StatusOffset\000"
+ 1931 064f 63707573 		.ascii	"cpussCm0StatusOffset\000"
  1931      73436D30 
  1931      53746174 
  1931      75734F66 
  1931      66736574 
  1932              	.LASF189:
- 1933 0660 50574D5F 		.ascii	"PWM_TIM_config\000"
+ 1933 0664 50574D5F 		.ascii	"PWM_TIM_config\000"
  1933      54494D5F 
  1933      636F6E66 
  1933      696700
  1934              	.LASF66:
- 1935 066f 64774368 		.ascii	"dwChOffset\000"
+ 1935 0673 64774368 		.ascii	"dwChOffset\000"
  1935      4F666673 
  1935      657400
  1936              	.LASF125:
- 1937 067a 6D617374 		.ascii	"masterBufferIdx\000"
+ 1937 067e 6D617374 		.ascii	"masterBufferIdx\000"
  1937      65724275 
  1937      66666572 
  1937      49647800 
  1938              	.LASF41:
- 1939 068a 63707573 		.ascii	"cpussFlashPaSize\000"
+ 1939 068e 63707573 		.ascii	"cpussFlashPaSize\000"
  1939      73466C61 
  1939      73685061 
  1939      53697A65 
  1939      00
  1940              	.LASF79:
- 1941 069b 70657269 		.ascii	"periDivCmdPaTypeSelPos\000"
+ 1941 069f 70657269 		.ascii	"periDivCmdPaTypeSelPos\000"
  1941      44697643 
  1941      6D645061 
  1941      54797065 
  1941      53656C50 
  1942              	.LASF102:
- 1943 06b2 63707573 		.ascii	"cpussRam2Ctl0\000"
+ 1943 06b6 63707573 		.ascii	"cpussRam2Ctl0\000"
  1943      7352616D 
  1943      3243746C 
  1943      3000
  1944              	.LASF70:
- 1945 06c0 64775374 		.ascii	"dwStatusChIdxPos\000"
+ 1945 06c4 64775374 		.ascii	"dwStatusChIdxPos\000"
  1945      61747573 
  1945      43684964 
  1945      78506F73 
  1945      00
  1946              	.LASF52:
- 1947 06d1 75646250 		.ascii	"udbPresent\000"
+ 1947 06d5 75646250 		.ascii	"udbPresent\000"
  1947      72657365 
  1947      6E7400
  1948              	.LASF143:
- 1949 06dc 72785374 		.ascii	"rxStatus\000"
+ 1949 06e0 72785374 		.ascii	"rxStatus\000"
  1949      61747573 
  1949      00
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 45
-
-
  1950              	.LASF32:
- 1951 06e5 666C6173 		.ascii	"flashcVersion\000"
+ 1951 06e9 666C6173 		.ascii	"flashcVersion\000"
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 45
+
+
  1951      68635665 
  1951      7273696F 
  1951      6E00
  1952              	.LASF28:
- 1953 06f3 63727970 		.ascii	"cryptoBase\000"
+ 1953 06f7 63727970 		.ascii	"cryptoBase\000"
  1953      746F4261 
  1953      736500
  1954              	.LASF49:
- 1955 06fe 736D6966 		.ascii	"smifDeviceNr\000"
+ 1955 0702 736D6966 		.ascii	"smifDeviceNr\000"
  1955      44657669 
  1955      63654E72 
  1955      00
  1956              	.LASF103:
- 1957 070b 69706353 		.ascii	"ipcStructSize\000"
+ 1957 070f 69706353 		.ascii	"ipcStructSize\000"
  1957      74727563 
  1957      7453697A 
  1957      6500
  1958              	.LASF157:
- 1959 0719 70776D4D 		.ascii	"pwmMode\000"
+ 1959 071d 70776D4D 		.ascii	"pwmMode\000"
  1959      6F646500 
  1960              	.LASF107:
- 1961 0721 666C6F61 		.ascii	"float\000"
+ 1961 0725 666C6F61 		.ascii	"float\000"
  1961      7400
  1962              	.LASF71:
- 1963 0727 64775374 		.ascii	"dwStatusChIdxMsk\000"
+ 1963 072b 64775374 		.ascii	"dwStatusChIdxMsk\000"
  1963      61747573 
  1963      43684964 
  1963      784D736B 
  1963      00
  1964              	.LASF183:
- 1965 0738 63795F64 		.ascii	"cy_device\000"
+ 1965 073c 63795F64 		.ascii	"cy_device\000"
  1965      65766963 
  1965      6500
  1966              	.LASF99:
- 1967 0742 63707573 		.ascii	"cpussRomCtl\000"
+ 1967 0746 63707573 		.ascii	"cpussRomCtl\000"
  1967      73526F6D 
  1967      43746C00 
  1968              	.LASF69:
- 1969 074e 64774368 		.ascii	"dwChCtlPreemptablePos\000"
+ 1969 0752 64774368 		.ascii	"dwChCtlPreemptablePos\000"
  1969      43746C50 
  1969      7265656D 
  1969      70746162 
  1969      6C65506F 
  1970              	.LASF171:
- 1971 0764 6B696C6C 		.ascii	"killMode\000"
+ 1971 0768 6B696C6C 		.ascii	"killMode\000"
  1971      4D6F6465 
  1971      00
  1972              	.LASF22:
- 1973 076d 75646242 		.ascii	"udbBase\000"
+ 1973 0771 75646242 		.ascii	"udbBase\000"
  1973      61736500 
  1974              	.LASF112:
- 1975 0775 43595F53 		.ascii	"CY_SCB_I2C_ACK\000"
+ 1975 0779 43595F53 		.ascii	"CY_SCB_I2C_ACK\000"
  1975      43425F49 
  1975      32435F41 
  1975      434B00
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 46
-
-
  1976              	.LASF176:
- 1977 0784 73746172 		.ascii	"startInputMode\000"
+ 1977 0788 73746172 		.ascii	"startInputMode\000"
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 46
+
+
  1977      74496E70 
  1977      75744D6F 
  1977      646500
  1978              	.LASF1:
- 1979 0793 756E7369 		.ascii	"unsigned char\000"
+ 1979 0797 756E7369 		.ascii	"unsigned char\000"
  1979      676E6564 
  1979      20636861 
  1979      7200
  1980              	.LASF65:
- 1981 07a1 666C6173 		.ascii	"flashCtlMainWs4Freq\000"
+ 1981 07a5 666C6173 		.ascii	"flashCtlMainWs4Freq\000"
  1981      6843746C 
  1981      4D61696E 
  1981      57733446 
  1981      72657100 
  1982              	.LASF0:
- 1983 07b5 73686F72 		.ascii	"short int\000"
+ 1983 07b9 73686F72 		.ascii	"short int\000"
  1983      7420696E 
  1983      7400
  1984              	.LASF124:
- 1985 07bf 6D617374 		.ascii	"masterBufferSize\000"
+ 1985 07c3 6D617374 		.ascii	"masterBufferSize\000"
  1985      65724275 
  1985      66666572 
  1985      53697A65 
  1985      00
  1986              	.LASF76:
- 1987 07d0 70657269 		.ascii	"periDivCmdDivSelMsk\000"
+ 1987 07d4 70657269 		.ascii	"periDivCmdDivSelMsk\000"
  1987      44697643 
  1987      6D644469 
  1987      7653656C 
  1987      4D736B00 
  1988              	.LASF187:
- 1989 07e4 50574D5F 		.ascii	"PWM_AFE_config\000"
+ 1989 07e8 50574D5F 		.ascii	"PWM_AFE_config\000"
  1989      4146455F 
  1989      636F6E66 
  1989      696700
  1990              	.LASF63:
- 1991 07f3 666C6173 		.ascii	"flashCtlMainWs2Freq\000"
+ 1991 07f7 666C6173 		.ascii	"flashCtlMainWs2Freq\000"
  1991      6843746C 
  1991      4D61696E 
  1991      57733246 
  1991      72657100 
  1992              	.LASF121:
- 1993 0807 6D617374 		.ascii	"masterPause\000"
+ 1993 080b 6D617374 		.ascii	"masterPause\000"
  1993      65725061 
  1993      75736500 
  1994              	.LASF164:
- 1995 0813 656E6162 		.ascii	"enablePeriodSwap\000"
+ 1995 0817 656E6162 		.ascii	"enablePeriodSwap\000"
  1995      6C655065 
  1995      72696F64 
  1995      53776170 
  1995      00
  1996              	.LASF116:
- 1997 0824 63795F63 		.ascii	"cy_cb_scb_i2c_handle_addr_t\000"
+ 1997 0828 63795F63 		.ascii	"cy_cb_scb_i2c_handle_addr_t\000"
  1997      625F7363 
  1997      625F6932 
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 47
-
-
  1997      635F6861 
  1997      6E646C65 
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 47
+
+
  1998              	.LASF20:
- 1999 0840 666C6173 		.ascii	"flashcBase\000"
+ 1999 0844 666C6173 		.ascii	"flashcBase\000"
  1999      68634261 
  1999      736500
  2000              	.LASF173:
- 2001 084b 73776170 		.ascii	"swapInput\000"
+ 2001 084f 73776170 		.ascii	"swapInput\000"
  2001      496E7075 
  2001      7400
  2002              	.LASF126:
- 2003 0855 6D617374 		.ascii	"masterNumBytes\000"
+ 2003 0859 6D617374 		.ascii	"masterNumBytes\000"
  2003      65724E75 
  2003      6D427974 
  2003      657300
  2004              	.LASF132:
- 2005 0864 736C6176 		.ascii	"slaveTxBufferCnt\000"
+ 2005 0868 736C6176 		.ascii	"slaveTxBufferCnt\000"
  2005      65547842 
  2005      75666665 
  2005      72436E74 
  2005      00
  2006              	.LASF60:
- 2007 0875 666C6173 		.ascii	"flashEraseDelay\000"
+ 2007 0879 666C6173 		.ascii	"flashEraseDelay\000"
  2007      68457261 
  2007      73654465 
  2007      6C617900 
  2008              	.LASF16:
- 2009 0885 75696E74 		.ascii	"uint32_t\000"
+ 2009 0889 75696E74 		.ascii	"uint32_t\000"
  2009      33325F74 
  2009      00
  2010              	.LASF138:
- 2011 088e 63795F73 		.ascii	"cy_stc_scb_i2c_context_t\000"
+ 2011 0892 63795F73 		.ascii	"cy_stc_scb_i2c_context_t\000"
  2011      74635F73 
  2011      63625F69 
  2011      32635F63 
  2011      6F6E7465 
  2012              	.LASF194:
- 2013 08a7 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2013 08ab 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  2013      43313120 
  2013      352E342E 
  2013      31203230 
  2013      31363036 
- 2014 08da 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 2014 08de 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
  2014      20726576 
  2014      6973696F 
  2014      6E203233 
  2014      37373135 
- 2015 090d 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 2015 0911 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
  2015      67202D66 
  2015      66756E63 
  2015      74696F6E 
  2015      2D736563 
  2016              	.LASF111:
- 2017 0939 5F426F6F 		.ascii	"_Bool\000"
+ 2017 093d 5F426F6F 		.ascii	"_Bool\000"
  2017      6C00
  2018              	.LASF18:
- 2019 093f 6C6F6E67 		.ascii	"long double\000"
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 48
-
-
+ 2019 0943 6C6F6E67 		.ascii	"long double\000"
  2019      20646F75 
  2019      626C6500 
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 48
+
+
  2020              	.LASF106:
- 2021 094b 63686172 		.ascii	"char\000"
+ 2021 094f 63686172 		.ascii	"char\000"
  2021      00
  2022              	.LASF181:
- 2023 0950 636F756E 		.ascii	"countInput\000"
+ 2023 0954 636F756E 		.ascii	"countInput\000"
  2023      74496E70 
  2023      757400
  2024              	.LASF37:
- 2025 095b 70726F74 		.ascii	"protVersion\000"
+ 2025 095f 70726F74 		.ascii	"protVersion\000"
  2025      56657273 
  2025      696F6E00 
  2026              	.LASF100:
- 2027 0967 63707573 		.ascii	"cpussRam0Ctl0\000"
+ 2027 096b 63707573 		.ascii	"cpussRam0Ctl0\000"
  2027      7352616D 
  2027      3043746C 
  2027      3000
  2028              	.LASF5:
- 2029 0975 5F5F7569 		.ascii	"__uint16_t\000"
+ 2029 0979 5F5F7569 		.ascii	"__uint16_t\000"
  2029      6E743136 
  2029      5F7400
  2030              	.LASF81:
- 2031 0980 70657269 		.ascii	"periDiv16CtlOffset\000"
+ 2031 0984 70657269 		.ascii	"periDiv16CtlOffset\000"
  2031      44697631 
  2031      3643746C 
  2031      4F666673 
  2031      657400
  2032              	.LASF110:
- 2033 0993 43595F53 		.ascii	"CY_SYSPM_WAIT_FOR_EVENT\000"
+ 2033 0997 43595F53 		.ascii	"CY_SYSPM_WAIT_FOR_EVENT\000"
  2033      5953504D 
  2033      5F574149 
  2033      545F464F 
  2033      525F4556 
  2034              	.LASF123:
- 2035 09ab 6D617374 		.ascii	"masterBuffer\000"
+ 2035 09af 6D617374 		.ascii	"masterBuffer\000"
  2035      65724275 
  2035      66666572 
  2035      00
  2036              	.LASF34:
- 2037 09b8 6873696F 		.ascii	"hsiomVersion\000"
+ 2037 09bc 6873696F 		.ascii	"hsiomVersion\000"
  2037      6D566572 
  2037      73696F6E 
  2037      00
  2038              	.LASF59:
- 2039 09c5 666C6173 		.ascii	"flashProgramDelay\000"
+ 2039 09c9 666C6173 		.ascii	"flashProgramDelay\000"
  2039      6850726F 
  2039      6772616D 
  2039      44656C61 
  2039      7900
  2040              	.LASF44:
- 2041 09d7 63707573 		.ascii	"cpussNotConnectedIrq\000"
+ 2041 09db 63707573 		.ascii	"cpussNotConnectedIrq\000"
  2041      734E6F74 
  2041      436F6E6E 
  2041      65637465 
  2041      64497271 
  2042              	.LASF145:
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 49
-
-
- 2043 09ec 72785269 		.ascii	"rxRingBufSize\000"
+ 2043 09f0 72785269 		.ascii	"rxRingBufSize\000"
  2043      6E674275 
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 49
+
+
  2043      6653697A 
  2043      6500
  2044              	.LASF175:
- 2045 09fa 72656C6F 		.ascii	"reloadInput\000"
+ 2045 09fe 72656C6F 		.ascii	"reloadInput\000"
  2045      6164496E 
  2045      70757400 
  2046              	.LASF6:
- 2047 0a06 73686F72 		.ascii	"short unsigned int\000"
+ 2047 0a0a 73686F72 		.ascii	"short unsigned int\000"
  2047      7420756E 
  2047      7369676E 
  2047      65642069 
  2047      6E7400
  2048              	.LASF67:
- 2049 0a19 64774368 		.ascii	"dwChSize\000"
+ 2049 0a1d 64774368 		.ascii	"dwChSize\000"
  2049      53697A65 
  2049      00
  2050              	.LASF109:
- 2051 0a22 43595F53 		.ascii	"CY_SYSPM_WAIT_FOR_INTERRUPT\000"
+ 2051 0a26 43595F53 		.ascii	"CY_SYSPM_WAIT_FOR_INTERRUPT\000"
  2051      5953504D 
  2051      5F574149 
  2051      545F464F 
  2051      525F494E 
  2052              	.LASF117:
- 2053 0a3e 75736552 		.ascii	"useRxFifo\000"
+ 2053 0a42 75736552 		.ascii	"useRxFifo\000"
  2053      78466966 
  2053      6F00
  2054              	.LASF42:
- 2055 0a48 63707573 		.ascii	"cpussIpc0Irq\000"
+ 2055 0a4c 63707573 		.ascii	"cpussIpc0Irq\000"
  2055      73497063 
  2055      30497271 
  2055      00
  2056              	.LASF162:
- 2057 0a55 70657269 		.ascii	"period0\000"
+ 2057 0a59 70657269 		.ascii	"period0\000"
  2057      6F643000 
  2058              	.LASF163:
- 2059 0a5d 70657269 		.ascii	"period1\000"
+ 2059 0a61 70657269 		.ascii	"period1\000"
  2059      6F643100 
  2060              	.LASF166:
- 2061 0a65 636F6D70 		.ascii	"compare1\000"
+ 2061 0a69 636F6D70 		.ascii	"compare1\000"
  2061      61726531 
  2061      00
  2062              	.LASF89:
- 2063 0a6e 63707573 		.ascii	"cpussCm0ClockCtlOffset\000"
+ 2063 0a72 63707573 		.ascii	"cpussCm0ClockCtlOffset\000"
  2063      73436D30 
  2063      436C6F63 
  2063      6B43746C 
  2063      4F666673 
  2064              	.LASF85:
- 2065 0a85 6770696F 		.ascii	"gpioPrtCfgOffset\000"
+ 2065 0a89 6770696F 		.ascii	"gpioPrtCfgOffset\000"
  2065      50727443 
  2065      66674F66 
  2065      66736574 
  2065      00
  2066              	.LASF154:
- 2067 0a96 696E6974 		.ascii	"initKey\000"
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 50
-
-
+ 2067 0a9a 696E6974 		.ascii	"initKey\000"
  2067      4B657900 
  2068              	.LASF148:
- 2069 0a9e 72784275 		.ascii	"rxBuf\000"
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 50
+
+
+ 2069 0aa2 72784275 		.ascii	"rxBuf\000"
  2069      6600
  2070              	.LASF129:
- 2071 0aa4 736C6176 		.ascii	"slaveTxBuffer\000"
+ 2071 0aa8 736C6176 		.ascii	"slaveTxBuffer\000"
  2071      65547842 
  2071      75666665 
  2071      7200
  2072              	.LASF130:
- 2073 0ab2 736C6176 		.ascii	"slaveTxBufferSize\000"
+ 2073 0ab6 736C6176 		.ascii	"slaveTxBufferSize\000"
  2073      65547842 
  2073      75666665 
  2073      7253697A 
  2073      6500
  2074              	.LASF155:
- 2075 0ac4 63795F73 		.ascii	"cy_stc_scb_uart_context_t\000"
+ 2075 0ac8 63795F73 		.ascii	"cy_stc_scb_uart_context_t\000"
  2075      74635F73 
  2075      63625F75 
  2075      6172745F 
  2075      636F6E74 
  2076              	.LASF47:
- 2077 0ade 73727373 		.ascii	"srssNumHfroot\000"
+ 2077 0ae2 73727373 		.ascii	"srssNumHfroot\000"
  2077      4E756D48 
  2077      66726F6F 
  2077      7400
  2078              	.LASF190:
- 2079 0aec 43795F42 		.ascii	"Cy_BLE_Start\000"
+ 2079 0af0 43795F42 		.ascii	"Cy_BLE_Start\000"
  2079      4C455F53 
  2079      74617274 
  2079      00
  2080              	.LASF114:
- 2081 0af9 63795F65 		.ascii	"cy_en_scb_i2c_command_t\000"
+ 2081 0afd 63795F65 		.ascii	"cy_en_scb_i2c_command_t\000"
  2081      6E5F7363 
  2081      625F6932 
  2081      635F636F 
  2081      6D6D616E 
  2082              	.LASF98:
- 2083 0b11 63707573 		.ascii	"cpussCm4NmiCtlOffset\000"
+ 2083 0b15 63707573 		.ascii	"cpussCm4NmiCtlOffset\000"
  2083      73436D34 
  2083      4E6D6943 
  2083      746C4F66 
  2083      66736574 
  2084              	.LASF170:
- 2085 0b26 696E7665 		.ascii	"invertPWMOutN\000"
+ 2085 0b2a 696E7665 		.ascii	"invertPWMOutN\000"
  2085      72745057 
  2085      4D4F7574 
  2085      4E00
  2086              	.LASF58:
- 2087 0b34 666C6173 		.ascii	"flashWriteDelay\000"
+ 2087 0b38 666C6173 		.ascii	"flashWriteDelay\000"
  2087      68577269 
  2087      74654465 
  2087      6C617900 
  2088              	.LASF13:
- 2089 0b44 75696E74 		.ascii	"uint8_t\000"
+ 2089 0b48 75696E74 		.ascii	"uint8_t\000"
  2089      385F7400 
  2090              	.LASF91:
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 51
-
-
- 2091 0b4c 63707573 		.ascii	"cpussCm4StatusOffset\000"
+ 2091 0b50 63707573 		.ascii	"cpussCm4StatusOffset\000"
  2091      73436D34 
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 51
+
+
  2091      53746174 
  2091      75734F66 
  2091      66736574 
  2092              	.LASF84:
- 2093 0b61 6770696F 		.ascii	"gpioPrtIntrCfgOffset\000"
+ 2093 0b65 6770696F 		.ascii	"gpioPrtIntrCfgOffset\000"
  2093      50727449 
  2093      6E747243 
  2093      66674F66 
  2093      66736574 
  2094              	.LASF182:
- 2095 0b76 63795F73 		.ascii	"cy_stc_tcpwm_pwm_config_t\000"
+ 2095 0b7a 63795F73 		.ascii	"cy_stc_tcpwm_pwm_config_t\000"
  2095      74635F74 
  2095      6370776D 
  2095      5F70776D 
  2095      5F636F6E 
  2096              	.LASF174:
- 2097 0b90 72656C6F 		.ascii	"reloadInputMode\000"
+ 2097 0b94 72656C6F 		.ascii	"reloadInputMode\000"
  2097      6164496E 
  2097      7075744D 
  2097      6F646500 
  2098              	.LASF147:
- 2099 0ba0 72785269 		.ascii	"rxRingBufTail\000"
+ 2099 0ba4 72785269 		.ascii	"rxRingBufTail\000"
  2099      6E674275 
  2099      66546169 
  2099      6C00
  2100              	.LASF165:
- 2101 0bae 636F6D70 		.ascii	"compare0\000"
+ 2101 0bb2 636F6D70 		.ascii	"compare0\000"
  2101      61726530 
  2101      00
  2102              	.LASF95:
- 2103 0bb7 63707573 		.ascii	"cpussTrimRomCtlOffset\000"
+ 2103 0bbb 63707573 		.ascii	"cpussTrimRomCtlOffset\000"
  2103      73547269 
  2103      6D526F6D 
  2103      43746C4F 
  2103      66667365 
  2104              	.LASF180:
- 2105 0bcd 636F756E 		.ascii	"countInputMode\000"
+ 2105 0bd1 636F756E 		.ascii	"countInputMode\000"
  2105      74496E70 
  2105      75744D6F 
  2105      646500
  2106              	.LASF31:
- 2107 0bdc 64775665 		.ascii	"dwVersion\000"
+ 2107 0be0 64775665 		.ascii	"dwVersion\000"
  2107      7273696F 
  2107      6E00
  2108              	.LASF27:
- 2109 0be6 69706342 		.ascii	"ipcBase\000"
+ 2109 0bea 69706342 		.ascii	"ipcBase\000"
  2109      61736500 
  2110              	.LASF78:
- 2111 0bee 70657269 		.ascii	"periDivCmdPaDivSelPos\000"
+ 2111 0bf2 70657269 		.ascii	"periDivCmdPaDivSelPos\000"
  2111      44697643 
  2111      6D645061 
  2111      44697653 
  2111      656C506F 
  2112              	.LASF141:
- 2113 0c04 63795F73 		.ascii	"cy_stc_scb_uart_context\000"
-ARM GAS  C:\Users\yomat\AppData\Local\Temp\ccSOGRMd.s 			page 52
-
-
+ 2113 0c08 63795F73 		.ascii	"cy_stc_scb_uart_context\000"
  2113      74635F73 
  2113      63625F75 
+ARM GAS  C:\Users\yomat\AppData\Local\Temp\cc1wcNyi.s 			page 52
+
+
  2113      6172745F 
  2113      636F6E74 
  2114              	.LASF56:
- 2115 0c1c 666C6173 		.ascii	"flashRwwRequired\000"
+ 2115 0c20 666C6173 		.ascii	"flashRwwRequired\000"
  2115      68527777 
  2115      52657175 
  2115      69726564 

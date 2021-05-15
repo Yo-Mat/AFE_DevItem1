@@ -10,6 +10,7 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
+#include "semphr.h"
 #include "project.h"
 #include <stdio.h>
 
@@ -83,7 +84,9 @@ static struct AfeData afe_data[AFE_ID_NUM] = {
 // AFE算出値
 static struct CalValue afe_calval[AFE_ID_NUM];
 uint8_t SpO2 = 15;
+
 AFE_ID_E AFE_id = AFE_ID;
+AFE_ID_E AFE_st = AFE_ID;
 
 // AFE0割り込みハンドラ
 static void AFE0_hdr()
@@ -127,6 +130,7 @@ void AFE_act(AFE_ID_E afe_id)
         NVIC_DisableIRQ(ISR_AFE1_cfg.intrSrc);  // AFE1 停止
         afe4404Write(I2C_2_HW, AFE440X_CONTROL2, (uint8_t*)&pwrDwn, REG_DATA_LEN);
     }
+    AFE_st = afe_id;    // AFE制御状態
     
 }
 
@@ -252,9 +256,11 @@ void Task_LED (void *pvParameters)
         if (AFE_RDY(AFE0_ID)) AFE_samp(AFE0_ID);
         if (AFE_RDY(AFE1_ID)) AFE_samp(AFE1_ID);
 
-        /* Enter sleep mode */
-//        printf("Info! : LED task goes into sleep!\r\n");
-//		Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
-		Cy_SysPm_Sleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
+        if (AFE_st == NOAFE_ID && UART_IsTxComplete()) {
+            /* Enter sleep mode */
+//    		Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
+    		Cy_SysPm_Sleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
+//            printf("Info! : LED task is wake up!\r\n");
+        }
     }
 }
