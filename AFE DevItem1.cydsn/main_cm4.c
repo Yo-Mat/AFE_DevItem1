@@ -195,8 +195,8 @@ void bleTask(void *arg)
 
         if (AFE_st == NOAFE_ID && UART_IsTxComplete()) {
             /* Enter sleep mode */
-    		Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
-//    		Cy_SysPm_Sleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
+//    		Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
+    		Cy_SysPm_Sleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
 //            printf("Info! : BLE task is wake up!\r\n");
         }
     }
