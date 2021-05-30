@@ -1,5 +1,5 @@
 -- Project:   C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\AFE DevItem1.cyprj
--- Generated: 05/16/2021 18:05:03
+-- Generated: 05/30/2021 19:48:26
 -- PSoC Creator  4.4
 
 ENTITY \AFE DevItem1\ IS
@@ -78,22 +78,6 @@ ARCHITECTURE __DEFAULT__ OF \AFE DevItem1\ IS
     SIGNAL Net_599 : bit;
     SIGNAL Net_600 : bit;
     SIGNAL Net_601 : bit;
-    SIGNAL Net_635 : bit;
-    SIGNAL Net_698 : bit;
-    SIGNAL Net_699 : bit;
-    SIGNAL Net_700 : bit;
-    SIGNAL Net_703 : bit;
-    SIGNAL Net_710 : bit;
-    SIGNAL Net_711 : bit;
-    SIGNAL Net_712 : bit;
-    SIGNAL Net_713_ff12 : bit;
-    ATTRIBUTE global_signal OF Net_713_ff12 : SIGNAL IS true;
-    SIGNAL Net_713_ff13 : bit;
-    ATTRIBUTE global_signal OF Net_713_ff13 : SIGNAL IS true;
-    SIGNAL Net_715 : bit;
-    SIGNAL Net_721 : bit;
-    SIGNAL Net_722 : bit;
-    SIGNAL Net_724 : bit;
     SIGNAL Pin_AFE_CLK(0)__PA : bit;
     SIGNAL SW2(0)__PA : bit;
     SIGNAL \BLE:Net_1\ : bit;
@@ -115,6 +99,7 @@ ARCHITECTURE __DEFAULT__ OF \AFE DevItem1\ IS
     SIGNAL \I2C_2:intr_wire\ : bit;
     SIGNAL \\\I2C_2:scl(0)\\__PA\ : bit;
     SIGNAL \\\I2C_2:sda(0)\\__PA\ : bit;
+    SIGNAL \RTC:Net_3\ : bit;
     SIGNAL \UART:Net_1172\ : bit;
     SIGNAL \UART:Net_161\ : bit;
     SIGNAL \UART:Net_847_ff2\ : bit;
@@ -177,13 +162,11 @@ ARCHITECTURE __DEFAULT__ OF \AFE DevItem1\ IS
     ATTRIBUTE Location OF \I2C_2:SCB_IRQ\ : LABEL IS "[IntrContainer=(0)][IntrId=(43)]";
     ATTRIBUTE Location OF ISR_AFE0 : LABEL IS "[IntrContainer=(0)][IntrId=(122)]";
     ATTRIBUTE Location OF ISR_AFE1 : LABEL IS "[IntrContainer=(0)][IntrId=(123)]";
-    ATTRIBUTE Location OF \PWM_AFE:TCPWM\ : LABEL IS "F(TCPWM,10)";
+    ATTRIBUTE Location OF \PWM_AFE:TCPWM\ : LABEL IS "F(TCPWM,1)";
     ATTRIBUTE Location OF \BLE:cy_mxs40_ble\ : LABEL IS "F(BLE,0)";
     ATTRIBUTE Location OF \BLE:bless_isr\ : LABEL IS "[IntrContainer=(0)][IntrId=(24)]";
-    ATTRIBUTE Location OF ISR_CYC : LABEL IS "[IntrContainer=(0)][IntrId=(124)]";
-    ATTRIBUTE Location OF ISR_TIM : LABEL IS "[IntrContainer=(0)][IntrId=(125)]";
-    ATTRIBUTE Location OF \PWM_CYC:TCPWM\ : LABEL IS "F(TCPWM,0)";
-    ATTRIBUTE Location OF \PWM_TIM:TCPWM\ : LABEL IS "F(TCPWM,1)";
+    ATTRIBUTE Location OF \RTC:RTC\ : LABEL IS "F(RTC,0)";
+    ATTRIBUTE Location OF \RTC:RTC_IRQ\ : LABEL IS "[IntrContainer=(0)][IntrId=(21)]";
     COMPONENT BLE
         PORT (
             ext_pa_lna_chip_en_out : OUT std_ulogic;
@@ -520,6 +503,10 @@ ARCHITECTURE __DEFAULT__ OF \AFE DevItem1\ IS
             out_clock_en : IN std_ulogic;
             out_reset : IN std_ulogic);
     END COMPONENT;
+    COMPONENT RTC
+        PORT (
+            interrupt : OUT std_ulogic);
+    END COMPONENT;
     COMPONENT SCB
         PORT (
             clock : IN std_ulogic;
@@ -595,14 +582,12 @@ BEGIN
             ilo => ClockBlock_ILO,
             wco => ClockBlock_WCO,
             lfclk => ClockBlock_LFClk,
-            ff_div_11 => Net_713_ff12,
+            ff_div_11 => open,
             ff_div_0 => open,
             ff_div_1 => \I2C_1:clock_wire_ff0\,
             ff_div_2 => \I2C_2:clock_wire_ff1\,
-            ff_div_12 => Net_713_ff13,
-            ff_div_13 => open,
             ff_div_5 => \UART:Net_847_ff2\,
-            ff_div_21 => Net_52_ff11,
+            ff_div_12 => Net_52_ff11,
             periclk_App => periclk_App);
 
     CPUSS:CPUSS
@@ -1644,60 +1629,19 @@ BEGIN
             interrupt => \BLE:Net_1\,
             clock => ClockBlock_PeriClk);
 
-    ISR_CYC:interrupt
+    \RTC:RTC\:RTC
+        GENERIC MAP(
+            cy_registers => "")
+        PORT MAP(
+            interrupt => \RTC:Net_3\);
+
+    \RTC:RTC_IRQ\:interrupt
         GENERIC MAP(
             cy_registers => "",
             deepsleep_required => 0,
-            int_type => "00")
+            int_type => "10")
         PORT MAP(
-            interrupt => Net_724,
+            interrupt => \RTC:Net_3\,
             clock => ClockBlock_PeriClk);
-
-    ISR_TIM:interrupt
-        GENERIC MAP(
-            cy_registers => "",
-            deepsleep_required => 0,
-            int_type => "00")
-        PORT MAP(
-            interrupt => Net_635,
-            clock => ClockBlock_PeriClk);
-
-    \PWM_CYC:TCPWM\:TCPWM
-        GENERIC MAP(
-            cy_registers => "",
-            exact_width => 0,
-            width => 32)
-        PORT MAP(
-            clock => Net_713_ff12,
-            capture => '0',
-            count => '1',
-            reload => '0',
-            stop => '0',
-            start => '0',
-            tr_underflow => Net_699,
-            tr_compare_match => Net_700,
-            tr_overflow => Net_698,
-            line_compl => Net_703,
-            line => Net_724,
-            interrupt => Net_722);
-
-    \PWM_TIM:TCPWM\:TCPWM
-        GENERIC MAP(
-            cy_registers => "",
-            exact_width => 0,
-            width => 16)
-        PORT MAP(
-            clock => Net_713_ff13,
-            capture => '0',
-            count => '1',
-            reload => '0',
-            stop => '0',
-            start => '0',
-            tr_underflow => Net_711,
-            tr_compare_match => Net_712,
-            tr_overflow => Net_710,
-            line_compl => Net_715,
-            line => Net_635,
-            interrupt => Net_721);
 
 END __DEFAULT__;

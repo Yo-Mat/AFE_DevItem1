@@ -51,6 +51,8 @@
 #include "AFE4404.h"
 #include "led_task.h"
 #include "bleTask.h"
+#include "rtc_intv.h"
+
 #include <stdio.h>
 #include <limits.h>
 
@@ -64,6 +66,14 @@ uint8 Spo2DataOld = 0xff;
 
 SemaphoreHandle_t bleSemaphore;
 uint8 SpO2Data_Notification_Enabled = 0;
+
+/*******************************************************************************/
+/*                      Function Prototypes                                    */
+/*******************************************************************************/
+cy_en_rtc_status_t RtcInit(void);
+cy_en_rtc_status_t RtcAlarmConfig(void);
+void RtcInterruptHandler(void);
+void RtcStepAlarm(void);
 
 void genericEventHandler(uint32_t event, void *eventParameter)
 {
@@ -192,50 +202,31 @@ void bleTask(void *arg)
                 }
             }
         }   
-
-        if (AFE_st == NOAFE_ID && UART_IsTxComplete()) {
-            /* Enter sleep mode */
-//    		Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
-    		Cy_SysPm_Sleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
-//            printf("Info! : BLE task is wake up!\r\n");
-        }
     }
 }
 
-
-// 動作時間割り込みハンドラ
-static void PWM_TIM_hdr()
+static void RTC_Timer_init()
 {
-    //printf("Info! : End of operating time!\r\n");
-    NVIC_DisableIRQ(ISR_TIM_cfg.intrSrc);
-    AFE_act(NOAFE_ID);
-    // LED(RED)消灯
-    Cy_GPIO_Write(LED_GREEN_PORT, LED_GREEN_NUM, 1);
-}
-
-// 動作周期割り込みハンドラ
-static void PWM_CYC_hdr()
-{
-    //printf("Info! : Start operation time!\r\n");
-    NVIC_ClearPendingIRQ(ISR_TIM_cfg.intrSrc);
-    PWM_TIM_Init(&PWM_TIM_config);
-    NVIC_EnableIRQ(ISR_TIM_cfg.intrSrc);
-    AFE_clr(AFE_ID);
-    AFE_act(AFE_ID);
-    // LED(RED)点灯
-    Cy_GPIO_Write(LED_GREEN_PORT, LED_GREEN_NUM, 0);
-}
-
-static void PWM_Timer_init()
-{
+    //printf("Debug! : Started RTC_Timer_init()!\r\n");
     // 動作周期
-    Cy_SysInt_Init(&ISR_CYC_cfg, PWM_CYC_hdr);
-    NVIC_ClearPendingIRQ(ISR_CYC_cfg.intrSrc);
-    NVIC_EnableIRQ(ISR_CYC_cfg.intrSrc);
-    // 動作時間
-    Cy_SysInt_Init(&ISR_TIM_cfg, PWM_TIM_hdr);
-    NVIC_ClearPendingIRQ(ISR_TIM_cfg.intrSrc);
-    NVIC_EnableIRQ(ISR_TIM_cfg.intrSrc);
+    if (RtcInit() != CY_RTC_SUCCESS) {
+        CY_ASSERT(0u);
+    }
+    else {
+        if (TICK_INTERVAL == 1u && USE_MINUTES == 1u) {
+            alarmConfig.secEn = CY_RTC_ALARM_ENABLE;
+        }
+        if (RtcAlarmConfig() != CY_RTC_SUCCESS) {
+           CY_ASSERT(0u);
+        }
+        else {
+		    Cy_RTC_SetInterruptMask(CY_RTC_INTR_ALARM2);
+        }
+    }
+    RtcStepAlarm();     // RTCアラームリスタート
+    Cy_SysInt_Init(&RTC_RTC_IRQ_cfg, RtcInterruptHandler);
+    NVIC_EnableIRQ(RTC_RTC_IRQ_cfg.intrSrc);
+    RTC_GetDateAndTime(&startTtime);
 }
 
 
@@ -257,8 +248,6 @@ int main()
 {
     // PWM開始
     PWM_AFE_Start();
-    PWM_CYC_Start();
-    PWM_TIM_Start();
     // I2C開始
     I2C_1_Start();
     I2C_2_Start();
@@ -268,17 +257,20 @@ int main()
     setvbuf( stdout, NULL, _IONBF, 0 ); 
 
     AFE_init(AFE_ID);   // AFE初期化
-    PWM_Timer_init();   // 動作周期・時間タイマ初期化
 
     __enable_irq(); /* Enable global interrupts. */
     
     Cy_GPIO_Write(LED_RED_0_PORT, LED_RED_0_NUM, 1);
     
     /* Create LED Tasks. See the respective Task definition for more
-       details of these tasks */       
+       details of these tasks */
+    //printf("Debug! : Create LED task!\r\n");
     xTaskCreate(Task_LED, "LED Task", AFE_OPT_SENSOR_STACK_SIZE,
                 NULL, AFE_OPT_SENSOR_PRIORITY, NULL);
+    //printf("Debug! : Create BLE task!\r\n");
     xTaskCreate(bleTask, "BLE Task", (4*1024), 0,2,0);
+
+    RTC_Timer_init();   // 動作周期・時間タイマ初期化
 
     /* Start the RTOS scheduler. This function should never return */
     vTaskStartScheduler();
@@ -362,6 +354,187 @@ void vApplicationMallocFailedHook(void)
     
     /* Halt the CPU */
     CY_ASSERT(0);
+}
+
+/******************************************************************************
+* Function Name: RtcInit
+*******************************************************************************
+*
+* Summary: 
+*  This function configures the RTC registers.
+*
+* Parameters:
+*  None
+*
+* Return:
+*  cy_en_rtc_status_t
+*       CY_RTC_SUCCESS      : Time and date configuration is successfully done.
+*       CY_RTC_BAD_PARAM    : Date values are not valid.
+*       CY_RTC_INVALID_STATE: RTC is busy state
+*
+******************************************************************************/
+cy_en_rtc_status_t RtcInit(void)
+{
+    uint32_t attempts = MAX_ATTEMPTS;
+    cy_en_rtc_status_t result;
+    
+    /* Setting the time and date can fail. For example the RTC might be busy.
+       Check the result and try again, if necessary.  */
+    do
+    {
+        result = Cy_RTC_Init(&RTC_config);
+        attempts--;
+        
+        Cy_SysLib_Delay(INIT_DELAY);
+    } while(( result != CY_RTC_SUCCESS) && (attempts != 0u));
+    
+	return (result);
+}
+
+/******************************************************************************
+* Function Name: RtcAlarmConfig
+*******************************************************************************
+*
+* Summary: 
+*  This function configures the custom RTC alarm to utilize the custom tick
+*  timer interrupt.
+*
+* Parameters:
+*  None
+*
+* Return:
+*  cy_en_rtc_status_t
+*       CY_RTC_SUCCESS      : Time and date configuration is successfully done.
+*       CY_RTC_BAD_PARAM    : Date values are not valid.
+*       CY_RTC_INVALID_STATE: RTC is busy state
+*
+******************************************************************************/
+cy_en_rtc_status_t RtcAlarmConfig(void)
+{
+    uint32_t attempts = MAX_ATTEMPTS;
+    cy_en_rtc_status_t result;
+
+    /* 
+       Setting the alarm can fail. For example the RTC might be busy. 
+       Check the result and try again, if necessary.
+    */
+    do
+	{
+		result = Cy_RTC_SetAlarmDateAndTime((cy_stc_rtc_alarm_t const *)&alarmConfig, CY_RTC_ALARM_2);
+		attempts--;
+        
+		Cy_SysLib_Delay(INIT_DELAY);
+    } while(( result != CY_RTC_SUCCESS) && (attempts != 0u));
+    
+	return (result);
+}
+
+/******************************************************************************
+* Function Name: RtcInterruptHandler
+*******************************************************************************
+*
+* Summary: 
+*  This is the general RTC interrupt handler in CPU NVIC.
+*  It calls the Alarm2 interrupt handler if that is the interrupt that occurs.
+*
+* Parameters:
+*  None
+*
+* Return:
+*  None
+*
+******************************************************************************/
+void RtcInterruptHandler(void)
+{
+    /* No DST parameters are required for the custom tick. */
+    Cy_RTC_Interrupt(NULL, false);
+}
+
+/******************************************************************************
+* Function Name: Cy_RTC_Alarm2Interrupt
+*******************************************************************************
+*
+* Summary: 
+*  The function overrides the __WEAK Cy_RTC_Alarm2Interrupt() in cy_rtc.c to 
+*  handle CY_RTC_ALARM_2 interrupt.
+*
+* Parameters:
+*  None
+*
+* Return:
+*  None
+*
+******************************************************************************/
+void Cy_RTC_Alarm2Interrupt(void)
+{
+    //printf("Debug! : Cycle of operating!\r\n"); CyDelay(10);
+    /* the interrupt has fired, meaning time expired and the alarm went off */
+	alarmFlag = 1u;  
+}
+
+/******************************************************************************
+* Function Name: RtcStepAlarm
+*******************************************************************************
+*
+* Summary: 
+*  This function sets the time for CY_RTC_ALARM_2, and configures the interrupt.
+*  The available periods are one second to sixty seconds and one minute to sixty 
+*  minutes. 
+*
+* Parameters:
+*  None
+*
+* Return:
+*  None
+*
+******************************************************************************/
+void RtcStepAlarm(void)
+{
+    /* Don't set next time, if the interval is one second or one minute */
+    if(TICK_INTERVAL != 1u)
+    {
+        if (USE_MINUTES)  /* match minutes, and advance by minutes */
+    	{
+    		/* 
+                Enable the correct matches. This is a periodic interrupt, but 
+                happens every two or more minutes. Because we are stepping by 
+                minutes, we need to match the minutes number. We also match 
+                the seconds number so the alarm only goes off when both the 
+                seconds and minutes match. Because we are not changing the value
+                of the seconds in the alarm, the alarm happens only once when the
+                minutes match.
+            */
+            alarmConfig.secEn = CY_RTC_ALARM_ENABLE;
+            alarmConfig.minEn = CY_RTC_ALARM_ENABLE;
+
+    		/* advance the minute by the specified interval */
+    		alarmConfig.min += TICK_INTERVAL;
+
+            /* keep it in range, 0-59 */
+            alarmConfig.min = alarmConfig.min % MINUTES_PER_HOUR;
+    	}
+    	else   /* USE_SECONDS, alarm when the seconds match */
+    	{
+    		/* 
+                Enable the correct matches. Because we are stepping by seconds, 
+                we need to match just the seconds number.
+            */
+            alarmConfig.secEn = CY_RTC_ALARM_ENABLE;
+
+    		/* advance the second by the specified interval */
+    		alarmConfig.sec += TICK_INTERVAL;
+
+            /* keep it in range, 0-59 */
+            alarmConfig.sec = alarmConfig.sec % SECONDS_PER_MIN;
+    	}
+    	
+    	/* update the alarm configuration */
+    	if(RtcAlarmConfig() != CY_RTC_SUCCESS)
+    	{
+    	   /* If the operation fails, halt */
+    	   CY_ASSERT(0u);
+    	}
+    }
 }
 
 /* [] END OF FILE */

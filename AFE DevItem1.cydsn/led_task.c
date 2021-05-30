@@ -6,12 +6,14 @@
 ******************************************************************************/
 
 /* Header file includes */
-#include "led_task.h"
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
 #include "semphr.h"
 #include "project.h"
+#include "led_task.h"
+#include "rtc_intv.h"
+
 #include <stdio.h>
 
 // タイミングデータ定義
@@ -88,6 +90,35 @@ uint8_t SpO2 = 15;
 AFE_ID_E AFE_id = AFE_ID;
 AFE_ID_E AFE_st = AFE_ID;
 
+/* The interrupt status variable */
+uint32_t alarmFlag = 0u;
+cy_stc_rtc_config_t startTtime;
+
+/* 
+    If an En field is set to CY_RTC_ALARM_DISABLE, the alarm
+    function ignores the disabled field when looking for a match.
+    Configured to ignore all matches but enable the alarm, and
+    the alarm goes off once per second, because the RTC uses 
+    one-second resolution. 
+*/
+cy_stc_rtc_alarm_t alarmConfig = 
+{
+    .sec            = RTC_INITIAL_DATE_SEC,
+    .secEn          = CY_RTC_ALARM_DISABLE,
+    .min            = RTC_INITIAL_DATE_MIN,
+    .minEn          = CY_RTC_ALARM_DISABLE,
+    .hour           = RTC_INITIAL_DATE_HOUR,
+    .hourEn         = CY_RTC_ALARM_DISABLE,
+    .dayOfWeek      = RTC_INITIAL_DATE_DOW,
+    .dayOfWeekEn    = CY_RTC_ALARM_DISABLE,
+    .date           = RTC_INITIAL_DATE_DOM,
+    .dateEn         = CY_RTC_ALARM_DISABLE,
+    .month          = RTC_INITIAL_DATE_MONTH,
+    .monthEn        = CY_RTC_ALARM_DISABLE,
+    .almEn          = CY_RTC_ALARM_ENABLE
+};
+
+
 // AFE0割り込みハンドラ
 static void AFE0_hdr()
 {
@@ -146,8 +177,8 @@ void AFE_init(AFE_ID_E afe_id)
     uint32_t data = 0;
     
     printf("Start AFE Control\r\n");
-    printf("Operation cycle: %3.1f min.\r\n", (double)PWM_CYC_config.period0/60000u);
-    printf("Operating  time: %u sec.\r\n", (unsigned)PWM_TIM_config.period0/1000u);
+    printf("Operation cycle: %d min.\r\n", TICK_INTERVAL);
+    printf("Operating  time: %d sec.\r\n", AFE_TIME);
     printf("  Selection AFE: %s\r\n", afe_id==AFE0_ID ? "AFE0" : "AFE1");
     printf("  LED1 TIG gain: %u korm\r\n", tia_reg[TIA2_ID]);
     printf("  LED1  current: %3.1f mA\r\n", I_LED2 * CURR_STEP);
@@ -250,17 +281,46 @@ static bool AFE_samp(AFE_ID_E afe_id)
 void Task_LED (void *pvParameters)
 {  
     (void)pvParameters ;
+    //printf("Debug! : LED task started!\r\n");
 
     for(;;) {
-        // データサンプリング
-        if (AFE_RDY(AFE0_ID)) AFE_samp(AFE0_ID);
-        if (AFE_RDY(AFE1_ID)) AFE_samp(AFE1_ID);
-
-        if (AFE_st == NOAFE_ID && UART_IsTxComplete()) {
+        if (AFE_st == NOAFE_ID) {
             /* Enter sleep mode */
-//    		Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
-    		Cy_SysPm_Sleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
-//            printf("Info! : LED task is wake up!\r\n");
+            //printf("Debug! : LED task goes into deep sleep...\r\n"); CyDelay(10);
+            Cy_GPIO_Write(LED_GREEN_PORT, LED_GREEN_NUM, 1);    // LED(GREEN)消灯
+    		Cy_SysPm_DeepSleep(CY_SYSPM_WAIT_FOR_INTERRUPT);
+            Cy_GPIO_Write(LED_GREEN_PORT, LED_GREEN_NUM, 0);    // LED(GREEN)点灯
+            //printf("Debug! : LED task is wake up!\r\n"); CyDelay(10);
+
+            if (alarmFlag) {        // RTCによるスリープ解除なら
+                printf("Debug! : Start operation time!\r\n"); CyDelay(10);
+                AFE_clr(AFE_ID);
+                AFE_act(AFE_ID);
+                RTC_GetDateAndTime(&startTtime);
+      			alarmFlag = 0u;
+                RtcStepAlarm();     // RTCアラームリスタート
+            }
+        }
+        else {
+  			alarmFlag = 0u;
+            cy_stc_rtc_config_t currTime;
+            RTC_GetDateAndTime(&currTime);
+            int32_t sec = (int32_t)currTime.sec - (int32_t)startTtime.sec;  // Second difference
+            int32_t min = (int32_t)currTime.min - (int32_t)startTtime.min;  // Minute difference
+            if (min < 0) min += 60;
+            // AFE制御中
+            if ((uint32_t)(min * 60 + sec) < AFE_TIME) {
+                //printf("Debug! : LED task is sampling data...\r\n"); CyDelay(10);
+                // データサンプリング
+                if (AFE_RDY(AFE0_ID)) AFE_samp(AFE0_ID);
+                if (AFE_RDY(AFE1_ID)) AFE_samp(AFE1_ID);
+            }
+            // AFE制御停止
+            else {
+                //printf("Debug! : End of operating time!\r\n"); CyDelay(10);
+                AFE_act(NOAFE_ID);
+            }
+                        
         }
     }
 }

@@ -1,5 +1,5 @@
 # AFE DevItem1
-# 2021-05-16 09:04:55Z
+# 2021-05-30 10:48:18Z
 
 dont_use_location SMIF -1 -1 0
 dont_use_location p4usbcell -1 -1 0
@@ -33,10 +33,8 @@ set_location "\I2C_2:SCB\" SCB -1 -1 2
 set_location "\I2C_2:SCB_IRQ\" interrupt -1 -1 43
 set_location "ISR_AFE0" interrupt -1 -1 122
 set_location "ISR_AFE1" interrupt -1 -1 123
-set_location "\PWM_AFE:TCPWM\" TCPWM -1 -1 10
+set_location "\PWM_AFE:TCPWM\" TCPWM -1 -1 1
 set_location "\BLE:cy_mxs40_ble\" BLE -1 -1 0
 set_location "\BLE:bless_isr\" interrupt -1 -1 24
-set_location "ISR_CYC" interrupt -1 -1 124
-set_location "ISR_TIM" interrupt -1 -1 125
-set_location "\PWM_CYC:TCPWM\" TCPWM -1 -1 0
-set_location "\PWM_TIM:TCPWM\" TCPWM -1 -1 1
+set_location "\RTC:RTC\" RTC -1 -1 0
+set_location "\RTC:RTC_IRQ\" interrupt -1 -1 21

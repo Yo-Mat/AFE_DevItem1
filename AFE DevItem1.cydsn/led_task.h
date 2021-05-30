@@ -79,6 +79,10 @@ extern uint8_t SpO2;
 extern AFE_ID_E AFE_id;
 extern AFE_ID_E AFE_st;
 
+extern uint32_t alarmFlag;
+extern cy_stc_rtc_alarm_t alarmConfig;
+extern cy_stc_rtc_config_t startTtime;
+
 void AFE_clr(AFE_ID_E afe_id);
 void AFE_init(AFE_ID_E afe_id);
 void AFE_act(AFE_ID_E afe_id);

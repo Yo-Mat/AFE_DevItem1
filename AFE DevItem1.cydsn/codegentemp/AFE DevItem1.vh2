@@ -2,7 +2,7 @@
 --	Conversion of AFE DevItem1.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Sun May 16 18:04:48 2021
+--	Sun May 30 19:48:11 2021
 --
 
 USE cypress.cypress.all;
@@ -141,29 +141,7 @@ SIGNAL Net_600 : bit;
 SIGNAL Net_599 : bit;
 SIGNAL Net_601 : bit;
 SIGNAL \BLE:Net_1\ : bit;
-SIGNAL Net_713 : bit;
-SIGNAL Net_724 : bit;
-SIGNAL Net_635 : bit;
-SIGNAL \PWM_CYC:swap\ : bit;
-SIGNAL \PWM_CYC:count\ : bit;
-SIGNAL \PWM_CYC:reload\ : bit;
-SIGNAL \PWM_CYC:kill\ : bit;
-SIGNAL \PWM_CYC:start\ : bit;
-SIGNAL Net_699 : bit;
-SIGNAL Net_700 : bit;
-SIGNAL Net_698 : bit;
-SIGNAL Net_703 : bit;
-SIGNAL Net_722 : bit;
-SIGNAL \PWM_TIM:swap\ : bit;
-SIGNAL \PWM_TIM:count\ : bit;
-SIGNAL \PWM_TIM:reload\ : bit;
-SIGNAL \PWM_TIM:kill\ : bit;
-SIGNAL \PWM_TIM:start\ : bit;
-SIGNAL Net_711 : bit;
-SIGNAL Net_712 : bit;
-SIGNAL Net_710 : bit;
-SIGNAL Net_715 : bit;
-SIGNAL Net_721 : bit;
+SIGNAL \RTC:Net_3\ : bit;
 BEGIN
 
 one <=  ('1') ;
@@ -722,57 +700,13 @@ LED_GREEN:cy_mxs40_gpio_v1_0
 		deepsleep_required=>'1',
 		int_type=>"10")
 	PORT MAP(int_signal=>\BLE:Net_1\);
-Clock_1kHz:cy_clock_v1_0
-	GENERIC MAP(cy_registers=>"",
-		id=>"3e544cc9-94a1-426f-8f9f-c263656a0c49",
-		source_clock_id=>"2FB4EC85-8328-4C5A-9ED9-8B63060178EB",
-		divisor=>0,
-		period=>"1000000000000",
-		is_direct=>'0',
-		is_digital=>'0')
-	PORT MAP(clock_out=>Net_713,
-		dig_domain_out=>open);
-ISR_CYC:cy_mxs40_isr_v1_0
+\RTC:RTC\:cy_mxs40_rtc_v1_0
+	GENERIC MAP(cy_registers=>"")
+	PORT MAP(interrupt=>\RTC:Net_3\);
+\RTC:RTC_IRQ\:cy_mxs40_isr_v1_0
 	GENERIC MAP(cy_registers=>"",
 		deepsleep_required=>'0',
-		int_type=>"00")
-	PORT MAP(int_signal=>Net_724);
-ISR_TIM:cy_mxs40_isr_v1_0
-	GENERIC MAP(cy_registers=>"",
-		deepsleep_required=>'0',
-		int_type=>"00")
-	PORT MAP(int_signal=>Net_635);
-\PWM_CYC:TCPWM\:cy_mxs40_tcpwm_v1_0
-	GENERIC MAP(cy_registers=>"",
-		width=>32,
-		exact_width=>'0')
-	PORT MAP(clock=>Net_713,
-		capture=>zero,
-		count=>one,
-		reload=>zero,
-		stop=>zero,
-		start=>zero,
-		tr_underflow=>Net_699,
-		tr_compare_match=>Net_700,
-		tr_overflow=>Net_698,
-		line_compl=>Net_703,
-		line=>Net_724,
-		interrupt=>Net_722);
-\PWM_TIM:TCPWM\:cy_mxs40_tcpwm_v1_0
-	GENERIC MAP(cy_registers=>"",
-		width=>16,
-		exact_width=>'0')
-	PORT MAP(clock=>Net_713,
-		capture=>zero,
-		count=>one,
-		reload=>zero,
-		stop=>zero,
-		start=>zero,
-		tr_underflow=>Net_711,
-		tr_compare_match=>Net_712,
-		tr_overflow=>Net_710,
-		line_compl=>Net_715,
-		line=>Net_635,
-		interrupt=>Net_721);
+		int_type=>"10")
+	PORT MAP(int_signal=>\RTC:Net_3\);
 
 END R_T_L;

@@ -28,11 +28,8 @@
   <file name="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\codegentemp\BLE_config.c" value="SOURCE_C;CortexM0p,CortexM4;;;;BLE" />
   <file name="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\codegentemp\BLE_config.h" value="HEADER;;;;;BLE" />
   <file name="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\codegentemp\BLE_custom_config.c" value="SOURCE_C;CortexM0p,CortexM4;;;;BLE" />
-  <file name="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\codegentemp\Clock_1kHz.h" value="HEADER;;;;;Clock_1kHz" />
-  <file name="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\codegentemp\PWM_CYC.c" value="SOURCE_C;CortexM0p,CortexM4;;;;PWM_CYC" />
-  <file name="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\codegentemp\PWM_CYC.h" value="HEADER;;;;;PWM_CYC" />
-  <file name="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\codegentemp\PWM_TIM.c" value="SOURCE_C;CortexM0p,CortexM4;;;;PWM_TIM" />
-  <file name="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\codegentemp\PWM_TIM.h" value="HEADER;;;;;PWM_TIM" />
+  <file name="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\codegentemp\RTC.c" value="SOURCE_C;CortexM0p,CortexM4;;;;RTC" />
+  <file name="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\codegentemp\RTC.h" value="HEADER;;;;;RTC" />
   <file name="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\codegentemp\UART_SCBCLK.h" value="HEADER;;;;;UART_SCBCLK" />
   <file name="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\codegentemp\I2C_1_SCBCLK.h" value="HEADER;;;;;I2C_1_SCBCLK" />
   <file name="C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\codegentemp\I2C_2_SCBCLK.h" value="HEADER;;;;;I2C_2_SCBCLK" />

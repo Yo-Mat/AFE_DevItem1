@@ -11,6 +11,7 @@
       <Data key="b5b708ed-a905-445f-a9f4-6d6f6e8c815d/b68e5b9d-7828-482d-a282-930f990e3b3e" value="CY_EINK_SPIM_SCBCLK" />
     </Group>
     <Group key="Interrupt">
+      <Data key="7dca17ae-279b-4849-a41f-e57459aa3f0b/7ef00bec-df5c-46f9-a7e7-201d85b6bd55" value="RTC_RTC_IRQ" />
       <Data key="7ebe91b9-e2c0-44b4-8d79-85b7cdf1d3f3/5e509665-5bd3-4115-bbc0-fb65a49def9a" value="BLE_bless_isr" />
       <Data key="8f5c281b-68ce-476b-bc10-aa7135dcc2f7" value="ISR_TIM" />
       <Data key="610ab426-70b5-47e7-9d26-bd29656adaf0/b9a438dd-31dc-4d3f-932a-b92d7b255394" value="I2C_1_SCB_IRQ" />
@@ -78,6 +79,20 @@
         <Data key="Vector" value="-1" />
       </Group>
     </Group>
+    <Group key="610ab426-70b5-47e7-9d26-bd29656adaf0/b9a438dd-31dc-4d3f-932a-b92d7b255394">
+      <Group key="CortexM4">
+        <Data key="Assigned" value="True" />
+        <Data key="Priority" value="Default" />
+        <Data key="Vector" value="-1" />
+      </Group>
+    </Group>
+    <Group key="9355880a-b929-4a30-9bef-01e8b834368b/9260d369-b684-4310-b925-f618d77b89d7">
+      <Group key="CortexM4">
+        <Data key="Assigned" value="True" />
+        <Data key="Priority" value="Default" />
+        <Data key="Vector" value="-1" />
+      </Group>
+    </Group>
     <Group key="a89aec8f-26f7-4995-a4a2-5f746b9398e7">
       <Group key="CortexM0p">
         <Data key="Assigned" value="False" />
@@ -98,6 +113,13 @@
       </Group>
       <Group key="CortexM4">
         <Data key="Assigned" value="False" />
+        <Data key="Priority" value="Default" />
+        <Data key="Vector" value="-1" />
+      </Group>
+    </Group>
+    <Group key="dccb3894-4387-4cc8-999c-cc9b0903a3f3/b9a438dd-31dc-4d3f-932a-b92d7b255394">
+      <Group key="CortexM4">
+        <Data key="Assigned" value="True" />
         <Data key="Priority" value="Default" />
         <Data key="Vector" value="-1" />
       </Group>

@@ -166,4 +166,14 @@ C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrim
 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\bIncludeDriverToComponent_v1_0\bIncludeDriverToComponent_v1_0.cysch
 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\bIncludeDriverToComponent_v1_0\bIncludeDriverToComponent_v1_0.cysym
 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\bIncludeDriverToComponent_v1_0\version.cypatch
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\RTC_PDL_v2_0\RTC_PDL_v2_0.cysym
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\RTC_PDL_v2_0\RTC_PDL_v2_0.cystate
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\RTC_PDL_v2_0\RTC_PDL_v2_0.pdf
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\RTC_PDL_v2_0\RTC_PDL_v2_0.cysch
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\RTC_PDL_v2_0\version.cypatch
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\RTC_PDL_v2_0\API\RTC_PDL.c
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\RTC_PDL_v2_0\API\RTC_PDL.h
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\RTC_PDL_v2_0\Custom\cycustomizer.cs
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_mxs40_rtc_v1_0\cy_mxs40_rtc_v1_0.cysym
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_mxs40_rtc_v1_0\PSoC6\cy_mxs40_rtc_v1_0.cyprimitive
 C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\AFE DevItem1.cydwr

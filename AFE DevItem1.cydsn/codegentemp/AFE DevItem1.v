@@ -1,6 +1,6 @@
 // ======================================================================
 // AFE DevItem1.v generated from TopDesign.cysch
-// 05/16/2021 at 18:04
+// 05/30/2021 at 19:48
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -810,99 +810,22 @@ module BLE_PDL_v2_20_5 (
 
 endmodule
 
-// TCPWM_PWM_PDL_v1_0(ClockPrescaler=0, Compare0=300000, Compare1=16384, CountInput=7, CountInputMasked=3, DeadClocks=0, EnableCompareSwap=false, EnablePeriodSwap=false, InterruptSource=0, InvertPwm=false, InvertPwm_n=false, KillInput=7, KillInputMasked=3, KillMode=2, Period0=600000, Period1=32768, PwmAlignment=0, PwmMode=4, ReloadInput=7, ReloadInputMasked=3, Resolution=32, RunMode=0, StartInput=7, StartInputMasked=3, SwapInput=7, SwapInputMasked=3, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMMENT=, CY_COMPONENT_NAME=TCPWM_PWM_PDL_v1_0, CY_CONFIG_TITLE=PWM_CYC, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=PWM_CYC, CY_INSTANCE_SHORT_NAME=PWM_CYC, CY_MAJOR_VERSION=1, CY_MINOR_VERSION=0, CY_PDL_DRIVER_NAME=tcpwm, CY_PDL_DRIVER_REQ_VERSION=1.0.0, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.4, INSTANCE_NAME=PWM_CYC, )
-module TCPWM_PWM_PDL_v1_0_6 (
-    clock,
-    compare,
-    count,
-    interrupt,
-    kill,
-    ovrflw,
-    pwm,
-    pwm_n,
-    reload,
-    start,
-    swap,
-    undrflw);
-    input       clock;
-    output      compare;
-    input       count;
-    output      interrupt;
-    input       kill;
-    output      ovrflw;
-    output      pwm;
-    output      pwm_n;
-    input       reload;
-    input       start;
-    input       swap;
-    output      undrflw;
+// RTC_PDL_v2_0(DateFormat=0, DaylightSavingsTimeEn=false, DayOfMonth=30, DayOfMonthDstStart=22, DayOfMonthDstStop=22, DayOfWeek=1, DayOfWeekDstStart=1, DayOfWeekDstStop=1, DstDateType=0, EnableRtcInterrupt=true, Hour=19, HoursDstStart=0, HoursDstStop=0, Month=5, MonthDstStart=3, MonthDstStop=10, RemoveIntr=false, TimeFormat=0, TimeResetOnStart=false, WeekOfMonthDstStart=6, WeekOfMonthDstStop=6, Year=21, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMMENT=, CY_COMPONENT_NAME=RTC_PDL_v2_0, CY_CONFIG_TITLE=RTC, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=RTC, CY_INSTANCE_SHORT_NAME=RTC, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=0, CY_PDL_DRIVER_NAME=rtc, CY_PDL_DRIVER_REQ_VERSION=2.0.0, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.4, INSTANCE_NAME=RTC, )
+module RTC_PDL_v2_0_6 ;
 
 
+          wire  Net_3;
 
-    cy_mxs40_tcpwm_v1_0 TCPWM (
-        .capture(swap),
-        .clock(clock),
-        .count(count),
-        .interrupt(interrupt),
-        .line(pwm),
-        .line_compl(pwm_n),
-        .reload(reload),
-        .start(start),
-        .stop(kill),
-        .tr_compare_match(compare),
-        .tr_overflow(ovrflw),
-        .tr_underflow(undrflw));
-    defparam TCPWM.exact_width = 0;
-    defparam TCPWM.width = 32;
+    cy_mxs40_rtc_v1_0 RTC (
+        .interrupt(Net_3));
 
 
+	cy_mxs40_isr_v1_0
+		#(.deepsleep_required(0),
+		  .int_type(2'b10))
+		RTC_IRQ
+		 (.int_signal(Net_3));
 
-endmodule
-
-// TCPWM_PWM_PDL_v1_0(ClockPrescaler=0, Compare0=5000, Compare1=16384, CountInput=7, CountInputMasked=3, DeadClocks=0, EnableCompareSwap=false, EnablePeriodSwap=false, InterruptSource=0, InvertPwm=false, InvertPwm_n=false, KillInput=7, KillInputMasked=3, KillMode=2, Period0=10000, Period1=32768, PwmAlignment=0, PwmMode=4, ReloadInput=7, ReloadInputMasked=3, Resolution=16, RunMode=0, StartInput=7, StartInputMasked=3, SwapInput=7, SwapInputMasked=3, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMMENT=, CY_COMPONENT_NAME=TCPWM_PWM_PDL_v1_0, CY_CONFIG_TITLE=PWM_TIM, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=PWM_TIM, CY_INSTANCE_SHORT_NAME=PWM_TIM, CY_MAJOR_VERSION=1, CY_MINOR_VERSION=0, CY_PDL_DRIVER_NAME=tcpwm, CY_PDL_DRIVER_REQ_VERSION=1.0.0, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.4, INSTANCE_NAME=PWM_TIM, )
-module TCPWM_PWM_PDL_v1_0_7 (
-    clock,
-    compare,
-    count,
-    interrupt,
-    kill,
-    ovrflw,
-    pwm,
-    pwm_n,
-    reload,
-    start,
-    swap,
-    undrflw);
-    input       clock;
-    output      compare;
-    input       count;
-    output      interrupt;
-    input       kill;
-    output      ovrflw;
-    output      pwm;
-    output      pwm_n;
-    input       reload;
-    input       start;
-    input       swap;
-    output      undrflw;
-
-
-
-    cy_mxs40_tcpwm_v1_0 TCPWM (
-        .capture(swap),
-        .clock(clock),
-        .count(count),
-        .interrupt(interrupt),
-        .line(pwm),
-        .line_compl(pwm_n),
-        .reload(reload),
-        .start(start),
-        .stop(kill),
-        .tr_compare_match(compare),
-        .tr_overflow(ovrflw),
-        .tr_underflow(undrflw));
-    defparam TCPWM.exact_width = 0;
-    defparam TCPWM.width = 16;
 
 
 
@@ -911,27 +834,6 @@ endmodule
 // top
 module top ;
 
-          wire  Net_711;
-          wire  Net_708;
-          wire  Net_706;
-          wire  Net_705;
-          wire  Net_715;
-          wire  Net_710;
-          wire  Net_704;
-          wire  Net_721;
-          wire  Net_707;
-          wire  Net_712;
-          wire  Net_699;
-          wire  Net_696;
-          wire  Net_694;
-          wire  Net_693;
-          wire  Net_703;
-          wire  Net_698;
-          wire  Net_692;
-          wire  Net_722;
-          wire  Net_695;
-          wire  Net_700;
-          wire  Net_781;
           wire  Net_601;
           wire  Net_600;
           wire  Net_599;
@@ -967,9 +869,6 @@ module top ;
           wire  Net_103;
           wire  Net_102;
           wire  Net_101;
-          wire  Net_713;
-          wire  Net_724;
-          wire  Net_635;
           wire  Net_52;
 
     SCB_UART_PDL_v2_0_0 UART (
@@ -1257,61 +1156,7 @@ module top ;
         .pa_lna_en(Net_600),
         .pa_tx_en(Net_601));
 
-
-	cy_clock_v1_0
-		#(.id("3e544cc9-94a1-426f-8f9f-c263656a0c49"),
-		  .source_clock_id("2FB4EC85-8328-4C5A-9ED9-8B63060178EB"),
-		  .divisor(0),
-		  .period("1000000000000"),
-		  .is_direct(0),
-		  .is_digital(0))
-		Clock_1kHz
-		 (.clock_out(Net_713));
-
-
-
-	cy_mxs40_isr_v1_0
-		#(.deepsleep_required(0),
-		  .int_type(2'b00))
-		ISR_CYC
-		 (.int_signal(Net_724));
-
-
-
-	cy_mxs40_isr_v1_0
-		#(.deepsleep_required(0),
-		  .int_type(2'b00))
-		ISR_TIM
-		 (.int_signal(Net_635));
-
-
-    TCPWM_PWM_PDL_v1_0_6 PWM_CYC (
-        .clock(Net_713),
-        .compare(Net_700),
-        .count(1'b1),
-        .interrupt(Net_722),
-        .kill(1'b0),
-        .ovrflw(Net_698),
-        .pwm(Net_724),
-        .pwm_n(Net_703),
-        .reload(1'b0),
-        .start(1'b0),
-        .swap(1'b0),
-        .undrflw(Net_699));
-
-    TCPWM_PWM_PDL_v1_0_7 PWM_TIM (
-        .clock(Net_713),
-        .compare(Net_712),
-        .count(1'b1),
-        .interrupt(Net_721),
-        .kill(1'b0),
-        .ovrflw(Net_710),
-        .pwm(Net_635),
-        .pwm_n(Net_715),
-        .reload(1'b0),
-        .start(1'b0),
-        .swap(1'b0),
-        .undrflw(Net_711));
+    RTC_PDL_v2_0_6 RTC ();
 
 
 

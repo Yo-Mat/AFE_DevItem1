@@ -1,6 +1,6 @@
-C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\AFE DevItem1.cyprj|8d07c328-d83b-4628-99cd-3bf0baf99d01
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|25f72e7d-9b87-4312-a90c-f9f7a3cf91ae
-C:\Users\yomat\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|67662bde-2991-4636-bc4b-3f233ec846ff
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|dd461e65-bfa9-4478-92dd-4504062f8cc5
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|42848f4b-34de-47da-8179-05de60f97279
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|4396fa52-757f-4dbd-90e3-983835a4c9c7
+C:\Users\yomat\Documents\PSoC Creator\AFE_DevItem1\AFE DevItem1.cydsn\AFE DevItem1.cyprj|b187b3b2-a08f-4ed0-858f-3b30069e1d79
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|8fdb23be-6b12-4dd6-8803-426c8712b08d
+C:\Users\yomat\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|2b3dcd9f-00d6-4bd6-b2ec-4400f45ed05e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|1ef84645-6c60-4960-8982-2fee50a964af
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|8936479c-acc1-437d-932b-a5daf4b4e7c2
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|2a4e899b-f8e3-4459-959a-af7403b95cb4
