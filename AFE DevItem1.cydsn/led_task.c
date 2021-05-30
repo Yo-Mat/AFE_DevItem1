@@ -293,7 +293,7 @@ void Task_LED (void *pvParameters)
             //printf("Debug! : LED task is wake up!\r\n"); CyDelay(10);
 
             if (alarmFlag) {        // RTCによるスリープ解除なら
-                printf("Debug! : Start operation time!\r\n"); CyDelay(10);
+                //printf("Debug! : Start operation time!\r\n"); CyDelay(10);
                 AFE_clr(AFE_ID);
                 AFE_act(AFE_ID);
                 RTC_GetDateAndTime(&startTtime);
