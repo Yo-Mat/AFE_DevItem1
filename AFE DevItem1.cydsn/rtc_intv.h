@@ -19,7 +19,7 @@
 #define SECONDS_PER_MIN     (60u)   /* used to keep values in range */
 #define MINUTES_PER_HOUR    (60u)
 
-#define TICK_INTERVAL       (10u)   /* seconds or minutes interval. The range should be 1-59 */
+#define TICK_INTERVAL       (1u)   /* seconds or minutes interval. The range should be 1-59 */
 #define USE_SECONDS         (0u)    /* set to one to use, set to zero to not use */
 #define USE_MINUTES         (1u)    /* use seconds OR minutes, not both  */
 
